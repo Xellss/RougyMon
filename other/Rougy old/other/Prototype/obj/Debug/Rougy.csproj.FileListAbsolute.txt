@@ -1,0 +1,21 @@
+C:\Repository\Rougy\bin\Debug\Rougy.exe.config
+C:\Repository\Rougy\bin\Debug\Rougy.exe
+C:\Repository\Rougy\bin\Debug\Rougy.pdb
+C:\Repository\Rougy\obj\Debug\Rougy.csprojResolveAssemblyReference.cache
+C:\Repository\Rougy\obj\Debug\Rougy.exe
+C:\Repository\Rougy\obj\Debug\Rougy.pdb
+C:\Users\Xells\Desktop\Rougy by Julian Hopp and Daniel Lause\other\Prototype\bin\Debug\Rougy.exe.config
+C:\Users\Xells\Desktop\Rougy by Julian Hopp and Daniel Lause\other\Prototype\obj\Debug\Rougy.exe
+C:\Users\Xells\Desktop\Rougy by Julian Hopp and Daniel Lause\other\Prototype\obj\Debug\Rougy.pdb
+C:\Users\Xells\Desktop\Rougy by Julian Hopp and Daniel Lause\other\Prototype\bin\Debug\Rougy.exe
+C:\Users\Xells\Desktop\Rougy by Julian Hopp and Daniel Lause\other\Prototype\bin\Debug\Rougy.pdb
+C:\Users\Xells\Desktop\Rougy by Julian Hopp and Daniel Lause\other\Prototype\obj\Debug\Rougy.csprojResolveAssemblyReference.cache
+C:\Users\Xells\Desktop\SAE\Rougy by Julian Hopp and Daniel Lause\other\Prototype\bin\Debug\Rougy.exe.config
+C:\Users\Xells\Desktop\SAE\Rougy by Julian Hopp and Daniel Lause\other\Prototype\obj\Debug\Rougy.exe
+C:\Users\Xells\Desktop\SAE\Rougy by Julian Hopp and Daniel Lause\other\Prototype\obj\Debug\Rougy.pdb
+C:\Users\Xells\Desktop\SAE\Rougy by Julian Hopp and Daniel Lause\other\Prototype\bin\Debug\Rougy.exe
+C:\Users\Xells\Desktop\SAE\Rougy by Julian Hopp and Daniel Lause\other\Prototype\bin\Debug\Rougy.pdb
+C:\Users\Xells\Desktop\SAE\Rougy by Julian Hopp and Daniel Lause\other\Prototype\obj\Debug\Rougy.csprojResolveAssemblyReference.cache
+C:\Users\Xells\Desktop\RougyMon by Julian Hopp and Daniel Lause GPD415\other\Rougy old\other\Prototype\bin\Debug\Rougy.exe.config
+C:\Users\Xells\Desktop\RougyMon by Julian Hopp and Daniel Lause GPD415\other\Rougy old\other\Prototype\obj\Debug\Rougy.exe
+C:\Users\Xells\Desktop\RougyMon by Julian Hopp and Daniel Lause GPD415\other\Rougy old\other\Prototype\obj\Debug\Rougy.pdb
