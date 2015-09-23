@@ -212,7 +212,6 @@ namespace GameStateManagementSample
             spriteBatch.End();
             spriteBatch.Begin();
             map.RenderMap(spriteBatch);
-            spriteBatch.End();
         }
 
         #endregion
