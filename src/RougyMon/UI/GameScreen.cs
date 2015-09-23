@@ -137,6 +137,7 @@ namespace GameStateManagement
         }
         public virtual void HandleInput(GameTime gameTime, InputState input) { }
         public virtual void Draw(SpriteBatch spriteBatch) { }
+        public virtual void LateDraw(SpriteBatch spriteBatch) { }
         public void ExitScreen()
         {
             if (TransitionOffTime == TimeSpan.Zero)

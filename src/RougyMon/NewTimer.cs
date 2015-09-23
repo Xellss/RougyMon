@@ -6,17 +6,13 @@ using System.Text;
 
 namespace RougyMon
 {
-    class NewTimer : Component
+    class NewTimer 
     {
         public TimeSpan Time;
         bool isRunning = false;
 
-        public NewTimer()
-        {
-            EventManager.OnUpdate += OnUpdate;
-        }
 
-        private void OnUpdate(Microsoft.Xna.Framework.GameTime gameTime)
+        public void OnUpdate(Microsoft.Xna.Framework.GameTime gameTime)
         {
             if (isRunning)
             {
@@ -24,20 +20,15 @@ namespace RougyMon
             }
         }
 
-        void Start()
+        public void Start()
         {
             isRunning = true;
         }
 
-        void Stop()
+        public void Stop()
         {
             isRunning = false;
         }
 
-        public override void Destroy()
-        {
-            EventManager.OnUpdate -= OnUpdate;
-            base.Destroy();
-        }
     }
 }

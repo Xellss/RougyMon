@@ -23,9 +23,6 @@ namespace GameStateManagementSample
         ContentManager content;
         SpriteFont gameFont;
 
-        Vector2 playerPosition = new Vector2(100, 100);
-        Vector2 enemyPosition = new Vector2(100, 100);
-
         Random random = new Random();
 
         float pauseAlpha;
@@ -34,6 +31,7 @@ namespace GameStateManagementSample
         private Camera camera;
         private Player player;
         private Map map;
+        NewTimer timer;
 
         #endregion
 
@@ -48,6 +46,10 @@ namespace GameStateManagementSample
                 new Buttons[] { Buttons.Start, Buttons.Back },
                 new Keys[] { Keys.Escape },
                 true);
+
+            timer = new NewTimer();
+            timer.Time = new TimeSpan(0, 10, 0);
+
         }
 
         public override void Activate(bool instancePreserved)
@@ -57,11 +59,12 @@ namespace GameStateManagementSample
                 if (content == null)
                     content = Managers.Content;
 
-                gameFont = content.Load<SpriteFont>("Fonts/Arial");
+                gameFont = content.Load<SpriteFont>("Fonts/ComicSansMS");
 
                 Thread.Sleep(1000);
 
             }
+
 
 #if WINDOWS_PHONE
             if (Microsoft.Phone.Shell.PhoneApplicationService.Current.State.ContainsKey("PlayerPosition"))
@@ -75,11 +78,12 @@ namespace GameStateManagementSample
             map.LoadMapFromTextfile(content.RootDirectory + "/Map/Map.txt", 42, 24);
             map.LoadMapFromImage(content.Load<Texture2D>("Map/UnitedMapBMP"));
 
-            player = new Player(new Vector2(1000, 50), map);
+            player = new Player(new Vector2(1000, 100), map);
             new Key(new Vector2(555, 100));
 
-            new UITimer(player);
+            //new UITimer(timer);
             camera = new Camera(Managers.Graphics.GraphicsDevice.Viewport);
+            timer.Start();
         }
 
         public override void Deactivate()
@@ -116,21 +120,8 @@ namespace GameStateManagementSample
             else
                 pauseAlpha = Math.Max(pauseAlpha - 1f / 32, 0);
 
-            if (IsActive)
-            {
-
-                const float randomization = 10;
-
-                enemyPosition.X += (float)(random.NextDouble() - 0.5) * randomization;
-                enemyPosition.Y += (float)(random.NextDouble() - 0.5) * randomization;
-
-                Vector2 targetPosition = new Vector2(
-                    Managers.Graphics.GraphicsDevice.Viewport.Width / 2 - gameFont.MeasureString("Insert Gameplay Here").X / 2, 
-                    200);
-
-                enemyPosition = Vector2.Lerp(enemyPosition, targetPosition, 0.05f);
-
-            }
+            camera.OnUpdate(player.transform.Position, 97 * 32, 54 * 32);
+            timer.OnUpdate(gameTime);
         }
 
         public override void HandleInput(GameTime gameTime, InputState input)
@@ -155,41 +146,6 @@ namespace GameStateManagementSample
                 ScreenManager.AddScreen(new PauseMenuScreen(), ControllingPlayer);
 #endif
             }
-            else
-            {
-
-                Vector2 movement = Vector2.Zero;
-
-                if (keyboardState.IsKeyDown(Keys.Left))
-                    movement.X--;
-
-                if (keyboardState.IsKeyDown(Keys.Right))
-                    movement.X++;
-
-                if (keyboardState.IsKeyDown(Keys.Up))
-                    movement.Y--;
-
-                if (keyboardState.IsKeyDown(Keys.Down))
-                    movement.Y++;
-
-                Vector2 thumbstick = gamePadState.ThumbSticks.Left;
-
-                movement.X += thumbstick.X;
-                movement.Y -= thumbstick.Y;
-
-                if (input.TouchState.Count > 0)
-                {
-                    Vector2 touchPosition = input.TouchState[0].Position;
-                    Vector2 direction = touchPosition - playerPosition;
-                    direction.Normalize();
-                    movement += direction;
-                }
-
-                if (movement.Length() > 1)
-                    movement.Normalize();
-
-                playerPosition += movement * 8f;
-            }
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -198,10 +154,6 @@ namespace GameStateManagementSample
             Managers.Graphics.GraphicsDevice.Clear(ClearOptions.Target,
                                                Color.CornflowerBlue, 0, 0);
             spriteBatch.Begin();
-            spriteBatch.DrawString(gameFont, "// TODO", playerPosition, Color.Green);
-
-            spriteBatch.DrawString(gameFont, "Insert Gameplay Here",
-                                   enemyPosition, Color.DarkRed);
 
             if (TransitionPosition > 0 || pauseAlpha > 0)
             {
@@ -209,9 +161,18 @@ namespace GameStateManagementSample
 
                 ScreenManager.FadeBackBufferToBlack(alpha);
             }
+
+            spriteBatch.End();
+            spriteBatch.Begin(SpriteSortMode.Deferred,BlendState.AlphaBlend,null,null,null,null,camera.matrix);
+            map.RenderMap(spriteBatch);
+        }
+
+        public override void LateDraw(SpriteBatch spriteBatch)
+        {
             spriteBatch.End();
             spriteBatch.Begin();
-            map.RenderMap(spriteBatch);
+            spriteBatch.DrawString(Fonts.ComicSans, string.Format("Time left: {0:mm\\:ss}", timer.Time), new Vector2(Managers.Graphics.GraphicsDevice.Viewport.Width - 333, 10), Color.White); base.LateDraw(spriteBatch);
+            spriteBatch.End();
         }
 
         #endregion

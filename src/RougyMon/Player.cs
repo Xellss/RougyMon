@@ -13,7 +13,6 @@ namespace RougyMon
         MoveWithInput moveWithInput;
         BoxCollider collider;
         Map map;
-        public NewTimer Timer;
 
         public bool HasKey = false;
 
@@ -36,8 +35,6 @@ namespace RougyMon
             collider = AddComponent<BoxCollider>();
             collider.OnCollisionEnter += OnCollisionEnter;
 
-            Timer = AddComponent<NewTimer>();
-            Timer.Time = TimeSpan.FromSeconds(120);
 
             EventManager.OnUpdate += OnUpdate;
         }
@@ -52,7 +49,7 @@ namespace RougyMon
         {
             //CheckCurrentTile();
             //CheckNextTile();
-            RectangleF newRectangle = new RectangleF(transform.Position.X, transform.Position.Y + 0.5f, 0.5f, 0.5f);
+            RectangleF newRectangle = new RectangleF(moveWithInput.NextPosition.X / map.TileWidth - 0.25f, moveWithInput.NextPosition.Y / map.TileHeight - 0.75f, 0.5f, 0.75f);
             moveWithInput.NextFiledIsPassable = CanMoveTo(newRectangle);
         }
 

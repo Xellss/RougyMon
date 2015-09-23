@@ -45,6 +45,19 @@ namespace MiniEngine
                 throw new Exception("GameObject needs a Transform component");
 
             EventManager.OnUpdate += OnUpdate;
+            EventManager.OnLateUpdate += OnLateUpdate;
+        }
+
+        void OnLateUpdate(GameTime gameTime)
+        {
+            if (NextFiledIsPassable)
+            {
+                transform.Translate(moveDirection * Speed);
+                moveDirection.X = 0;
+                moveDirection.Y = 0;
+            }
+            else
+                moveDirection = oldDirection;
         }
         void OnUpdate(GameTime gameTime)
         {
@@ -61,14 +74,7 @@ namespace MiniEngine
                 moveWithWASD();
                 moveWithArrows();
 
-                if (NextFiledIsPassable)
-                {
-                    transform.Translate(moveDirection * Speed);
-                    moveDirection.X = 0;
-                    moveDirection.Y = 0;
-                }
-                else
-                    moveDirection = oldDirection;
+                
             }
 
         }
@@ -160,6 +166,8 @@ namespace MiniEngine
         public override void Destroy()
         {
             EventManager.OnUpdate -= OnUpdate;
+            EventManager.OnLateUpdate -= OnLateUpdate;
+            
             base.Destroy();
         }
     }
