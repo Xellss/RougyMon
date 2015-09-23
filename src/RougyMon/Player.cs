@@ -35,7 +35,6 @@ namespace RougyMon
 
             collider = AddComponent<BoxCollider>();
             collider.OnCollisionEnter += OnCollisionEnter;
-            collider.OnCollisionStay += OnCollisionStay;
 
             Timer = AddComponent<NewTimer>();
             Timer.Time = TimeSpan.FromSeconds(120);
@@ -43,9 +42,6 @@ namespace RougyMon
             EventManager.OnUpdate += OnUpdate;
         }
 
-        private void OnCollisionStay(BoxCollider other)
-        {
-        }
 
         void OnCollisionEnter(BoxCollider other)
         {
@@ -54,29 +50,61 @@ namespace RougyMon
         }
         void OnUpdate(GameTime gameTime)
         {
-            CheckCurrentTile();
-            CheckNextTile();
+            //CheckCurrentTile();
+            //CheckNextTile();
+            RectangleF newRectangle = new RectangleF(transform.Position.X, transform.Position.Y + 0.5f, 0.5f, 0.5f);
+            moveWithInput.NextFiledIsPassable = CanMoveTo(newRectangle);
         }
 
-        private void CheckCurrentTile()
+        public bool CanMoveTo(RectangleF recCollider)
         {
-            //moveWithInput.NextFiledIsPassable = true;
-            int x = (int)transform.Position.X / map.TileHeight;
-            int y = (int)transform.Position.Y / map.TileWidth;
-            //Console.WriteLine("Current Tile:{0} Position:{1}", map.tiles[x, y].Type.ToString(), transform.Position / 32);
-            //if (map.tiles[x, y].Type == Tile.Types.Moor)
-            //moveWithInput.Speed = 3;
-            //else
-            //moveWithInput.Speed = 5;
+
+            Vector2 v;
+            for (v.X = recCollider.Location.X; v.X <= recCollider.Right; v.X += 0.25f)
+            {
+                for (v.Y = recCollider.Location.Y; v.Y <= recCollider.Bottom; v.Y += 0.25f)
+                {
+                    if (!map.IsPassable(v))
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
-        private void CheckNextTile()
-        {
-            int x = (int)moveWithInput.NextPosition.X / map.TileHeight;
-            int y = (int)moveWithInput.NextPosition.Y / map.TileWidth;
-            //Console.WriteLine("Next Tile:{0} Position:{1}", map.tiles[x, y].Type.ToString(), moveWithInput.NextPosition / 32);
-            //if (map.tiles[x, y].Type == Tile.Types.Tree)
-            //moveWithInput.NextFiledIsPassable = false;
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //private void CheckCurrentTile()
+        //{
+        //    //moveWithInput.NextFiledIsPassable = true;
+        //    int x = (int)transform.Position.X / map.TileHeight;
+        //    int y = (int)transform.Position.Y / map.TileWidth;
+        //    //Console.WriteLine("Current Tile:{0} Position:{1}", map.tiles[x, y].Type.ToString(), transform.Position / 32);
+        //    //if (map.tiles[x, y].Type == Tile.Types.Moor)
+        //    //moveWithInput.Speed = 3;
+        //    //else
+        //    //moveWithInput.Speed = 5;
+        //}
+        //private void CheckNextTile()
+        //{
+        //    int x = (int)moveWithInput.NextPosition.X / map.TileHeight;
+        //    int y = (int)moveWithInput.NextPosition.Y / map.TileWidth;
+        //    //Console.WriteLine("Next Tile:{0} Position:{1}", map.tiles[x, y].Type.ToString(), moveWithInput.NextPosition / 32);
+        //    //if (map.tiles[x, y].Type == Tile.Types.Tree)
+        //    //moveWithInput.NextFiledIsPassable = false;
+        //}
 
         public override void Destroy()
         {
