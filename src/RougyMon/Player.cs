@@ -27,7 +27,7 @@ namespace RougyMon
             transform.Position = position;
 
             renderer = AddComponent<Renderer>();
-            renderer.SetImage(Managers.Content.Load<Texture2D>("Sprites/Player"));
+            renderer.SetImage(Managers.Content.Load<Texture2D>("Sprites/Brunhilde/Brunhilde_Down_0"));
             renderer.Pivot = new Vector2(renderer.ImageWidth / 2, renderer.ImageHeight / 1f);
 
             moveWithInput = AddComponent<MoveWithInput>();

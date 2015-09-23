@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:201454b4be2bd50d6dd708432a0d1f1b:f680c07db02b1571211fe15b9db0482c:e1dd5c8832bacc0b2adcac2331415416$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="RougyMon_Sheet.png" width="256" height="512">
+    <sprite n="Brunhilde_Down_0.png" x="2" y="2" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Down_1.png" x="36" y="2" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Down_2.png" x="70" y="2" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Left_0.png" x="104" y="2" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Left_1.png" x="138" y="2" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Left_2.png" x="172" y="2" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Left_3.png" x="206" y="2" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Left_4.png" x="2" y="36" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Right_0.png" x="36" y="36" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Right_1.png" x="70" y="36" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Right_2.png" x="104" y="36" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Right_3.png" x="138" y="36" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Right_4.png" x="172" y="36" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Up_0.png" x="206" y="36" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Up_1.png" x="2" y="70" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Up_2.png" x="36" y="70" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkForest_Back_0.png" x="70" y="70" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkForest_Back_1.png" x="104" y="70" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkForest_Back_2.png" x="138" y="70" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkForest_Front_0.png" x="172" y="70" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkForest_Front_1.png" x="206" y="70" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkForest_Front_2.png" x="2" y="104" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkForest_Left_0.png" x="36" y="104" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkForest_Left_1.png" x="36" y="104" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkForest_Left_2.png" x="70" y="104" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkForest_Left_4.png" x="70" y="104" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkForest_Left_3.png" x="104" y="104" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkForest_Right_0.png" x="138" y="104" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkForest_Right_1.png" x="138" y="104" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkForest_Right_2.png" x="172" y="104" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkForest_Right_4.png" x="172" y="104" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkForest_Right_3.png" x="206" y="104" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkGraveyard_Back_0.png" x="2" y="138" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkGraveyard_Back_1.png" x="36" y="138" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkGraveyard_Back_2.png" x="70" y="138" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkGraveyard_Front_0.png" x="104" y="138" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkGraveyard_Front_1.png" x="138" y="138" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkGraveyard_Front_2.png" x="172" y="138" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkGraveyard_Left_0.png" x="206" y="138" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkGraveyard_Left_1.png" x="2" y="172" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkGraveyard_Left_2.png" x="36" y="172" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkGraveyard_Right_0.png" x="70" y="172" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkGraveyard_Right_1.png" x="104" y="172" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="OrkGraveyard_Right_2.png" x="138" y="172" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="SkeletonKing_Back_0.png" x="172" y="172" w="40" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="SkeletonKing_Back_1.png" x="214" y="172" w="40" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="SkeletonKing_Back_2.png" x="2" y="214" w="40" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="SkeletonKing_Front_0.png" x="44" y="214" w="40" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="SkeletonKing_Front_1.png" x="86" y="214" w="40" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="SkeletonKing_Front_2.png" x="128" y="214" w="40" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="SkeletonKing_Left_0.png" x="170" y="214" w="40" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="SkeletonKing_Left_1.png" x="212" y="214" w="40" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="SkeletonKing_Left_2.png" x="2" y="256" w="40" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="SkeletonKing_Right_0.png" x="44" y="256" w="40" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="SkeletonKing_Right_1.png" x="86" y="256" w="40" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="SkeletonKing_Right_2.png" x="128" y="256" w="40" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="Skeleton_Back_0.png" x="170" y="256" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Skeleton_Back_1.png" x="204" y="256" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Skeleton_Back_2.png" x="2" y="298" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Skeleton_Front_0.png" x="36" y="298" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Skeleton_Front_1.png" x="70" y="298" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Skeleton_Front_2.png" x="104" y="298" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Skeleton_Left_0.png" x="138" y="298" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Skeleton_Left_1.png" x="172" y="298" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Skeleton_Left_2.png" x="206" y="298" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Skeleton_Left_3.png" x="2" y="332" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Skeleton_Left_4.png" x="36" y="332" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Skeleton_Right_0.png" x="70" y="332" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Skeleton_Right_1.png" x="104" y="332" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Skeleton_Right_2.png" x="138" y="332" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Skeleton_Right_3.png" x="172" y="332" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Skeleton_Right_4.png" x="206" y="332" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Spider_Back_0.png" x="2" y="366" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Spider_Back_1.png" x="36" y="366" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Spider_Back_2.png" x="70" y="366" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Spider_Back_3.png" x="104" y="366" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Spider_Back_4.png" x="138" y="366" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Spider_Back_5.png" x="172" y="366" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Spider_Front_0.png" x="206" y="366" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Spider_Front_1.png" x="2" y="400" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Spider_Front_2.png" x="36" y="400" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Spider_Front_3.png" x="70" y="400" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Spider_Front_4.png" x="104" y="400" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Spider_Front_5.png" x="138" y="400" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Spider_Left_0.png" x="172" y="400" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Spider_Left_1.png" x="206" y="400" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Spider_Left_2.png" x="2" y="434" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Spider_Left_3.png" x="36" y="434" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Spider_Left_4.png" x="70" y="434" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Spider_Left_5.png" x="104" y="434" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Spider_Right_0.png" x="138" y="434" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Spider_Right_1.png" x="172" y="434" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Spider_Right_2.png" x="206" y="434" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Spider_Right_3.png" x="2" y="468" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Spider_Right_4.png" x="36" y="468" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Spider_Right_5.png" x="70" y="468" w="32" h="32" pX="0.5" pY="0.5"/>
+</TextureAtlas>

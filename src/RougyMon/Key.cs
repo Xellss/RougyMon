@@ -22,7 +22,7 @@ namespace RougyMon
             transform.Position = position;
 
             renderer = AddComponent<Renderer>();
-            renderer.SetImage(Managers.Content.Load<Texture2D>("Sprites/Key"));
+            renderer.SetImage(Managers.Content.Load<Texture2D>("Sprites/Objects/Key"));
             renderer.Pivot = new Vector2(renderer.ImageWidth / 2, renderer.ImageHeight / 2f);
 
             collider = AddComponent<BoxCollider>();
