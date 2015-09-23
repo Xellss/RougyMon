@@ -75,6 +75,7 @@ namespace RougyMon
             GraphicsDevice.Clear(Color.CornflowerBlue);
             //map.RenderMap(spriteBatch);
             EventManager.Render(spriteBatch);
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }
