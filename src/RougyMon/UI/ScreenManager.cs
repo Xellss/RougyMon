@@ -1,8 +1,5 @@
 #region File Description
 
-
-
-
 #endregion
 
 #region Using Statements
@@ -50,17 +47,10 @@ namespace GameStateManagement
 
         #region Properties
 
-
-
-
         public SpriteFont Font
         {
             get { return font; }
         }
-
-
-
-
 
         public bool TraceEnabled
         {
@@ -68,24 +58,18 @@ namespace GameStateManagement
             set { traceEnabled = value; }
         }
 
-
-
         public Texture2D BlankTexture
         {
             get { return blankTexture; }
         }
 
-
         #endregion
 
         #region Initialization
 
-
-
         public ScreenManager(Game game)
         {
             this.game = game;
-
 
             TouchPanel.EnabledGestures = GestureType.None;
 
@@ -109,13 +93,10 @@ namespace GameStateManagement
 
         #region Update and Draw
 
-
-
         public void Update(GameTime gameTime)
         {
 
             input.Update();
-
 
             tempScreensList.Clear();
 
@@ -138,14 +119,12 @@ namespace GameStateManagement
                     screen.ScreenState == ScreenState.Active)
                 {
 
-
                     if (!otherScreenHasFocus)
                     {
                         screen.HandleInput(gameTime, input);
 
                         otherScreenHasFocus = true;
                     }
-
 
                     if (!screen.IsPopup)
                         coveredByOtherScreen = true;
@@ -156,8 +135,6 @@ namespace GameStateManagement
                 TraceScreens();
         }
 
-
-
         void TraceScreens()
         {
             List<string> screenNames = new List<string>();
@@ -167,8 +144,6 @@ namespace GameStateManagement
 
             Debug.WriteLine(string.Join(", ", screenNames.ToArray()));
         }
-
-
 
         public void Draw(SpriteBatch spriteBatch)
         {
@@ -181,12 +156,9 @@ namespace GameStateManagement
             }
         }
 
-
         #endregion
 
         #region Public Methods
-
-
 
         public void AddScreen(GameScreen screen, PlayerIndex? controllingPlayer)
         {
@@ -204,11 +176,6 @@ namespace GameStateManagement
             TouchPanel.EnabledGestures = screen.EnabledGestures;
         }
 
-
-
-
-
-
         public void RemoveScreen(GameScreen screen)
         {
 
@@ -220,29 +187,19 @@ namespace GameStateManagement
             screens.Remove(screen);
             tempScreensList.Remove(screen);
 
-
             if (screens.Count > 0)
             {
                 TouchPanel.EnabledGestures = screens[screens.Count - 1].EnabledGestures;
             }
         }
 
-
-
-
-
         public GameScreen[] GetScreens()
         {
             return screens.ToArray();
         }
 
-
-
-
         public void FadeBackBufferToBlack(float alpha)
         {
-
-
 
         }
 

@@ -1,10 +1,5 @@
 #region File Description
 
-
-
-
-
-
 #endregion
 
 #region Using Statements
@@ -14,13 +9,9 @@ using Microsoft.Xna.Framework;
 namespace GameStateManagementSample
 {
 
-
-
     class MainMenuScreen : MenuScreen
     {
         #region Initialization
-
-
 
         public MainMenuScreen()
             : base("Main Menu")
@@ -39,12 +30,9 @@ namespace GameStateManagementSample
             MenuEntries.Add(exitMenuEntry);
         }
 
-
         #endregion
 
         #region Handle Input
-
-
 
         void PlayGameMenuEntrySelected(object sender, PlayerIndexEventArgs e)
         {
@@ -52,14 +40,10 @@ namespace GameStateManagementSample
                                new GameplayScreen());
         }
 
-
-
         void OptionsMenuEntrySelected(object sender, PlayerIndexEventArgs e)
         {
             ScreenManager.AddScreen(new OptionsMenuScreen(), e.PlayerIndex);
         }
-
-
 
         protected override void OnCancel(PlayerIndex playerIndex)
         {
@@ -72,14 +56,10 @@ namespace GameStateManagementSample
             ScreenManager.AddScreen(confirmExitMessageBox, playerIndex);
         }
 
-
-
-
         void ConfirmExitMessageBoxAccepted(object sender, PlayerIndexEventArgs e)
         {
             ScreenManager.Game.Exit();
         }
-
 
         #endregion
     }

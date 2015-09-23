@@ -1,10 +1,5 @@
 #region File Description
 
-
-
-
-
-
 #endregion
 
 #region Using Statements
@@ -20,10 +15,6 @@ using RougyMon;
 
 namespace GameStateManagementSample
 {
-
-
-
-
 
     class GameplayScreen : GameScreen
     {
@@ -48,8 +39,6 @@ namespace GameStateManagementSample
 
         #region Initialization
 
-
-
         public GameplayScreen()
         {
             TransitionOnTime = TimeSpan.FromSeconds(1.5);
@@ -61,8 +50,6 @@ namespace GameStateManagementSample
                 true);
         }
 
-
-
         public override void Activate(bool instancePreserved)
         {
             if (!instancePreserved)
@@ -72,12 +59,7 @@ namespace GameStateManagementSample
 
                 gameFont = content.Load<SpriteFont>("Fonts/Arial");
 
-
-
                 Thread.Sleep(1000);
-
-
-
 
             }
 
@@ -93,14 +75,12 @@ namespace GameStateManagementSample
             map.LoadMapFromTextfile(content.RootDirectory + "/Map/Map.txt", 42, 24);
             map.LoadMapFromImage(content.Load<Texture2D>("Map/UnitedMapBMP"));
 
-
             player = new Player(new Vector2(1000, 50), map);
             new Key(new Vector2(555, 100));
 
             new UITimer(player);
             camera = new Camera(Managers.Graphics.GraphicsDevice.Viewport);
         }
-
 
         public override void Deactivate()
         {
@@ -112,8 +92,6 @@ namespace GameStateManagementSample
             base.Deactivate();
         }
 
-
-
         public override void Unload()
         {
             content.Unload();
@@ -124,14 +102,9 @@ namespace GameStateManagementSample
 #endif
         }
 
-
         #endregion
 
         #region Update and Draw
-
-
-
-
 
         public override void Update(GameTime gameTime, bool otherScreenHasFocus,
                                                        bool coveredByOtherScreen)
@@ -157,12 +130,8 @@ namespace GameStateManagementSample
 
                 enemyPosition = Vector2.Lerp(enemyPosition, targetPosition, 0.05f);
 
-
             }
         }
-
-
-
 
         public override void HandleInput(GameTime gameTime, InputState input)
         {
@@ -173,9 +142,6 @@ namespace GameStateManagementSample
 
             KeyboardState keyboardState = input.CurrentKeyboardStates[playerIndex];
             GamePadState gamePadState = input.CurrentGamePadStates[playerIndex];
-
-
-
 
             bool gamePadDisconnected = !gamePadState.IsConnected &&
                                        input.GamePadWasConnected[playerIndex];
@@ -226,14 +192,12 @@ namespace GameStateManagementSample
             }
         }
 
-
-
         public override void Draw(SpriteBatch spriteBatch)
         {
 
             Managers.Graphics.GraphicsDevice.Clear(ClearOptions.Target,
                                                Color.CornflowerBlue, 0, 0);
-
+            spriteBatch.Begin();
             spriteBatch.DrawString(gameFont, "// TODO", playerPosition, Color.Green);
 
             spriteBatch.DrawString(gameFont, "Insert Gameplay Here",
@@ -245,8 +209,11 @@ namespace GameStateManagementSample
 
                 ScreenManager.FadeBackBufferToBlack(alpha);
             }
+            spriteBatch.End();
+            spriteBatch.Begin();
+            map.RenderMap(spriteBatch);
+            spriteBatch.End();
         }
-
 
         #endregion
     }

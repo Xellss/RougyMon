@@ -139,9 +139,9 @@
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Content\Fonts\Arial.xnb">
+    <Content Include="Content\Fonts\Arial.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
     <None Include="Content\Fonts\ComicSansMS.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

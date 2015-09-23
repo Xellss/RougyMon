@@ -1,10 +1,5 @@
 #region File Description
 
-
-
-
-
-
 #endregion
 
 #region Using Statements
@@ -17,19 +12,6 @@ using RougyMon;
 
 namespace GameStateManagementSample
 {
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     class LoadingScreen : GameScreen
     {
@@ -44,9 +26,6 @@ namespace GameStateManagementSample
 
         #region Initialization
 
-
-
-
         private LoadingScreen(ScreenManager screenManager, bool loadingIsSlow,
                               GameScreen[] screensToLoad)
         {
@@ -55,8 +34,6 @@ namespace GameStateManagementSample
 
             TransitionOnTime = TimeSpan.FromSeconds(0.5);
         }
-
-
 
         public static void Load(ScreenManager screenManager, bool loadingIsSlow,
                                 PlayerIndex? controllingPlayer,
@@ -73,18 +50,14 @@ namespace GameStateManagementSample
             screenManager.AddScreen(loadingScreen, controllingPlayer);
         }
 
-
         #endregion
 
         #region Update and Draw
-
-
 
         public override void Update(GameTime gameTime, bool otherScreenHasFocus,
                                                        bool coveredByOtherScreen)
         {
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
-
 
             if (otherScreensAreGone)
             {
@@ -98,20 +71,11 @@ namespace GameStateManagementSample
                     }
                 }
 
-
-
-
             }
         }
 
-
-
         public override void Draw(SpriteBatch spriteBatch)
         {
-
-
-
-
 
             if ((ScreenState == ScreenState.Active) &&
                 (ScreenManager.GetScreens().Length == 1))
@@ -119,13 +83,9 @@ namespace GameStateManagementSample
                 otherScreensAreGone = true;
             }
 
-
-
-
-
-
             if (loadingIsSlow)
             {
+                spriteBatch.Begin();
                 SpriteFont font = ScreenManager.Font;
 
                 const string message = "Loading...";
@@ -138,9 +98,9 @@ namespace GameStateManagementSample
                 Color color = Color.White * TransitionAlpha;
 
                 spriteBatch.DrawString(font, message, textPosition, color);
+                spriteBatch.End();
             }
         }
-
 
         #endregion
     }

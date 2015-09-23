@@ -12,7 +12,6 @@
 //        public float Seconds = 60;
 //        public float Minutes = 0;
 
-
 //        public float TimerSeconds = 0;
 //        public float TimerMinutes = 0;
 
@@ -37,8 +36,7 @@
 
 //        private void runTimer(GameTime gameTime)
 //        {
-            
-            
+
 //            if (StartTimer)
 //            {
 //                TimerSeconds = Seconds - (float)gameTime.TotalGameTime.Seconds;

@@ -58,7 +58,7 @@ namespace GameStateManagementSample
 #if WINDOWS_PHONE
             isSelected = false;
 #endif       
-            Color color = isSelected ? Color.Yellow : Color.White;   
+            Color color = isSelected ? Color.Blue : Color.Black;   
             color *= screen.TransitionAlpha;   
             ScreenManager screenManager = screen.ScreenManager;
             SpriteFont font = screenManager.Font; 

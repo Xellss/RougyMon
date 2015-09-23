@@ -1,10 +1,5 @@
 #region File Description
 
-
-
-
-
-
 #endregion
 
 #region Using Statements
@@ -20,9 +15,6 @@ using RougyMon;
 
 namespace GameStateManagementSample
 {
-
-
-
 
     abstract class MenuScreen : GameScreen
     {
@@ -41,20 +33,14 @@ namespace GameStateManagementSample
 
         #region Properties
 
-
-
-
         protected IList<MenuEntry> MenuEntries
         {
             get { return menuEntries; }
         }
 
-
         #endregion
 
         #region Initialization
-
-
 
         public MenuScreen(string menuTitle)
         {
@@ -81,20 +67,12 @@ namespace GameStateManagementSample
                 true);
         }
 
-
         #endregion
 
         #region Handle Input
 
-
-
-
         public override void HandleInput(GameTime gameTime, InputState input)
         {
-
-
-
-
 
             PlayerIndex playerIndex;
 
@@ -124,39 +102,27 @@ namespace GameStateManagementSample
             }
         }
 
-
-
         protected virtual void OnSelectEntry(int entryIndex, PlayerIndex playerIndex)
         {
             menuEntries[entryIndex].OnSelectEntry(playerIndex);
         }
-
-
 
         protected virtual void OnCancel(PlayerIndex playerIndex)
         {
             ExitScreen();
         }
 
-
-
         protected void OnCancel(object sender, PlayerIndexEventArgs e)
         {
             OnCancel(e.PlayerIndex);
         }
 
-
         #endregion
 
         #region Update and Draw
 
-
-
-
         protected virtual void UpdateMenuEntryLocations()
         {
-
-
 
             float transitionOffset = (float)Math.Pow(TransitionPosition, 2);
 
@@ -179,8 +145,6 @@ namespace GameStateManagementSample
             }
         }
 
-
-
         public override void Update(GameTime gameTime, bool otherScreenHasFocus,
                                                        bool coveredByOtherScreen)
         {
@@ -194,15 +158,13 @@ namespace GameStateManagementSample
             }
         }
 
-
-
         public override void Draw(SpriteBatch spriteBatch)
         {
 
             UpdateMenuEntryLocations();
 
             SpriteFont font = ScreenManager.Font;
-
+            spriteBatch.Begin();
             for (int i = 0; i < menuEntries.Count; i++)
             {
                 MenuEntry menuEntry = menuEntries[i];
@@ -211,8 +173,6 @@ namespace GameStateManagementSample
 
                 menuEntry.Draw(this, isSelected, spriteBatch);
             }
-
-
 
             float transitionOffset = (float)Math.Pow(TransitionPosition, 2);
 
@@ -225,8 +185,8 @@ namespace GameStateManagementSample
 
             spriteBatch.DrawString(font, menuTitle, titlePosition, titleColor, 0,
                                    titleOrigin, titleScale, SpriteEffects.None, 0);
+            spriteBatch.End();
         }
-
 
         #endregion
     }

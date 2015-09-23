@@ -1,10 +1,5 @@
 #region File Description
 
-
-
-
-
-
 #endregion
 
 #region Using Statements
@@ -19,9 +14,6 @@ using RougyMon;
 
 namespace GameStateManagementSample
 {
-
-
-
 
     class MessageBoxScreen : GameScreen
     {
@@ -44,15 +36,9 @@ namespace GameStateManagementSample
 
         #region Initialization
 
-
-
-
         public MessageBoxScreen(string message)
             : this(message, true)
         { }
-
-
-
 
         public MessageBoxScreen(string message, bool includeUsageText)
         {
@@ -79,11 +65,6 @@ namespace GameStateManagementSample
                 true);
         }
 
-
-
-
-
-
         public override void Activate(bool instancePreserved)
         {
             if (!instancePreserved)
@@ -93,20 +74,13 @@ namespace GameStateManagementSample
             }
         }
 
-
         #endregion
 
         #region Handle Input
 
-
-
         public override void HandleInput(GameTime gameTime, InputState input)
         {
             PlayerIndex playerIndex;
-
-
-
-
 
             if (menuSelect.Evaluate(input, ControllingPlayer, out playerIndex))
             {
@@ -126,12 +100,9 @@ namespace GameStateManagementSample
             }
         }
 
-
         #endregion
 
         #region Draw
-
-
 
         public override void Draw(SpriteBatch spriteBatch)
         {
@@ -153,14 +124,12 @@ namespace GameStateManagementSample
                                                           (int)textSize.Y + vPad * 2);
 
             Color color = Color.White * TransitionAlpha;
-
+            spriteBatch.Begin();
             spriteBatch.Draw(gradientTexture, backgroundRectangle, color);
 
             spriteBatch.DrawString(font, message, textPosition, color);
-
-            
+            spriteBatch.End();
         }
-
 
         #endregion
     }
