@@ -20,7 +20,7 @@ namespace RougyMon
             Tag = tileType.ToString();
 
             Type = tileType;
-            IsPassable = tileType == Types.Grass || tileType == Types.Moor;
+            IsPassable = tileType == Types.Grass || tileType == Types.Moor || tileType == Types.Sand || tileType == Types.Moor || tileType == Types.DarkMoor || tileType == Types.OpenDoorLeft || tileType == Types.OpenDoorTop;
         }
     }
 }
