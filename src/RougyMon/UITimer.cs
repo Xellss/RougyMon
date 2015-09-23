@@ -7,12 +7,12 @@ namespace RougyMon
 {
     class UITimer : GameObject
     {
-        private Player player;
+        private NewTimer timer;
         private UILabel uiTimer;
 
-        public UITimer(Player player)
+        public UITimer(NewTimer timer)
         {
-            this.player = player;
+            this.timer = timer;
 
             uiTimer = new UILabel(Fonts.ComicSans, new Vector2(1500, 10));
             uiTimer.TextRenderer.Scale = 0.2f;
@@ -33,8 +33,7 @@ namespace RougyMon
 
         private void UpdateUILabel()
         {
-            uiTimer.TextRenderer.Text = string.Format("Time left: {0:mm\\:ss}",player.Timer.Time);
-            
+            uiTimer.TextRenderer.Text = string.Format("Time left: {0:mm\\:ss}", timer.Time);
         }
     }
 }

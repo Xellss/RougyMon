@@ -13,7 +13,6 @@ namespace RougyMon
         MoveWithInput moveWithInput;
         BoxCollider collider;
         Map map;
-        public NewTimer Timer;
 
         public bool HasKey = false;
 
@@ -36,8 +35,6 @@ namespace RougyMon
             collider = AddComponent<BoxCollider>();
             collider.OnCollisionEnter += OnCollisionEnter;
 
-            Timer = AddComponent<NewTimer>();
-            Timer.Time = TimeSpan.FromSeconds(120);
 
             EventManager.OnUpdate += OnUpdate;
         }

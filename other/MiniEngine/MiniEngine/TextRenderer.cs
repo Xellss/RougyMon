@@ -28,7 +28,6 @@ namespace MiniEngine
         {
             if (Font == null)
                 return;
-
             spriteBatch.DrawString(Font, Text, transform.Position, TextColor, Rotation, Vector2.Zero, Scale, SpriteEffects.None, Depth);
         }
 

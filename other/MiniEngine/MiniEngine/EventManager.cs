@@ -7,7 +7,7 @@ namespace MiniEngine
     public static class EventManager
     {
         public delegate void RenderEvent(SpriteBatch spriteBatch);
-        public static event RenderEvent OnRender;
+        public static event RenderEvent OnRender, OnLateRender;
 
         public delegate void UpdateEvent(GameTime gameTime);
         public static event UpdateEvent OnUpdate, OnLateUpdate;
@@ -16,6 +16,8 @@ namespace MiniEngine
         {
             if (OnRender != null)
                 OnRender(spriteBatch);
+            if (OnLateRender != null)
+                OnLateRender(spriteBatch);
         }
 
         public static void Update(GameTime gameTime)

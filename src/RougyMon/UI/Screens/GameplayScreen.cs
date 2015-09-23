@@ -31,6 +31,7 @@ namespace GameStateManagementSample
         private Camera camera;
         private Player player;
         private Map map;
+        NewTimer timer;
 
         #endregion
 
@@ -45,6 +46,10 @@ namespace GameStateManagementSample
                 new Buttons[] { Buttons.Start, Buttons.Back },
                 new Keys[] { Keys.Escape },
                 true);
+
+            timer = new NewTimer();
+            timer.Time = new TimeSpan(0, 10, 0);
+
         }
 
         public override void Activate(bool instancePreserved)
@@ -59,6 +64,7 @@ namespace GameStateManagementSample
                 Thread.Sleep(1000);
 
             }
+
 
 #if WINDOWS_PHONE
             if (Microsoft.Phone.Shell.PhoneApplicationService.Current.State.ContainsKey("PlayerPosition"))
@@ -75,8 +81,9 @@ namespace GameStateManagementSample
             player = new Player(new Vector2(1000, 100), map);
             new Key(new Vector2(555, 100));
 
-            new UITimer(player);
+            //new UITimer(timer);
             camera = new Camera(Managers.Graphics.GraphicsDevice.Viewport);
+            timer.Start();
         }
 
         public override void Deactivate()
@@ -114,6 +121,7 @@ namespace GameStateManagementSample
                 pauseAlpha = Math.Max(pauseAlpha - 1f / 32, 0);
 
             camera.OnUpdate(player.transform.Position, 97 * 32, 54 * 32);
+            timer.OnUpdate(gameTime);
         }
 
         public override void HandleInput(GameTime gameTime, InputState input)
@@ -153,9 +161,18 @@ namespace GameStateManagementSample
 
                 ScreenManager.FadeBackBufferToBlack(alpha);
             }
+
             spriteBatch.End();
             spriteBatch.Begin(SpriteSortMode.Deferred,BlendState.AlphaBlend,null,null,null,null,camera.matrix);
             map.RenderMap(spriteBatch);
+        }
+
+        public override void LateDraw(SpriteBatch spriteBatch)
+        {
+            spriteBatch.End();
+            spriteBatch.Begin();
+            spriteBatch.DrawString(Fonts.ComicSans, string.Format("Time left: {0:mm\\:ss}", timer.Time), new Vector2(Managers.Graphics.GraphicsDevice.Viewport.Width - 333, 10), Color.White); base.LateDraw(spriteBatch);
+            spriteBatch.End();
         }
 
         #endregion

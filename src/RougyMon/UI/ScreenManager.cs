@@ -85,6 +85,7 @@ namespace GameStateManagement
 
             EventManager.OnUpdate += Update;
             EventManager.OnRender += Draw;
+            EventManager.OnLateRender += LateDraw;
 
             isInitialized = true;
         }
@@ -153,6 +154,17 @@ namespace GameStateManagement
                     continue;
 
                 screen.Draw(spriteBatch);
+            }
+        }
+
+        public void LateDraw(SpriteBatch spriteBatch)
+        {
+            foreach (GameScreen screen in screens)
+            {
+                if (screen.ScreenState == ScreenState.Hidden)
+                    continue;
+
+                screen.LateDraw(spriteBatch);
             }
         }
 
