@@ -42,7 +42,6 @@ namespace RougyMon
         {
         }
 
-        
         public override void Destroy()
         {
             EventManager.OnUpdate -= OnUpdate;

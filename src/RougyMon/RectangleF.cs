@@ -34,7 +34,6 @@ namespace RougyMon
 
         #region Public Properties
 
-
         /// <summary>
         /// Returns the x coordinate of the left edge of this <see cref="Rectangle"/>.
         /// </summary>
@@ -356,7 +355,6 @@ namespace RougyMon
                    value.Top < Bottom &&
                    Top < value.Bottom;
         }
-
 
         /// <summary>
         /// Gets whether or not the other <see cref="Rectangle"/> intersects with this rectangle.

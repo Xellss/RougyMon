@@ -58,6 +58,23 @@
     <Compile Include="Timer.cs" />
     <Compile Include="UITimer.cs" />
     <Compile Include="UILabel.cs" />
+    <Compile Include="UI\GameScreen.cs" />
+    <Compile Include="UI\InputAction.cs" />
+    <Compile Include="UI\InputState.cs" />
+    <Compile Include="UI\IScreenFactory.cs" />
+    <Compile Include="UI\ScreenFactory.cs" />
+    <Compile Include="UI\ScreenManager.cs" />
+    <Compile Include="UI\Screens\BackgroundScreen.cs" />
+    <Compile Include="UI\Screens\Button.cs" />
+    <Compile Include="UI\Screens\GameplayScreen.cs" />
+    <Compile Include="UI\Screens\LoadingScreen.cs" />
+    <Compile Include="UI\Screens\MainMenuScreen.cs" />
+    <Compile Include="UI\Screens\MenuEntry.cs" />
+    <Compile Include="UI\Screens\MenuScreen.cs" />
+    <Compile Include="UI\Screens\MessageBoxScreen.cs" />
+    <Compile Include="UI\Screens\OptionsMenuScreen.cs" />
+    <Compile Include="UI\Screens\PauseMenuScreen.cs" />
+    <Compile Include="UI\Screens\PlayerIndexEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MiniEngine">
@@ -80,10 +97,19 @@
       <Link>SDL.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\blank.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\gradient.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Images\ende.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Images\Intro.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\YouWin.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Images\Titelscreen.jpg">
@@ -236,6 +262,9 @@
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Fonts\Arial.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Content\Fonts\Arial.spritefont">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

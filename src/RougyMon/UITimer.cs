@@ -10,7 +10,6 @@ namespace RougyMon
         private Player player;
         private UILabel uiTimer;
 
-
         public UITimer(Player player)
         {
             this.player = player;
