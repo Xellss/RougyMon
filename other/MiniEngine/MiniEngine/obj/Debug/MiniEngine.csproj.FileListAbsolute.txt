@@ -25,6 +25,5 @@ C:\Users\Daniel\Documents\RougyMon\other\MiniEngine\MiniEngine\bin\Debug\MiniEng
 C:\Users\Daniel\Documents\RougyMon\other\MiniEngine\MiniEngine\bin\Debug\MonoGame.Framework.dll
 C:\Users\Daniel\Documents\RougyMon\other\MiniEngine\MiniEngine\bin\Debug\OpenTK.dll
 C:\Users\Daniel\Documents\RougyMon\other\MiniEngine\MiniEngine\bin\Debug\Tao.Sdl.dll
-C:\Users\Daniel\Documents\RougyMon\other\MiniEngine\MiniEngine\obj\Debug\MiniEngine.csprojResolveAssemblyReference.cache
 C:\Users\Daniel\Documents\RougyMon\other\MiniEngine\MiniEngine\obj\Debug\MiniEngine.dll
 C:\Users\Daniel\Documents\RougyMon\other\MiniEngine\MiniEngine\obj\Debug\MiniEngine.pdb

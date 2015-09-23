@@ -35,8 +35,10 @@ namespace RougyMon
                 center.Y = yOffset - (viewport.Height / 1.5f);
             else center.Y = position.Y;
 
-            matrix = Matrix.CreateTranslation(new Vector3(-center.X + (viewport.Width),
-                                                            -center.Y + (viewport.Height), 0));
+            matrix = Matrix.CreateTranslation(new Vector3(-position, 0)) * Matrix.CreateScale(2f) * Matrix.CreateTranslation(new Vector3(viewport.Bounds.Size.ToVector2() / 2, 0));
+
+            //matrix = Matrix.CreateTranslation(new Vector3(-center.X + (viewport.Width),
+            //                                                -center.Y + (viewport.Height), 0));
         }
     }
 }

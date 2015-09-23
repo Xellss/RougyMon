@@ -52,7 +52,7 @@ namespace RougyMon
         {
             //CheckCurrentTile();
             //CheckNextTile();
-            RectangleF newRectangle = new RectangleF(transform.Position.X, transform.Position.Y + 0.5f, 0.5f, 0.5f);
+            RectangleF newRectangle = new RectangleF(moveWithInput.NextPosition.X / map.TileWidth - 0.25f, moveWithInput.NextPosition.Y / map.TileHeight - 0.75f, 0.5f, 0.75f);
             moveWithInput.NextFiledIsPassable = CanMoveTo(newRectangle);
         }
 
