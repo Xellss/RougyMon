@@ -46,7 +46,6 @@
     <Compile Include="Key.cs" />
     <Compile Include="Managers.cs" />
     <Compile Include="Map.cs" />
-    <Compile Include="NewMap.cs" />
     <Compile Include="NewTimer.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />

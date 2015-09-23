@@ -44,8 +44,8 @@ namespace RougyMon
             //map.LoadMapFromImage(Content.Load<Texture2D>("Map/UnitedMapBMP"));
 
 
-            player = new Player(new Vector2(1000, 100), map);
-            new Key(new Vector2(555, 100));
+            //player = new Player(new Vector2(1000, 100), map);
+            //new Key(new Vector2(555, 100));
 
             arial = Content.Load<SpriteFont>("Fonts/Arial");
             comicSans = Content.Load<SpriteFont>("Fonts/ComicSansMS");
