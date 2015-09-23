@@ -41,7 +41,7 @@
     <Compile Include="Camera.cs" />
     <Compile Include="Fonts.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="GameOver.cs" />
+    <Compile Include="UI\Screens\GameOverScreen.cs" />
     <Compile Include="Highscore.cs" />
     <Compile Include="Key.cs" />
     <Compile Include="Managers.cs" />
@@ -76,9 +76,6 @@
     <Compile Include="UI\Screens\PlayerIndexEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="MiniEngine">
-      <HintPath>..\..\other\MiniEngine\MiniEngine\bin\Debug\MiniEngine.dll</HintPath>
-    </Reference>
     <Reference Include="OpenTK">
       <HintPath>$(MSBuildProgramFiles32)\MonoGame\v3.0\Assemblies\WindowsGL\OpenTK.dll</HintPath>
     </Reference>
@@ -102,16 +99,16 @@
     <Content Include="Content\gradient.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Images\ende.png">
+    <Content Include="Content\Images\Outro.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Images\Intro.png">
+    <Content Include="Content\Images\IntroOld.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Images\YouWin.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Images\Titelscreen.jpg">
+    <Content Include="Content\Images\Intro.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Map\MapForestBMP.bmp">
@@ -276,6 +273,12 @@
     <None Include="Content\Fonts\ComicSansMS.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\other\MiniEngine\MiniEngine\MiniEngine.csproj">
+      <Project>{13367357-9d60-49a4-87d1-db5df2ae2ca7}</Project>
+      <Name>MiniEngine</Name>
+    </ProjectReference>
   </ItemGroup>
   <!-- Specify the search path explicitly so the ResolveAssemblyReferences task picks the right ones -->
   <Target Name="BeforeResolveReferences">

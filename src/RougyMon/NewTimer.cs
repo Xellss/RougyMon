@@ -6,7 +6,7 @@ using System.Text;
 
 namespace RougyMon
 {
-    class NewTimer 
+   public class NewTimer 
     {
         public TimeSpan Time;
         bool isRunning = false;

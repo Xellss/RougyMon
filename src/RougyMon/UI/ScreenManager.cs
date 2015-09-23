@@ -204,6 +204,17 @@ namespace GameStateManagement
                 TouchPanel.EnabledGestures = screens[screens.Count - 1].EnabledGestures;
             }
         }
+        public void Clear()
+        {
+            //for (int i = screens.Count - 1; i >= 0; i--)
+            //{
+            //    RemoveScreen(screens[i]);
+            //}
+            while (screens.Count > 0)
+            {
+                RemoveScreen(screens[0]);
+            }
+        }
 
         public GameScreen[] GetScreens()
         {

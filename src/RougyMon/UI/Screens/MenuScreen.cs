@@ -126,7 +126,7 @@ namespace GameStateManagementSample
 
             float transitionOffset = (float)Math.Pow(TransitionPosition, 2);
 
-            Vector2 position = new Vector2(0f, 175f);
+            Vector2 position = new Vector2(0f, 400f);
 
             for (int i = 0; i < menuEntries.Count; i++)
             {

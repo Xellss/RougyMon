@@ -32,6 +32,9 @@ namespace GameStateManagementSample
         private Player player;
         private Map map;
         NewTimer timer;
+        bool debug;
+        InputAction debugAction;
+        private Key key;
 
         #endregion
 
@@ -45,6 +48,10 @@ namespace GameStateManagementSample
             pauseAction = new InputAction(
                 new Buttons[] { Buttons.Start, Buttons.Back },
                 new Keys[] { Keys.Escape },
+                true);
+            debugAction = new InputAction(
+                new Buttons[] { Buttons.A },
+                new Keys[] { Keys.E },
                 true);
 
             timer = new NewTimer();
@@ -79,7 +86,7 @@ namespace GameStateManagementSample
             map.LoadMapFromImage(content.Load<Texture2D>("Map/UnitedMapBMP"));
 
             player = new Player(new Vector2(1000, 100), map);
-            new Key(new Vector2(555, 100));
+            key = new Key(new Vector2(555, 100));
 
             //new UITimer(timer);
             camera = new Camera(Managers.Graphics.GraphicsDevice.Viewport);
@@ -122,6 +129,16 @@ namespace GameStateManagementSample
 
             camera.OnUpdate(player.transform.Position, 97 * 32, 54 * 32);
             timer.OnUpdate(gameTime);
+
+            if (timer.Time  <= TimeSpan.Zero || debug)
+            {
+                key.Destroy();
+                player.Destroy();
+                timer.Stop();
+                ScreenManager.Clear();
+                ScreenManager.AddScreen(new GameOverScreen(), null);
+
+            }
         }
 
         public override void HandleInput(GameTime gameTime, InputState input)
@@ -146,6 +163,12 @@ namespace GameStateManagementSample
                 ScreenManager.AddScreen(new PauseMenuScreen(), ControllingPlayer);
 #endif
             }
+
+            if (debugAction.Evaluate(input, ControllingPlayer, out player))
+            {
+                debug = true;
+            }
+
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -171,7 +194,9 @@ namespace GameStateManagementSample
         {
             spriteBatch.End();
             spriteBatch.Begin();
-            spriteBatch.DrawString(Fonts.ComicSans, string.Format("Time left: {0:mm\\:ss}", timer.Time), new Vector2(Managers.Graphics.GraphicsDevice.Viewport.Width - 333, 10), Color.White); base.LateDraw(spriteBatch);
+            string text = string.Format("Time left: {0:mm\\:ss}", timer.Time);
+            float size = Fonts.Arial.MeasureString(text).X;
+            spriteBatch.DrawString(Fonts.Arial, text, new Vector2(Managers.Graphics.GraphicsDevice.Viewport.Width - size, 10), Color.White); base.LateDraw(spriteBatch);
             spriteBatch.End();
         }
 

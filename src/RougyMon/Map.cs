@@ -12,17 +12,17 @@ namespace RougyMon
         public int TileHeight = 32;
 
         //passable tiles
-        public Color Grass = new Color(255,255,255);
-        public Color Moor = new Color(255,106,0);
+        public Color Grass = new Color(255, 255, 255);
+        public Color Moor = new Color(255, 106, 0);
         public Color DarkMoor = new Color(0, 0, 255);
         //public Color Path = new Color(0, 0, 255);
-        public Color Sand = new Color(209,255,245);
+        public Color Sand = new Color(209, 255, 245);
 
         //not passable tiles
         public Color GraveyardWall = new Color(255, 0, 0);
-        public Color Tree = new Color(0,255,33);
-        public Color Water = new Color(0,33,255);
-        public Color StoneWall = new Color(0,0,0);
+        public Color Tree = new Color(0, 255, 33);
+        public Color Water = new Color(0, 33, 255);
+        public Color StoneWall = new Color(0, 0, 0);
         public Color BlackBackground = new Color(255, 76, 249);
         //public Color Graveyard = new Color(0, 0, 255);
 
@@ -59,8 +59,9 @@ namespace RougyMon
                 {
                     Tile tile = tiles[x, y];
                     Vector2 position = new Vector2(x * TileWidth, y * TileHeight);
-                    Rectangle sourceRect = new Rectangle((int)tile.Type * TileWidth, 0, TileWidth, TileHeight);
-                    spriteBatch.Draw(tileSet, position, sourceRect, Color.White);
+                    Rectangle rect = new Rectangle(x * TileWidth, y * TileHeight, TileWidth, TileHeight);
+                    Rectangle sourceRect = new Rectangle((int)tile.Type * TileWidth+1, 1, TileWidth - 2, TileHeight - 2);
+                    spriteBatch.Draw(tileSet, rect, sourceRect, Color.White);
                 }
             }
         }
@@ -153,7 +154,7 @@ namespace RougyMon
                 return new Tile(Tile.Types.BlackBackground);
             else if (color == GraveyardWall)
                 return new Tile(Tile.Types.GraveyardWall);
-            
+
             else
                 return null;
         }
