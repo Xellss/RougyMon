@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using GameStateManagement;
 using RougyMon;
+using RougyMon.UI.Screens;
 #endregion
 
 namespace GameStateManagementSample
@@ -134,7 +135,15 @@ namespace GameStateManagementSample
                 player.Destroy();
                 timer.Stop();
                 ScreenManager.Clear();
-                ScreenManager.AddScreen(new GameOverScreen(), null);
+
+                if (debug)
+                {
+                    ScreenManager.AddScreen(new PlayerWonScreen(timer.Time), null);
+                }
+                else
+                {
+                    ScreenManager.AddScreen(new GameOverScreen(), null);
+                }
 
             }
         }

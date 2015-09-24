@@ -9,7 +9,7 @@ using System.Text;
 
 namespace RougyMon.UI.Screens
 {
-    class TextMenuEntry : MenuEntry
+     class TextMenuEntry : MenuEntry
     {
         private string Prefix;
         public TextMenuEntry(string prefix, string value)

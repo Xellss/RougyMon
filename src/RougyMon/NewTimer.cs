@@ -11,7 +11,6 @@ namespace RougyMon
         public TimeSpan Time;
         bool isRunning = false;
 
-
         public void OnUpdate(Microsoft.Xna.Framework.GameTime gameTime)
         {
             if (isRunning)

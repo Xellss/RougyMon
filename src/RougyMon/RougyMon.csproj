@@ -42,7 +42,6 @@
     <Compile Include="Fonts.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="UI\Screens\GameOverScreen.cs" />
-    <Compile Include="Highscore.cs" />
     <Compile Include="Key.cs" />
     <Compile Include="Managers.cs" />
     <Compile Include="Map.cs" />
@@ -54,7 +53,6 @@
     <Compile Include="SpriteAnimation.cs" />
     <Compile Include="SpriteAnimationFrame.cs" />
     <Compile Include="Tile.cs" />
-    <Compile Include="Timer.cs" />
     <Compile Include="UITimer.cs" />
     <Compile Include="UILabel.cs" />
     <Compile Include="UI\GameScreen.cs" />
@@ -66,6 +64,7 @@
     <Compile Include="UI\Screens\BackgroundScreen.cs" />
     <Compile Include="UI\Screens\Button.cs" />
     <Compile Include="UI\Screens\GameplayScreen.cs" />
+    <Compile Include="UI\Screens\HighscoreMenuScreen.cs" />
     <Compile Include="UI\Screens\LoadingScreen.cs" />
     <Compile Include="UI\Screens\MainMenuScreen.cs" />
     <Compile Include="UI\Screens\MenuEntry.cs" />
@@ -74,6 +73,7 @@
     <Compile Include="UI\Screens\OptionsMenuScreen.cs" />
     <Compile Include="UI\Screens\PauseMenuScreen.cs" />
     <Compile Include="UI\Screens\PlayerIndexEventArgs.cs" />
+    <Compile Include="UI\Screens\PlayerWonScreen.cs" />
     <Compile Include="UI\Screens\TextMenuEntry.cs" />
   </ItemGroup>
   <ItemGroup>

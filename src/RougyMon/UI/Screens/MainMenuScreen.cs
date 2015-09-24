@@ -4,6 +4,7 @@
 
 #region Using Statements
 using Microsoft.Xna.Framework;
+using RougyMon;
 using RougyMon.UI.Screens;
 #endregion
 
@@ -14,21 +15,29 @@ namespace GameStateManagementSample
     {
         #region Initialization
 
+        TextMenuEntry name;
+
         public MainMenuScreen()
             : base("Main Menu")
         {
 
-            MenuEntry name = new TextMenuEntry("Name", "New Player");
+            name = new TextMenuEntry("Name", Managers.PlayerName);
             MenuEntry playGameMenuEntry = new MenuEntry("Play Game");
+            MenuEntry highscoreMenuEntry = new MenuEntry("Highscore");
             MenuEntry optionsMenuEntry = new MenuEntry("Options");
             MenuEntry exitMenuEntry = new MenuEntry("Exit");
 
             MenuEntries.Add(name);
             playGameMenuEntry.Selected += PlayGameMenuEntrySelected;
+
             optionsMenuEntry.Selected += OptionsMenuEntrySelected;
             exitMenuEntry.Selected += OnCancel;
 
+            highscoreMenuEntry.Selected += HighscoreMenuEntrySelected;
+            exitMenuEntry.Selected += OnCancel;
+
             MenuEntries.Add(playGameMenuEntry);
+            MenuEntries.Add(highscoreMenuEntry);
             MenuEntries.Add(optionsMenuEntry);
             MenuEntries.Add(exitMenuEntry);
         }
@@ -42,6 +51,13 @@ namespace GameStateManagementSample
             LoadingScreen.Load(ScreenManager, true, e.PlayerIndex,
                                new GameplayScreen());
         }
+
+        void HighscoreMenuEntrySelected(object sender, PlayerIndexEventArgs e)
+        {
+            ScreenManager.AddScreen(new HighscoreMenuScreen(), e.PlayerIndex);
+        }
+
+
 
         void OptionsMenuEntrySelected(object sender, PlayerIndexEventArgs e)
         {
@@ -62,6 +78,12 @@ namespace GameStateManagementSample
         void ConfirmExitMessageBoxAccepted(object sender, PlayerIndexEventArgs e)
         {
             ScreenManager.Game.Exit();
+        }
+
+        public override void Unload()
+        {
+            Managers.PlayerName = name.Value;
+            base.Unload();
         }
 
         #endregion
