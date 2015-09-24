@@ -60,7 +60,7 @@ namespace RougyMon
                     Tile tile = tiles[x, y];
                     Vector2 position = new Vector2(x * TileWidth, y * TileHeight);
                     Rectangle rect = new Rectangle(x * TileWidth, y * TileHeight, TileWidth, TileHeight);
-                    Rectangle sourceRect = new Rectangle((int)tile.Type * TileWidth+1, 1, TileWidth - 2, TileHeight - 2);
+                    Rectangle sourceRect = new Rectangle((int)tile.Type * TileWidth + 1, 1, TileWidth - 2, TileHeight - 2);
                     spriteBatch.Draw(tileSet, rect, sourceRect, Color.White);
                 }
             }

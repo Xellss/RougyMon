@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
+using System;
 namespace GameStateManagement
 {
     public class InputState
@@ -44,6 +45,10 @@ namespace GameStateManagement
                 Gestures.Add(TouchPanel.ReadGesture());
             }
         }
+        public bool IsKeyPressed(Keys key)
+        {
+            return CurrentKeyboardStates[0].IsKeyDown(key);
+        }
         public bool IsKeyPressed(Keys key, PlayerIndex? controllingPlayer, out PlayerIndex playerIndex)
         {
             if (controllingPlayer.HasValue)
@@ -75,6 +80,10 @@ namespace GameStateManagement
                         IsButtonPressed(button, PlayerIndex.Three, out playerIndex) ||
                         IsButtonPressed(button, PlayerIndex.Four, out playerIndex));
             }
+        }
+        public bool IsNewKeyPress(Keys key)
+        {
+            return (CurrentKeyboardStates[0].IsKeyDown(key) && LastKeyboardStates[0].IsKeyUp(key));
         }
         public bool IsNewKeyPress(Keys key, PlayerIndex? controllingPlayer, out PlayerIndex playerIndex)
         {
@@ -108,6 +117,18 @@ namespace GameStateManagement
                         IsNewButtonPress(button, PlayerIndex.Three, out playerIndex) ||
                         IsNewButtonPress(button, PlayerIndex.Four, out playerIndex));
             }
+        }
+
+        public List<Keys> NewPressedKeys()
+        {
+            List<Keys> keys = new List<Keys>();
+            Array arr = Enum.GetValues(typeof(Keys));
+            foreach (Keys item in arr)
+            {
+                if (IsNewKeyPress(item))
+                    keys.Add(item);
+            }
+            return keys;
         }
     }
 }

@@ -80,9 +80,10 @@ namespace GameStateManagementSample
 
             map = new Map(content.Load<Texture2D>("Map/Tiles"));
             //map.LoadMapFromTextfile(content.RootDirectory + "/Map/Map.txt", 42, 24);
-            map.LoadMapFromImage(content.Load<Texture2D>("Map/UnitedMapBMP"));
+            //map.LoadMapFromImage(content.Load<Texture2D>("Map/UnitedMapBMP"));
+            map.LoadMapFromImage(content.Load<Texture2D>("Map/MainMap"));
 
-            player = new Player(new Vector2(2200, 1400), map);
+            player = new Player(new Vector2(2600, 1900), map);
             key = new Key(new Vector2(555, 100));
 
             //new UITimer(timer);

@@ -71,6 +71,11 @@ namespace GameStateManagementSample
 
         #region Handle Input
 
+        void OnInput(int selectedInput, InputState inputState)
+        {
+            menuEntries[selectedInput].OnInput(inputState);
+        }
+
         public override void HandleInput(GameTime gameTime, InputState input)
         {
 
@@ -99,6 +104,10 @@ namespace GameStateManagementSample
             else if (menuCancel.Evaluate(input, ControllingPlayer, out playerIndex))
             {
                 OnCancel(playerIndex);
+            }
+            else
+            {
+                OnInput(selectedEntry, input);
             }
         }
 

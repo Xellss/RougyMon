@@ -8,7 +8,10 @@ using Microsoft.Xna.Framework;
 
 namespace RougyMon
 {
+
+
     class Highscore : Component
     {
+
     }
 }

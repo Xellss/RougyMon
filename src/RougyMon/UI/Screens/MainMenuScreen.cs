@@ -4,6 +4,7 @@
 
 #region Using Statements
 using Microsoft.Xna.Framework;
+using RougyMon.UI.Screens;
 #endregion
 
 namespace GameStateManagementSample
@@ -17,10 +18,12 @@ namespace GameStateManagementSample
             : base("Main Menu")
         {
 
+            MenuEntry name = new TextMenuEntry("Name", "New Player");
             MenuEntry playGameMenuEntry = new MenuEntry("Play Game");
             MenuEntry optionsMenuEntry = new MenuEntry("Options");
             MenuEntry exitMenuEntry = new MenuEntry("Exit");
 
+            MenuEntries.Add(name);
             playGameMenuEntry.Selected += PlayGameMenuEntrySelected;
             optionsMenuEntry.Selected += OptionsMenuEntrySelected;
             exitMenuEntry.Selected += OnCancel;
