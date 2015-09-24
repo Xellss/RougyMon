@@ -1,0 +1,43 @@
+
+Chat:
+MoveWithArrows : 
+			Player player;
+            player.moveWithInput.MoveWithArrow = true;
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+			
+			
+			
+
+
+
+
+
+			
+To Do:
+Sprite Animation
+Text Box (Intro)
+Enemy and Object Spawnpoints
+Hit Enemy = Timer - 
+Hit HealPotion = Timer +
+Rectangle Player
+MoveSpeed (Moor, DarkMoor, Sand)
+Options (Fullscreen, Move with Arrows)
+Sounds
+Victory
+Cheats
+King Drop
+Shoot
+
+
+
+
+Done:

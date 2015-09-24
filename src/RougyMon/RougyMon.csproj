@@ -97,6 +97,9 @@
     <Content Include="Content\blank.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Chat.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\gradient.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
