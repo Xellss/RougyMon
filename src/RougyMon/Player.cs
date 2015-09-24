@@ -46,7 +46,7 @@ namespace RougyMon
         }
         void OnUpdate(GameTime gameTime)
         {
-            RectangleF newRectangle = new RectangleF(moveWithInput.NextPosition.X / map.TileWidth - 0.25f, moveWithInput.NextPosition.Y / map.TileHeight - 0.75f, 0.5f, 0.75f);
+            RectangleF newRectangle = new RectangleF(moveWithInput.NextPosition.X / map.TileWidth - 0.25f, moveWithInput.NextPosition.Y / map.TileHeight - 0.25f, 0.5f, 0.25f);
             moveWithInput.NextFiledIsPassable = CanMoveTo(newRectangle);
         }
 
