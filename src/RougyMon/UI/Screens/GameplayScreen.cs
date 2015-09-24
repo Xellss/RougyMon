@@ -15,7 +15,6 @@ using RougyMon;
 
 namespace GameStateManagementSample
 {
-
     class GameplayScreen : GameScreen
     {
         #region Fields
@@ -69,9 +68,7 @@ namespace GameStateManagementSample
                 gameFont = content.Load<SpriteFont>("Fonts/ComicSansMS");
 
                 Thread.Sleep(1000);
-
             }
-
 
 #if WINDOWS_PHONE
             if (Microsoft.Phone.Shell.PhoneApplicationService.Current.State.ContainsKey("PlayerPosition"))
@@ -82,10 +79,10 @@ namespace GameStateManagementSample
 #endif
 
             map = new Map(content.Load<Texture2D>("Map/Tiles"));
-            map.LoadMapFromTextfile(content.RootDirectory + "/Map/Map.txt", 42, 24);
+            //map.LoadMapFromTextfile(content.RootDirectory + "/Map/Map.txt", 42, 24);
             map.LoadMapFromImage(content.Load<Texture2D>("Map/UnitedMapBMP"));
 
-            player = new Player(new Vector2(1000, 100), map);
+            player = new Player(new Vector2(2200, 1400), map);
             key = new Key(new Vector2(555, 100));
 
             //new UITimer(timer);

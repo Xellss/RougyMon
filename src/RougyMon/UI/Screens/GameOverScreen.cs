@@ -30,7 +30,7 @@ namespace RougyMon
 
         public override void Activate(bool instancePreserved)
         {
-            backgroundTexture = Managers.Content.Load<Texture2D>("Images/Outro.png");
+            backgroundTexture = Managers.Content.Load<Texture2D>("Images/Outro.jpg");
 
             base.Activate(instancePreserved);
         }

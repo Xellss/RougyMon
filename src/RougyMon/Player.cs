@@ -39,7 +39,6 @@ namespace RougyMon
             EventManager.OnUpdate += OnUpdate;
         }
 
-
         void OnCollisionEnter(BoxCollider other)
         {
             if (other.GameObject.Tag == "Key")
@@ -47,8 +46,6 @@ namespace RougyMon
         }
         void OnUpdate(GameTime gameTime)
         {
-            //CheckCurrentTile();
-            //CheckNextTile();
             RectangleF newRectangle = new RectangleF(moveWithInput.NextPosition.X / map.TileWidth - 0.25f, moveWithInput.NextPosition.Y / map.TileHeight - 0.75f, 0.5f, 0.75f);
             moveWithInput.NextFiledIsPassable = CanMoveTo(newRectangle);
         }
@@ -69,39 +66,6 @@ namespace RougyMon
             }
             return true;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //private void CheckCurrentTile()
-        //{
-        //    //moveWithInput.NextFiledIsPassable = true;
-        //    int x = (int)transform.Position.X / map.TileHeight;
-        //    int y = (int)transform.Position.Y / map.TileWidth;
-        //    //Console.WriteLine("Current Tile:{0} Position:{1}", map.tiles[x, y].Type.ToString(), transform.Position / 32);
-        //    //if (map.tiles[x, y].Type == Tile.Types.Moor)
-        //    //moveWithInput.Speed = 3;
-        //    //else
-        //    //moveWithInput.Speed = 5;
-        //}
-        //private void CheckNextTile()
-        //{
-        //    int x = (int)moveWithInput.NextPosition.X / map.TileHeight;
-        //    int y = (int)moveWithInput.NextPosition.Y / map.TileWidth;
-        //    //Console.WriteLine("Next Tile:{0} Position:{1}", map.tiles[x, y].Type.ToString(), moveWithInput.NextPosition / 32);
-        //    //if (map.tiles[x, y].Type == Tile.Types.Tree)
-        //    //moveWithInput.NextFiledIsPassable = false;
-        //}
 
         public override void Destroy()
         {
