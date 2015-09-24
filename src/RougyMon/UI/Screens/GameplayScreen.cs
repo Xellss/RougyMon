@@ -84,7 +84,7 @@ namespace GameStateManagementSample
             //map.LoadMapFromImage(content.Load<Texture2D>("Map/UnitedMapBMP"));
             map.LoadMapFromImage(content.Load<Texture2D>("Map/MainMap"));
 
-            player = new Player(new Vector2(2600, 1900), map);
+            player = new Player(new Vector2(3900, 4000), map);
             key = new Key(new Vector2(555, 100));
 
             //new UITimer(timer);
