@@ -28,7 +28,6 @@ Text Box (Intro)
 Enemy and Object Spawnpoints
 Hit Enemy = Timer - 
 Hit HealPotion = Timer +
-MoveSpeed (Moor, DarkMoor, Sand)
 Options (Fullscreen, Move with Arrows)
 Sounds
 Victory
@@ -41,3 +40,4 @@ Shoot
 
 Done:
 Rectangle Player
+MoveSpeed (Moor, DarkMoor, Sand)
