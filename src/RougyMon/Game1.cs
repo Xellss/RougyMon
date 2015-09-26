@@ -9,7 +9,7 @@ namespace RougyMon
 {
     public class Game1 : Game
     {
-        GraphicsDeviceManager graphics;
+        public GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         //Map map;
         //Player player;
@@ -65,6 +65,7 @@ namespace RougyMon
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+
             EventManager.Update(gameTime);
             //camera.OnUpdate(player.transform.Position, 97 * 32, 54 * 32);
             base.Update(gameTime);

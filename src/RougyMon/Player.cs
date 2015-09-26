@@ -14,7 +14,6 @@ namespace RougyMon
         public MoveWithInput moveWithInput;
         BoxCollider collider;
         Map map;
-        //OptionsMenuScreen menuScreen = new OptionsMenuScreen();
 
         public bool HasKey = false;
 
@@ -33,7 +32,6 @@ namespace RougyMon
 
             moveWithInput = AddComponent<MoveWithInput>();
             moveWithInput.Speed = 5;
-            //moveWithInput.MoveWithArrow = true;
             moveWithInput.MoveWithArrow = OptionsMenuScreen.MoveArrows;
 
             collider = AddComponent<BoxCollider>();
