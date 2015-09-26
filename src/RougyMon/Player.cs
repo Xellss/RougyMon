@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 using MiniEngine;
+using GameStateManagementSample;
 
 namespace RougyMon
 {
@@ -13,6 +14,7 @@ namespace RougyMon
         public MoveWithInput moveWithInput;
         BoxCollider collider;
         Map map;
+        //OptionsMenuScreen menuScreen = new OptionsMenuScreen();
 
         public bool HasKey = false;
 
@@ -32,6 +34,7 @@ namespace RougyMon
             moveWithInput = AddComponent<MoveWithInput>();
             moveWithInput.Speed = 5;
             //moveWithInput.MoveWithArrow = true;
+            moveWithInput.MoveWithArrow = OptionsMenuScreen.MoveArrows;
 
             collider = AddComponent<BoxCollider>();
             collider.OnCollisionEnter += OnCollisionEnter;
@@ -47,6 +50,7 @@ namespace RougyMon
         }
         void OnUpdate(GameTime gameTime)
         {
+
             RectangleF newRectangle = new RectangleF(moveWithInput.NextPosition.X / map.TileWidth - 0.25f, moveWithInput.NextPosition.Y / map.TileHeight - 0.25f, 0.5f, 0.25f);
             moveWithInput.NextFiledIsPassable = CanMoveTo(newRectangle);
 
@@ -72,7 +76,7 @@ namespace RougyMon
         }
         private void CheckCurrentTile()
         {
-            Tile nextTile = map.GetTile(transform.Position/32);
+            Tile nextTile = map.GetTile(transform.Position / 32);
             if (nextTile == null)
                 return;
 
@@ -84,7 +88,7 @@ namespace RougyMon
             else if (nextTile.Type == Tile.Types.Sand)
                 moveWithInput.Speed = 7;
             else
-            moveWithInput.Speed = 5;
+                moveWithInput.Speed = 5;
         }
 
         public override void Destroy()

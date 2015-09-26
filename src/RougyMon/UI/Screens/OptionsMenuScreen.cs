@@ -14,6 +14,7 @@ namespace GameStateManagementSample
         MenuEntry languageMenuEntry;
         MenuEntry frobnicateMenuEntry;
         MenuEntry elfMenuEntry;
+        public static bool MoveArrows = false;
         enum Ungulate
         {
             BactrianCamel,
@@ -23,7 +24,7 @@ namespace GameStateManagementSample
         static Ungulate currentUngulate = Ungulate.Dromedary;
         static string[] languages = { "C#", "French", "Hi Chris" };
         static int currentLanguage = 0;
-        static bool frobnicate = true;
+        //static bool frobnicate = true;
         static int elf = 23;
         #endregion
         #region Initialization
@@ -46,12 +47,13 @@ namespace GameStateManagementSample
             MenuEntries.Add(frobnicateMenuEntry);
             MenuEntries.Add(elfMenuEntry);
             MenuEntries.Add(back);
+            
         }
         void SetMenuEntryText()
         {
             ungulateMenuEntry.Text = "Preferred ungulate: " + currentUngulate;
             languageMenuEntry.Text = "Language: " + languages[currentLanguage];
-            frobnicateMenuEntry.Text = "Frobnicate: " + (frobnicate ? "on" : "off");
+            frobnicateMenuEntry.Text = "Movement with: " + (MoveArrows ? "Arrows" : "WASD");
             elfMenuEntry.Text = "elf: " + elf;
         }
         #endregion
@@ -70,7 +72,7 @@ namespace GameStateManagementSample
         }
         void FrobnicateMenuEntrySelected(object sender, PlayerIndexEventArgs e)
         {
-            frobnicate = !frobnicate;
+            MoveArrows = !MoveArrows;
             SetMenuEntryText();
         }
         void ElfMenuEntrySelected(object sender, PlayerIndexEventArgs e)
