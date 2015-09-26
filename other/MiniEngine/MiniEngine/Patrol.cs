@@ -55,7 +55,7 @@ namespace MiniEngine
 
             moveDirection.Normalize();
             takeNextPosition(moveDirection);
-            wayIsBlocked();
+            //wayIsBlocked();
 
         }
 

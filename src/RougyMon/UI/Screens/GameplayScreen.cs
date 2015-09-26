@@ -30,6 +30,7 @@ namespace GameStateManagementSample
         InputAction pauseAction;
         private Camera camera;
         private Player player;
+        OrkGraveyard orkGraveyard;
         private Map map;
         NewTimer timer;
         bool debug;
@@ -85,6 +86,7 @@ namespace GameStateManagementSample
             map.LoadMapFromImage(content.Load<Texture2D>("Map/MainMap"));
 
             player = new Player(new Vector2(3900, 4000), map);
+            orkGraveyard = new OrkGraveyard(new Vector2(3800, 3900), map, new Vector2(4000, 3900));
             key = new Key(new Vector2(555, 100));
 
             //new UITimer(timer);

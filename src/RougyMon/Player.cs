@@ -31,6 +31,7 @@ namespace RougyMon
 
             moveWithInput = AddComponent<MoveWithInput>();
             moveWithInput.Speed = 5;
+            moveWithInput.MoveWithArrow = true;
 
             collider = AddComponent<BoxCollider>();
             collider.OnCollisionEnter += OnCollisionEnter;
