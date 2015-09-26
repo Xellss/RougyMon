@@ -41,49 +41,90 @@ namespace MiniEngine
 
         public void PatrolToTarget(Vector2 target)
         {
-            this.target = target;
+            //this.target = target;
 
-            if (target == transform.Position)
-                patrolEnd = true;
-            else
+            //if (target == transform.Position)
+            //    patrolEnd = true;
+            //else
+            //    patrolEnd = false;
+
+            //if (!patrolEnd)
+            //    moveDirection = target - transform.Position;
+            //else
+            //    moveDirection = startPosition - transform.Position;
+
+            //moveDirection.Normalize();
+            //takeNextPosition(moveDirection);
+            //wayIsBlocked();
+            this.target = target;
+            moveDirection = target - transform.Position;
+            moveDirection.Normalize();
+
+            if (patrolEnd)
+            {
+                moveDirection = startPosition - transform.Position;
+                moveDirection.Normalize();
+                float distance = Vector2.Distance(transform.Position, startPosition);
+                if (distance > 2)
+                    transform.Translate(moveDirection * Speed);
+                else
+                    transform.Position = startPosition;
+            }
+            else MoveToTarget(target);
+
+            if (transform.Position == startPosition)
                 patrolEnd = false;
 
-            if (!patrolEnd)
-                moveDirection = target - transform.Position;
-            else
-                moveDirection = startPosition - transform.Position;
-
+        }
+        public void MoveToTarget(Vector2 target)
+        {
+            this.target = target;
+            moveDirection = target - transform.Position;
             moveDirection.Normalize();
-            takeNextPosition(moveDirection);
-            //wayIsBlocked();
+
 
         }
 
-
         public void Move()
         {
-            if (CanPatrol)
-            {
+            //if (CanPatrol)
+            //{
+            //    PatrolToTarget(target);
+
+            //    if (target != Vector2.Zero && !patrolEnd)
+            //    {
+            //        float distance = Vector2.Distance(transform.Position, target);
+            //        if (distance > 2)
+            //            transform.Translate(moveDirection * Speed);
+            //        else
+            //            transform.Position = target;
+            //    }
+
+            //    else if (startPosition != Vector2.Zero && patrolEnd)
+            //    {
+            //        float distance = Vector2.Distance(transform.Position, startPosition);
+            //        if (distance > 2)
+            //            transform.Translate(moveDirection * Speed);
+            //        else
+            //            transform.Position = startPosition;
+            //    }
+            //}
+
+
                 PatrolToTarget(target);
 
-                if (target != Vector2.Zero && !patrolEnd)
-                {
-                    float distance = Vector2.Distance(transform.Position, target);
-                    if (distance > 2)
-                        transform.Translate(moveDirection * Speed);
-                    else
-                        transform.Position = target;
-                }
-
-                else if (startPosition != Vector2.Zero && patrolEnd)
-                {
-                    float distance = Vector2.Distance(transform.Position, startPosition);
-                    if (distance > 2)
-                        transform.Translate(moveDirection * Speed);
-                    else
-                        transform.Position = startPosition;
-                }
+            if (target != Vector2.Zero && !patrolEnd)
+            {
+                float distance = Vector2.Distance(transform.Position, target);
+                if (distance > 2)
+                    transform.Translate(moveDirection * Speed);
+                else
+                    transform.Position = target;
             }
+            if (transform.Position == target)
+
+                patrolEnd = true;
+
         }
         private void takeNextPosition(Vector2 moveDirection)
         {

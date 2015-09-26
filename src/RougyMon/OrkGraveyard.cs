@@ -15,7 +15,8 @@ namespace RougyMon
         BoxCollider collider;
         Map map;
         Patrol patrol;
-        NewTimer timer;
+        int moveSpeed;
+        //NewTimer timer;
 
 
         public OrkGraveyard(Vector2 position, Map map, Vector2 patrolTarget)
@@ -32,8 +33,8 @@ namespace RougyMon
             renderer.Pivot = new Vector2(renderer.ImageWidth / 2, renderer.ImageHeight / 1f);
 
             patrol = AddComponent<Patrol>();
-            patrol.Speed = 1;
             patrol.PatrolToTarget(patrolTarget);
+            moveSpeed = 5;
 
 
             collider = AddComponent<BoxCollider>();
@@ -89,7 +90,7 @@ namespace RougyMon
             else if (nextTile.Type == Tile.Types.Sand)
                 patrol.Speed = 7;
             else
-                patrol.Speed = 5;
+                patrol.Speed = moveSpeed;
         }
         public override void Destroy()
         {
