@@ -1,37 +1,41 @@
 ﻿using System;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using MiniEngine;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace RougyMon
 {
-    class Player : GameObject
+    class OrkForest : GameObject
     {
-        public Transform transform;
+        Transform transform;
         Renderer renderer;
-        public MoveWithInput moveWithInput;
         BoxCollider collider;
         Map map;
+        Patrol patrol;
+        public int moveSpeed;
+        //NewTimer timer;
 
-        public bool HasKey = false;
 
-        public Player(Vector2 position, Map map)
+        public OrkForest(Vector2 position, Map map, Vector2 patrolTarget)
         {
             this.map = map;
 
-            Tag = "Player";
+            Tag = "OrkForest";
 
             transform = AddComponent<Transform>();
             transform.Position = position;
 
             renderer = AddComponent<Renderer>();
-            renderer.SetImage(Managers.Content.Load<Texture2D>("Sprites/Brunhilde/Brunhilde_Front_0"));
+            renderer.SetImage(Managers.Content.Load<Texture2D>("Sprites/OrkForest/OrkForest_Front_0"));
             renderer.Pivot = new Vector2(renderer.ImageWidth / 2, renderer.ImageHeight / 1f);
 
-            moveWithInput = AddComponent<MoveWithInput>();
-            moveWithInput.Speed = 5;
-            //moveWithInput.MoveWithArrow = true;
+            patrol = AddComponent<Patrol>();
+            patrol.PatrolToTarget(patrolTarget);
+            moveSpeed = 3;
+
 
             collider = AddComponent<BoxCollider>();
             collider.OnCollisionEnter += OnCollisionEnter;
@@ -42,16 +46,18 @@ namespace RougyMon
 
         void OnCollisionEnter(BoxCollider other)
         {
-            if (other.GameObject.Tag == "Key")
-                HasKey = true;
+            if (other.GameObject.Tag == "Player")
+            {
+                //timer.Time.TotalSeconds -= 10f;
+                Destroy();
+            }
         }
         void OnUpdate(GameTime gameTime)
         {
-            RectangleF newRectangle = new RectangleF(moveWithInput.NextPosition.X / map.TileWidth - 0.25f, moveWithInput.NextPosition.Y / map.TileHeight - 0.25f, 0.5f, 0.25f);
-            moveWithInput.NextFiledIsPassable = CanMoveTo(newRectangle);
+            RectangleF newRectangle = new RectangleF(patrol.NextPosition.X / map.TileWidth - 0.25f, patrol.NextPosition.Y / map.TileHeight - 0.25f, 0.5f, 0.25f);
+            patrol.NextFiledIsPassable = CanMoveTo(newRectangle);
 
             CheckCurrentTile();
-            //Console.WriteLine(transform.Position);
         }
 
         public bool CanMoveTo(RectangleF recCollider)
@@ -72,21 +78,20 @@ namespace RougyMon
         }
         private void CheckCurrentTile()
         {
-            Tile nextTile = map.GetTile(transform.Position/32);
+            Tile nextTile = map.GetTile(transform.Position / 32);
             if (nextTile == null)
                 return;
 
 
             if (nextTile.Type == Tile.Types.Moor)
-                moveWithInput.Speed = 1;
+                patrol.Speed = 1;
             else if (nextTile.Type == Tile.Types.DarkMoor)
-                moveWithInput.Speed = 1;
+                patrol.Speed = 1;
             else if (nextTile.Type == Tile.Types.Sand)
-                moveWithInput.Speed = 7;
+                patrol.Speed = 7;
             else
-            moveWithInput.Speed = 5;
+                patrol.Speed = moveSpeed;
         }
-
         public override void Destroy()
         {
             EventManager.OnUpdate -= OnUpdate;
@@ -94,3 +99,4 @@ namespace RougyMon
         }
     }
 }
+

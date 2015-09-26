@@ -188,58 +188,6 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>../OrkForest/OrkForest_Back_0.png</filename>
-            <filename>../OrkForest/OrkForest_Back_1.png</filename>
-            <filename>../OrkForest/OrkForest_Back_2.png</filename>
-            <filename>../OrkForest/OrkForest_Front_0.png</filename>
-            <filename>../OrkForest/OrkForest_Front_1.png</filename>
-            <filename>../OrkForest/OrkForest_Front_2.png</filename>
-            <filename>../OrkForest/OrkForest_Left_0.png</filename>
-            <filename>../OrkForest/OrkForest_Left_1.png</filename>
-            <filename>../OrkForest/OrkForest_Left_2.png</filename>
-            <filename>../OrkForest/OrkForest_Left_3.png</filename>
-            <filename>../OrkForest/OrkForest_Left_4.png</filename>
-            <filename>../OrkForest/OrkForest_Right_0.png</filename>
-            <filename>../OrkForest/OrkForest_Right_1.png</filename>
-            <filename>../OrkForest/OrkForest_Right_2.png</filename>
-            <filename>../OrkForest/OrkForest_Right_3.png</filename>
-            <filename>../OrkForest/OrkForest_Right_4.png</filename>
-            <filename>../Spider/Spider/Spider_Back_0.png</filename>
-            <filename>../Spider/Spider/Spider_Back_1.png</filename>
-            <filename>../Spider/Spider/Spider_Back_2.png</filename>
-            <filename>../Spider/Spider/Spider_Back_3.png</filename>
-            <filename>../Spider/Spider/Spider_Back_4.png</filename>
-            <filename>../Spider/Spider/Spider_Back_5.png</filename>
-            <filename>../Spider/Spider/Spider_Front_0.png</filename>
-            <filename>../Spider/Spider/Spider_Front_1.png</filename>
-            <filename>../Spider/Spider/Spider_Front_2.png</filename>
-            <filename>../Spider/Spider/Spider_Front_3.png</filename>
-            <filename>../Spider/Spider/Spider_Front_4.png</filename>
-            <filename>../Spider/Spider/Spider_Front_5.png</filename>
-            <filename>../Spider/Spider/Spider_Left_0.png</filename>
-            <filename>../Spider/Spider/Spider_Left_1.png</filename>
-            <filename>../Spider/Spider/Spider_Left_2.png</filename>
-            <filename>../Spider/Spider/Spider_Left_3.png</filename>
-            <filename>../Spider/Spider/Spider_Left_4.png</filename>
-            <filename>../Spider/Spider/Spider_Left_5.png</filename>
-            <filename>../Spider/Spider/Spider_Right_0.png</filename>
-            <filename>../Spider/Spider/Spider_Right_1.png</filename>
-            <filename>../Spider/Spider/Spider_Right_2.png</filename>
-            <filename>../Spider/Spider/Spider_Right_3.png</filename>
-            <filename>../Spider/Spider/Spider_Right_4.png</filename>
-            <filename>../Spider/Spider/Spider_Right_5.png</filename>
-            <filename>../SkeletonKing/Skeleton King/SkeletonKing_Back_0.png</filename>
-            <filename>../SkeletonKing/Skeleton King/SkeletonKing_Back_1.png</filename>
-            <filename>../SkeletonKing/Skeleton King/SkeletonKing_Back_2.png</filename>
-            <filename>../SkeletonKing/Skeleton King/SkeletonKing_Front_0.png</filename>
-            <filename>../SkeletonKing/Skeleton King/SkeletonKing_Front_1.png</filename>
-            <filename>../SkeletonKing/Skeleton King/SkeletonKing_Front_2.png</filename>
-            <filename>../SkeletonKing/Skeleton King/SkeletonKing_Left_0.png</filename>
-            <filename>../SkeletonKing/Skeleton King/SkeletonKing_Left_1.png</filename>
-            <filename>../SkeletonKing/Skeleton King/SkeletonKing_Left_2.png</filename>
-            <filename>../SkeletonKing/Skeleton King/SkeletonKing_Right_0.png</filename>
-            <filename>../SkeletonKing/Skeleton King/SkeletonKing_Right_1.png</filename>
-            <filename>../SkeletonKing/Skeleton King/SkeletonKing_Right_2.png</filename>
             <filename>../Skeleton/Skeleton_Back_0.png</filename>
             <filename>../Skeleton/Skeleton_Back_1.png</filename>
             <filename>../Skeleton/Skeleton_Back_2.png</filename>
@@ -268,22 +216,74 @@
             <filename>../OrkGraveyard/OrkGraveyard_Right_0.png</filename>
             <filename>../OrkGraveyard/OrkGraveyard_Right_1.png</filename>
             <filename>../OrkGraveyard/OrkGraveyard_Right_2.png</filename>
-            <filename>../Brunhilde/Brunhilde/Brunhilde_Down_0.png</filename>
-            <filename>../Brunhilde/Brunhilde/Brunhilde_Down_1.png</filename>
-            <filename>../Brunhilde/Brunhilde/Brunhilde_Down_2.png</filename>
-            <filename>../Brunhilde/Brunhilde/Brunhilde_Left_0.png</filename>
-            <filename>../Brunhilde/Brunhilde/Brunhilde_Left_1.png</filename>
-            <filename>../Brunhilde/Brunhilde/Brunhilde_Left_2.png</filename>
-            <filename>../Brunhilde/Brunhilde/Brunhilde_Left_3.png</filename>
-            <filename>../Brunhilde/Brunhilde/Brunhilde_Left_4.png</filename>
-            <filename>../Brunhilde/Brunhilde/Brunhilde_Right_0.png</filename>
-            <filename>../Brunhilde/Brunhilde/Brunhilde_Right_1.png</filename>
-            <filename>../Brunhilde/Brunhilde/Brunhilde_Right_2.png</filename>
-            <filename>../Brunhilde/Brunhilde/Brunhilde_Right_3.png</filename>
-            <filename>../Brunhilde/Brunhilde/Brunhilde_Right_4.png</filename>
-            <filename>../Brunhilde/Brunhilde/Brunhilde_Up_0.png</filename>
-            <filename>../Brunhilde/Brunhilde/Brunhilde_Up_1.png</filename>
-            <filename>../Brunhilde/Brunhilde/Brunhilde_Up_2.png</filename>
+            <filename>../Brunhilde/Brunhilde_Left_3.png</filename>
+            <filename>../Brunhilde/Brunhilde_Left_4.png</filename>
+            <filename>../Brunhilde/Brunhilde_Right_0.png</filename>
+            <filename>../Brunhilde/Brunhilde_Right_1.png</filename>
+            <filename>../Brunhilde/Brunhilde_Right_2.png</filename>
+            <filename>../Brunhilde/Brunhilde_Right_3.png</filename>
+            <filename>../Brunhilde/Brunhilde_Right_4.png</filename>
+            <filename>../Brunhilde/Brunhilde_Back_0.png</filename>
+            <filename>../Brunhilde/Brunhilde_Back_1.png</filename>
+            <filename>../Brunhilde/Brunhilde_Back_2.png</filename>
+            <filename>../Brunhilde/Brunhilde_Front_0.png</filename>
+            <filename>../Brunhilde/Brunhilde_Front_1.png</filename>
+            <filename>../Brunhilde/Brunhilde_Front_2.png</filename>
+            <filename>../Brunhilde/Brunhilde_Left_0.png</filename>
+            <filename>../Brunhilde/Brunhilde_Left_1.png</filename>
+            <filename>../Brunhilde/Brunhilde_Left_2.png</filename>
+            <filename>../Spider/Spider_Back_5.png</filename>
+            <filename>../Spider/Spider_Front_0.png</filename>
+            <filename>../Spider/Spider_Front_1.png</filename>
+            <filename>../Spider/Spider_Front_2.png</filename>
+            <filename>../Spider/Spider_Front_3.png</filename>
+            <filename>../Spider/Spider_Front_4.png</filename>
+            <filename>../Spider/Spider_Front_5.png</filename>
+            <filename>../Spider/Spider_Left_0.png</filename>
+            <filename>../Spider/Spider_Left_1.png</filename>
+            <filename>../Spider/Spider_Left_2.png</filename>
+            <filename>../Spider/Spider_Left_3.png</filename>
+            <filename>../Spider/Spider_Left_4.png</filename>
+            <filename>../Spider/Spider_Left_5.png</filename>
+            <filename>../Spider/Spider_Right_0.png</filename>
+            <filename>../Spider/Spider_Right_1.png</filename>
+            <filename>../Spider/Spider_Right_2.png</filename>
+            <filename>../Spider/Spider_Right_3.png</filename>
+            <filename>../Spider/Spider_Right_4.png</filename>
+            <filename>../Spider/Spider_Right_5.png</filename>
+            <filename>../Spider/Spider_Back_0.png</filename>
+            <filename>../Spider/Spider_Back_1.png</filename>
+            <filename>../Spider/Spider_Back_2.png</filename>
+            <filename>../Spider/Spider_Back_3.png</filename>
+            <filename>../Spider/Spider_Back_4.png</filename>
+            <filename>../SkeletonKing/SkeletonKing_Left_2.png</filename>
+            <filename>../SkeletonKing/SkeletonKing_Right_0.png</filename>
+            <filename>../SkeletonKing/SkeletonKing_Right_1.png</filename>
+            <filename>../SkeletonKing/SkeletonKing_Right_2.png</filename>
+            <filename>../SkeletonKing/SkeletonKing_Back_0.png</filename>
+            <filename>../SkeletonKing/SkeletonKing_Back_1.png</filename>
+            <filename>../SkeletonKing/SkeletonKing_Back_2.png</filename>
+            <filename>../SkeletonKing/SkeletonKing_Front_0.png</filename>
+            <filename>../SkeletonKing/SkeletonKing_Front_1.png</filename>
+            <filename>../SkeletonKing/SkeletonKing_Front_2.png</filename>
+            <filename>../SkeletonKing/SkeletonKing_Left_0.png</filename>
+            <filename>../SkeletonKing/SkeletonKing_Left_1.png</filename>
+            <filename>../OrkForest/OrkForest_Front_2.png</filename>
+            <filename>../OrkForest/OrkForest_Left_0.png</filename>
+            <filename>../OrkForest/OrkForest_Left_1.png</filename>
+            <filename>../OrkForest/OrkForest_Left_2.png</filename>
+            <filename>../OrkForest/OrkForest_Left_3.png</filename>
+            <filename>../OrkForest/OrkForest_Left_4.png</filename>
+            <filename>../OrkForest/OrkForest_Right_0.png</filename>
+            <filename>../OrkForest/OrkForest_Right_1.png</filename>
+            <filename>../OrkForest/OrkForest_Right_2.png</filename>
+            <filename>../OrkForest/OrkForest_Right_3.png</filename>
+            <filename>../OrkForest/OrkForest_Right_4.png</filename>
+            <filename>../OrkForest/OrkForest_Back_0.png</filename>
+            <filename>../OrkForest/OrkForest_Back_1.png</filename>
+            <filename>../OrkForest/OrkForest_Back_2.png</filename>
+            <filename>../OrkForest/OrkForest_Front_0.png</filename>
+            <filename>../OrkForest/OrkForest_Front_1.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

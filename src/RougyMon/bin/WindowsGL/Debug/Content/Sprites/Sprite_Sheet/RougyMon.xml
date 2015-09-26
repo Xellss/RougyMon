@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
-<!-- $TexturePacker:SmartUpdate:201454b4be2bd50d6dd708432a0d1f1b:f680c07db02b1571211fe15b9db0482c:e1dd5c8832bacc0b2adcac2331415416$ -->
+<!-- $TexturePacker:SmartUpdate:4f4c1e69566972b0594a11c716544b53:6dbef52898262ccd62776dc2a3a7e22c:e1dd5c8832bacc0b2adcac2331415416$ -->
 <!--Format:
 n  => name of the sprite
 x  => sprite x pos in texture
@@ -16,22 +16,22 @@ oH => sprite's original height (only available if trimmed)
 r => 'y' only set if sprite is rotated
 -->
 <TextureAtlas imagePath="RougyMon_Sheet.png" width="256" height="512">
-    <sprite n="Brunhilde_Down_0.png" x="2" y="2" w="32" h="32" pX="0.5" pY="0.5"/>
-    <sprite n="Brunhilde_Down_1.png" x="36" y="2" w="32" h="32" pX="0.5" pY="0.5"/>
-    <sprite n="Brunhilde_Down_2.png" x="70" y="2" w="32" h="32" pX="0.5" pY="0.5"/>
-    <sprite n="Brunhilde_Left_0.png" x="104" y="2" w="32" h="32" pX="0.5" pY="0.5"/>
-    <sprite n="Brunhilde_Left_1.png" x="138" y="2" w="32" h="32" pX="0.5" pY="0.5"/>
-    <sprite n="Brunhilde_Left_2.png" x="172" y="2" w="32" h="32" pX="0.5" pY="0.5"/>
-    <sprite n="Brunhilde_Left_3.png" x="206" y="2" w="32" h="32" pX="0.5" pY="0.5"/>
-    <sprite n="Brunhilde_Left_4.png" x="2" y="36" w="32" h="32" pX="0.5" pY="0.5"/>
-    <sprite n="Brunhilde_Right_0.png" x="36" y="36" w="32" h="32" pX="0.5" pY="0.5"/>
-    <sprite n="Brunhilde_Right_1.png" x="70" y="36" w="32" h="32" pX="0.5" pY="0.5"/>
-    <sprite n="Brunhilde_Right_2.png" x="104" y="36" w="32" h="32" pX="0.5" pY="0.5"/>
-    <sprite n="Brunhilde_Right_3.png" x="138" y="36" w="32" h="32" pX="0.5" pY="0.5"/>
-    <sprite n="Brunhilde_Right_4.png" x="172" y="36" w="32" h="32" pX="0.5" pY="0.5"/>
-    <sprite n="Brunhilde_Up_0.png" x="206" y="36" w="32" h="32" pX="0.5" pY="0.5"/>
-    <sprite n="Brunhilde_Up_1.png" x="2" y="70" w="32" h="32" pX="0.5" pY="0.5"/>
-    <sprite n="Brunhilde_Up_2.png" x="36" y="70" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Back_0.png" x="2" y="2" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Back_1.png" x="36" y="2" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Back_2.png" x="70" y="2" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Front_0.png" x="104" y="2" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Front_1.png" x="138" y="2" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Front_2.png" x="172" y="2" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Left_0.png" x="206" y="2" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Left_1.png" x="2" y="36" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Left_2.png" x="36" y="36" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Left_3.png" x="70" y="36" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Left_4.png" x="104" y="36" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Right_0.png" x="138" y="36" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Right_1.png" x="172" y="36" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Right_2.png" x="206" y="36" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Right_3.png" x="2" y="70" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Brunhilde_Right_4.png" x="36" y="70" w="32" h="32" pX="0.5" pY="0.5"/>
     <sprite n="OrkForest_Back_0.png" x="70" y="70" w="32" h="32" pX="0.5" pY="0.5"/>
     <sprite n="OrkForest_Back_1.png" x="104" y="70" w="32" h="32" pX="0.5" pY="0.5"/>
     <sprite n="OrkForest_Back_2.png" x="138" y="70" w="32" h="32" pX="0.5" pY="0.5"/>

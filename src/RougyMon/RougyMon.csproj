@@ -41,7 +41,11 @@
     <Compile Include="Camera.cs" />
     <Compile Include="Fonts.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="OrkForest.cs" />
     <Compile Include="OrkGraveyard.cs" />
+    <Compile Include="Skeleton.cs" />
+    <Compile Include="SkeletonKing.cs" />
+    <Compile Include="Spider.cs" />
     <Compile Include="UI\Screens\GameOverScreen.cs" />
     <Compile Include="Key.cs" />
     <Compile Include="Managers.cs" />
@@ -131,13 +135,22 @@
     <Content Include="Content\Map\UnitedMapWithSpacePNG.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sprites\Brunhilde\Brunhilde_Down_0.png">
+    <Content Include="Content\Sprites\Brunhilde\Brunhilde_Back_0.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sprites\Brunhilde\Brunhilde_Down_1.png">
+    <Content Include="Content\Sprites\Brunhilde\Brunhilde_Back_1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sprites\Brunhilde\Brunhilde_Down_2.png">
+    <Content Include="Content\Sprites\Brunhilde\Brunhilde_Back_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Brunhilde\Brunhilde_Front_0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Brunhilde\Brunhilde_Front_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Brunhilde\Brunhilde_Front_2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Sprites\Brunhilde\Brunhilde_Left_0.png">
@@ -168,15 +181,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Sprites\Brunhilde\Brunhilde_Right_4.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Sprites\Brunhilde\Brunhilde_Up_0.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Sprites\Brunhilde\Brunhilde_Up_1.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Sprites\Brunhilde\Brunhilde_Up_2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Sprites\House\House_Object_1.png">

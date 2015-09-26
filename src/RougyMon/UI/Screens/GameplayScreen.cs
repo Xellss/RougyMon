@@ -30,7 +30,6 @@ namespace GameStateManagementSample
         InputAction pauseAction;
         private Camera camera;
         private Player player;
-        OrkGraveyard orkGraveyard;
         private Map map;
         NewTimer timer;
         bool debug;
@@ -86,7 +85,12 @@ namespace GameStateManagementSample
             map.LoadMapFromImage(content.Load<Texture2D>("Map/MainMap"));
 
             player = new Player(new Vector2(3900, 4000), map);
-            orkGraveyard = new OrkGraveyard(new Vector2(3800, 3900), map, new Vector2(4000, 3900));
+            OrkGraveyard orkGraveyard = new OrkGraveyard(new Vector2(4460, 2280), map, new Vector2(5015, 2280));
+            OrkForest orkForest = new OrkForest(new Vector2(4460, 2380), map, new Vector2(5015, 2380));
+            Spider spider = new Spider(new Vector2(4460, 2480), map, new Vector2(5015, 2480));
+            Skeleton skeleton = new Skeleton(new Vector2(4460, 2680), map, new Vector2(5015, 2680));
+            SkeletonKing skeletonKing = new SkeletonKing(new Vector2(4460, 2880), map, new Vector2(5015, 2880));
+            skeletonKing.moveSpeed = 3;
             key = new Key(new Vector2(555, 100));
 
             //new UITimer(timer);

@@ -15,7 +15,7 @@ namespace RougyMon
         BoxCollider collider;
         Map map;
         Patrol patrol;
-        int moveSpeed;
+        public int moveSpeed;
         //NewTimer timer;
 
 
@@ -34,7 +34,7 @@ namespace RougyMon
 
             patrol = AddComponent<Patrol>();
             patrol.PatrolToTarget(patrolTarget);
-            moveSpeed = 5;
+            moveSpeed = 3;
 
 
             collider = AddComponent<BoxCollider>();
