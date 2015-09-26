@@ -13,7 +13,6 @@ namespace RougyMon
         public MoveWithInput moveWithInput;
         BoxCollider collider;
         Map map;
-        public static MoveWithInput OptionMenu;
 
         public bool HasKey = false;
 
