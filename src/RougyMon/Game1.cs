@@ -11,9 +11,6 @@ namespace RougyMon
     {
         public GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        //Map map;
-        //Player player;
-        //Camera camera;
 
         SpriteFont arial;
         SpriteFont comicSans;
@@ -39,18 +36,8 @@ namespace RougyMon
             Managers.Graphics = this.graphics;
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            //map = new Map(Content.Load<Texture2D>("Map/Tiles"));
-            //map.LoadMapFromTextfile(Content.RootDirectory + "/Map/Map.txt", 42, 24);
-            //map.LoadMapFromImage(Content.Load<Texture2D>("Map/UnitedMapBMP"));
-
-
-            //player = new Player(new Vector2(1000, 100), map);
-            //new Key(new Vector2(555, 100));
-
             arial = Content.Load<SpriteFont>("Fonts/Arial");
             comicSans = Content.Load<SpriteFont>("Fonts/ComicSansMS");
-            //new UITimer(player);
-            //camera = new Camera(GraphicsDevice.Viewport);
 
             screenManager = new ScreenManager(this);
             screenManager.AddScreen(new BackgroundScreen(), null);
@@ -67,14 +54,12 @@ namespace RougyMon
                 Exit();
 
             EventManager.Update(gameTime);
-            //camera.OnUpdate(player.transform.Position, 97 * 32, 54 * 32);
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            //map.RenderMap(spriteBatch);
             EventManager.Render(spriteBatch);
             base.Draw(gameTime);
         }

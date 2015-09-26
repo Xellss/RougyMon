@@ -12,7 +12,7 @@ namespace RougyMon
     {
         public Matrix matrix;
 
-        Vector2 center;
+
         Viewport viewport;
 
         public Camera(Viewport viewport)

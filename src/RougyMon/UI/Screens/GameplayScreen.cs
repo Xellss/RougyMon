@@ -84,7 +84,7 @@ namespace GameStateManagementSample
             //map.LoadMapFromImage(content.Load<Texture2D>("Map/UnitedMapBMP"));
             map.LoadMapFromImage(content.Load<Texture2D>("Map/MainMap"));
 
-            player = new Player(new Vector2(3900, 4000), map);
+            player = new Player(new Vector2(4400, 2230), map);
             OrkGraveyard orkGraveyard = new OrkGraveyard(new Vector2(4460, 2280), map, new Vector2(5015, 2280));
             OrkForest orkForest = new OrkForest(new Vector2(4460, 2380), map, new Vector2(5015, 2380));
             Spider spider = new Spider(new Vector2(4460, 2480), map, new Vector2(5015, 2480));

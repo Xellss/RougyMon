@@ -18,7 +18,6 @@ namespace RougyMon
         public int moveSpeed;
         //NewTimer timer;
 
-
         public Skeleton(Vector2 position, Map map, Vector2 patrolTarget)
         {
             this.map = map;
@@ -36,10 +35,8 @@ namespace RougyMon
             patrol.PatrolToTarget(patrolTarget);
             moveSpeed = 3;
 
-
             collider = AddComponent<BoxCollider>();
             collider.OnCollisionEnter += OnCollisionEnter;
-
 
             EventManager.OnUpdate += OnUpdate;
         }
