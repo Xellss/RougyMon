@@ -2,6 +2,8 @@
 #endregion
 #region Using Statements
 using Microsoft.Xna.Framework;
+using RougyMon;
+using MiniEngine;
 #endregion
 namespace GameStateManagementSample
 {

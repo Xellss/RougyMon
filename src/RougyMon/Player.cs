@@ -10,9 +10,10 @@ namespace RougyMon
     {
         public Transform transform;
         Renderer renderer;
-        MoveWithInput moveWithInput;
+        public MoveWithInput moveWithInput;
         BoxCollider collider;
         Map map;
+        public static MoveWithInput OptionMenu;
 
         public bool HasKey = false;
 
