@@ -27,7 +27,7 @@ namespace RougyMon
         {
             base.Initialize();
             IsMouseVisible = true;
-            graphics.IsFullScreen = true;
+            //graphics.IsFullScreen = true;
         }
 
         protected override void LoadContent()

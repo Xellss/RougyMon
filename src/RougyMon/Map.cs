@@ -24,6 +24,19 @@ namespace RougyMon
         public Color Water = new Color(0, 33, 255);
         public Color StoneWall = new Color(0, 0, 0);
         public Color BlackBackground = new Color(255, 76, 249);
+        public Color House1 = new Color(0, 0, 1);
+        public Color House2 = new Color(0, 0, 2);
+        public Color House3 = new Color(0, 0, 3);
+        public Color House4 = new Color(0, 0, 4);
+        public Color House5 = new Color(0, 0, 5);
+        public Color House6 = new Color(0, 0, 6);
+        public Color House7 = new Color(0, 0, 7);
+        public Color House8 = new Color(0, 0, 8);
+        public Color House9 = new Color(0, 0, 9);
+        public Color House10 = new Color(0, 0, 10);
+        public Color House11= new Color(0, 0, 11);
+        public Color House12 = new Color(0, 0, 12);
+
         //public Color Graveyard = new Color(0, 0, 255);
 
         public int MapWidth;
@@ -154,6 +167,31 @@ namespace RougyMon
                 return new Tile(Tile.Types.BlackBackground);
             else if (color == GraveyardWall)
                 return new Tile(Tile.Types.GraveyardWall);
+            else if (color == House1)
+                return new Tile(Tile.Types.House1);
+            else if (color == House2)
+                return new Tile(Tile.Types.House2);
+            else if (color == House3)
+                return new Tile(Tile.Types.House3);
+            else if (color == House4)
+                return new Tile(Tile.Types.House4);
+            else if (color == House5)
+                return new Tile(Tile.Types.House5);
+            else if (color == House6)
+                return new Tile(Tile.Types.House6);
+            else if (color == House7)
+                return new Tile(Tile.Types.House7);
+            else if (color == House8)
+                return new Tile(Tile.Types.House8);
+            else if (color == House9)
+                return new Tile(Tile.Types.House9);
+            else if (color == House10)
+                return new Tile(Tile.Types.House10);
+            else if (color == House11)
+                return new Tile(Tile.Types.House11);
+            else if (color == House12)
+                return new Tile(Tile.Types.House12);
+
 
             else
                 return null;
