@@ -38,7 +38,7 @@ namespace GameStateManagementSample
                 if (content == null)
                     content = Managers.Content;
 
-                backgroundTexture = content.Load<Texture2D>("Images/Intro.png");
+                backgroundTexture = content.Load<Texture2D>("Images/Intro.jpg");
             }
         }
 

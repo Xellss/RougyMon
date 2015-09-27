@@ -18,7 +18,7 @@ namespace GameStateManagementSample
         TextMenuEntry name;
 
         public MainMenuScreen()
-            : base("Main Menu")
+            : base("")
         {
 
             name = new TextMenuEntry("Name", Managers.PlayerName);
