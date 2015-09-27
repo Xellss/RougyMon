@@ -60,7 +60,7 @@ namespace RougyMon
             moveWithInput.NextFiledIsPassable = CanMoveTo(newRectangle);
 
             CheckCurrentTile();
-            //Console.WriteLine(transform.Position);
+            Console.WriteLine(transform.Position);
         }
 
         public bool CanMoveTo(RectangleF recCollider)

@@ -35,7 +35,8 @@ namespace GameStateManagementSample
         NewTimer timer;
         bool debug;
         InputAction debugAction;
-        private Key key;
+        private Key key_1;
+        Key_2 key_2;
         OrkGraveyard orkGraveyard;
         OrkForest orkForest;
         Spider spider;
@@ -97,8 +98,11 @@ namespace GameStateManagementSample
             skeletonKing = new SkeletonKing(new Vector2(4460, 2880), map, new Vector2(5015, 2880));
             skeletonKing.moveSpeed = 3;
 
-            player = new Player(new Vector2(4400, 2230), map);
+            key_1 = new Key(new Vector2(2258, 4175));
+            key_2 = new Key_2(new Vector2(2416, 3683));
 
+
+            player = new Player(new Vector2(4400, 2230), map);
             //new UITimer(timer);
             camera = new Camera(Managers.Graphics.GraphicsDevice.Viewport);
             timer.Start();
@@ -141,19 +145,20 @@ namespace GameStateManagementSample
             camera.OnUpdate(player.transform.Position, 97 * 32, 54 * 32);
             timer.OnUpdate(gameTime);
 
-            if (timer.Time  <= TimeSpan.Zero || debug || ScreenManager.WinScreen)
+            if (timer.Time <= TimeSpan.Zero || debug || ScreenManager.WinScreen)
             {
                 orkGraveyard.Destroy();
                 orkForest.Destroy();
                 spider.Destroy();
                 skeleton.Destroy();
                 skeletonKing.Destroy();
-                //key.Destroy();
+                key_1.Destroy();
+                key_2.Destroy();
                 player.Destroy();
                 timer.Stop();
                 ScreenManager.Clear();
-                
-                
+
+
 
                 if (ScreenManager.WinScreen)
                 {
