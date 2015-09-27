@@ -1,36 +1,28 @@
 To Do:
-Sprite Animation
-Text Box (Intro)
-Enemy and Object Spawnpoints
-Hit Enemy = Timer - 
-Hit HealPotion = Timer +
-Sounds
-Victory
-Cheats
-King Drop
-Shoot
+Julian - Sprite Animation
+Julian - Shoot
+Julian - Hit Enemy = Timer - 
+Julian - Hit HealPotion = Timer +
 
-
+Daniel - Enemy and Object Spawnpoints
+Daniel - Doors
+Daniel - Cheats
+Daniel - Text Box (Intro)
+Daniel - Sounds
 
 
 Done:
 Rectangle Player
 MoveSpeed (Moor, DarkMoor, Sand)
 Options (Fullscreen, Move with Arrows)
-
-
+Victory
+King Drop
 
 
 Chat:
 
-D:
-los arbeite du noob
-__
-D:
-MoveWithArrows : 
-			Player player;
-            player.moveWithInput.MoveWithArrow = true;
-			
+D: los arbeite du n00b
+
 			
 			
 			
