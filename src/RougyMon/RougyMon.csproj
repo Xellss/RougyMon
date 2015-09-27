@@ -255,6 +255,9 @@
     <Content Include="Content\Sprites\Objects\Key_2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Sprites\Objects\Rubin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Sprites\Objects\Tree_1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
