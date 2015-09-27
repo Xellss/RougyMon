@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework.Input;
+
 
 namespace RougyMon
 {
@@ -16,6 +18,11 @@ namespace RougyMon
             if (isRunning)
             {
                 Time = Time.Subtract(gameTime.ElapsedGameTime);
+
+                if (Keyboard.GetState().IsKeyDown(Keys.I))
+                {
+                    Time = Time.Subtract(gameTime.ElapsedGameTime);
+                }
             }
         }
 

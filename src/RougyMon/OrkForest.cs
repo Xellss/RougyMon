@@ -48,6 +48,7 @@ namespace RougyMon
         {
             if (other.GameObject.Tag == "Player")
             {
+                
                 //timer.Time.TotalSeconds -= 10f;
                 Destroy();
             }
