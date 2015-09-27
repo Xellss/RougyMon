@@ -15,7 +15,10 @@ namespace RougyMon
         BoxCollider collider;
         Map map;
 
-        public bool HasKey = false;
+        public bool HasKey1 = false;
+        public bool HasKey2 = false;
+        public bool HasJewel = false;
+
 
         public Player(Vector2 position, Map map)
         {
@@ -43,8 +46,12 @@ namespace RougyMon
 
         void OnCollisionEnter(BoxCollider other)
         {
-            if (other.GameObject.Tag == "Key")
-                HasKey = true;
+            if (other.GameObject.Tag == "Key_1")
+                HasKey1 = true;
+            if (other.GameObject.Tag == "Key_2")
+                HasKey2 = true;
+            if (other.GameObject.Tag == "Jewel")
+                HasJewel = true;
         }
         void OnUpdate(GameTime gameTime)
         {

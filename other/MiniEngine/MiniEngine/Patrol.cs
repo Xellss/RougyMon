@@ -36,7 +36,8 @@ namespace MiniEngine
 
         void OnUpdate(GameTime gameTime)
         {
-            Move();
+            if (CanPatrol)
+                Move();
         }
 
         public void PatrolToTarget(Vector2 target)

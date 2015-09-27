@@ -16,7 +16,7 @@ namespace RougyMon.UI.Screens
 
 
          public PlayerWonScreen(TimeSpan time)
-            : base("Game Over")
+            : base("")
         {
             MenuEntry playGameMenuEntry = new MenuEntry("Play Game");
             MenuEntry exitMenuEntry = new MenuEntry("Exit");
@@ -33,11 +33,12 @@ namespace RougyMon.UI.Screens
             {
                 write.WriteLine("{0};{1:c}", Managers.PlayerName, time);
             }
+             
         }
 
         public override void Activate(bool instancePreserved)
         {
-            backgroundTexture = Managers.Content.Load<Texture2D>("Images/Outro.jpg");
+            backgroundTexture = Managers.Content.Load<Texture2D>("Images/Victory");
 
             base.Activate(instancePreserved);
         }

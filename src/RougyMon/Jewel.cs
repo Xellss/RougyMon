@@ -2,51 +2,45 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using MiniEngine;
-
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
 namespace RougyMon
 {
-    class Key : GameObject
+    class Jewel : GameObject
     {
         Transform transform;
         Renderer renderer;
         BoxCollider collider;
 
-        public Key(Vector2 position)
+        public Jewel(Vector2 position)
         {
-            Tag = "Key_1";
+            Tag = "Jewel";
 
             transform = AddComponent<Transform>();
             transform.Position = position;
 
             renderer = AddComponent<Renderer>();
-            renderer.SetImage(Managers.Content.Load<Texture2D>("Sprites/Objects/Key_1"));
+            renderer.SetImage(Managers.Content.Load<Texture2D>("Sprites/Objects/Jewel"));
             renderer.Pivot = new Vector2(renderer.ImageWidth / 2, renderer.ImageHeight / 2f);
 
             collider = AddComponent<BoxCollider>();
             collider.OnCollisionEnter += OnCollisionEnter;
 
-            EventManager.OnUpdate += OnUpdate;
 
         }
 
         private void OnCollisionEnter(BoxCollider other)
         {
-            if (other.GameObject.Tag == "Player")
-                Destroy();
-        }
-
-        private void OnUpdate(GameTime gameTime)
-        {
+            //if (other.GameObject.Tag == "Player")
+                //Destroy();
         }
 
         public override void Destroy()
         {
-            EventManager.OnUpdate -= OnUpdate;
 
             base.Destroy();
         }
     }
 }
+

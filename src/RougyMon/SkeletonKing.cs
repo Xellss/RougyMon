@@ -5,6 +5,8 @@ using System.Text;
 using MiniEngine;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using GameStateManagement;
+using RougyMon.UI.Screens;
 
 namespace RougyMon
 {
@@ -48,8 +50,17 @@ namespace RougyMon
         {
             if (other.GameObject.Tag == "Player")
             {
+                if (Tag == "Jewel")
+                {
+                    Destroy();
+                    ScreenManager.WinScreen = true;
+                }
+                renderer.SetImage(Managers.Content.Load<Texture2D>("Sprites/Objects/Jewel"));
+                transform.Position = new Vector2(transform.Position.X + 20, transform.Position.Y - 20);
+                patrol.CanPatrol = false;
+                Tag = "Jewel";
                 //timer.Time.TotalSeconds -= 10f;
-                Destroy();
+                //Destroy();
             }
         }
         void OnUpdate(GameTime gameTime)

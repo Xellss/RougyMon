@@ -8,21 +8,21 @@ using MiniEngine;
 
 namespace RougyMon
 {
-    class Key : GameObject
+    class Key_2 : GameObject
     {
         Transform transform;
         Renderer renderer;
         BoxCollider collider;
 
-        public Key(Vector2 position)
+        public Key_2(Vector2 position)
         {
-            Tag = "Key_1";
+            Tag = "Key_2";
 
             transform = AddComponent<Transform>();
             transform.Position = position;
 
             renderer = AddComponent<Renderer>();
-            renderer.SetImage(Managers.Content.Load<Texture2D>("Sprites/Objects/Key_1"));
+            renderer.SetImage(Managers.Content.Load<Texture2D>("Sprites/Objects/Key_2"));
             renderer.Pivot = new Vector2(renderer.ImageWidth / 2, renderer.ImageHeight / 2f);
 
             collider = AddComponent<BoxCollider>();
