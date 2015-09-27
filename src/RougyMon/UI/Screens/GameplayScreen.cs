@@ -12,6 +12,7 @@ using Microsoft.Xna.Framework.Input;
 using GameStateManagement;
 using RougyMon;
 using RougyMon.UI.Screens;
+using MiniEngine;
 #endregion
 
 namespace GameStateManagementSample
@@ -35,6 +36,11 @@ namespace GameStateManagementSample
         bool debug;
         InputAction debugAction;
         private Key key;
+        OrkGraveyard orkGraveyard;
+        OrkForest orkForest;
+        Spider spider;
+        Skeleton skeleton;
+        SkeletonKing skeletonKing;
 
         #endregion
 
@@ -84,14 +90,14 @@ namespace GameStateManagementSample
             //map.LoadMapFromImage(content.Load<Texture2D>("Map/UnitedMapBMP"));
             map.LoadMapFromImage(content.Load<Texture2D>("Map/MainMap"));
 
-            player = new Player(new Vector2(4400, 2230), map);
-            OrkGraveyard orkGraveyard = new OrkGraveyard(new Vector2(4460, 2280), map, new Vector2(5015, 2280));
-            OrkForest orkForest = new OrkForest(new Vector2(4460, 2380), map, new Vector2(5015, 2380));
-            Spider spider = new Spider(new Vector2(4460, 2480), map, new Vector2(5015, 2480));
-            Skeleton skeleton = new Skeleton(new Vector2(4460, 2680), map, new Vector2(5015, 2680));
-            SkeletonKing skeletonKing = new SkeletonKing(new Vector2(4460, 2880), map, new Vector2(5015, 2880));
+            orkGraveyard = new OrkGraveyard(new Vector2(4460, 2280), map, new Vector2(5015, 2280));
+            orkForest = new OrkForest(new Vector2(4460, 2380), map, new Vector2(5015, 2380));
+            spider = new Spider(new Vector2(4460, 2480), map, new Vector2(5015, 2480));
+            skeleton = new Skeleton(new Vector2(4460, 2680), map, new Vector2(5015, 2680));
+            skeletonKing = new SkeletonKing(new Vector2(4460, 2880), map, new Vector2(5015, 2880));
             skeletonKing.moveSpeed = 3;
-            key = new Key(new Vector2(555, 100));
+
+            player = new Player(new Vector2(4400, 2230), map);
 
             //new UITimer(timer);
             camera = new Camera(Managers.Graphics.GraphicsDevice.Viewport);
@@ -135,18 +141,29 @@ namespace GameStateManagementSample
             camera.OnUpdate(player.transform.Position, 97 * 32, 54 * 32);
             timer.OnUpdate(gameTime);
 
-            if (timer.Time  <= TimeSpan.Zero || debug)
+            if (timer.Time  <= TimeSpan.Zero || debug || ScreenManager.WinScreen)
             {
-                key.Destroy();
+                orkGraveyard.Destroy();
+                orkForest.Destroy();
+                spider.Destroy();
+                skeleton.Destroy();
+                skeletonKing.Destroy();
+                //key.Destroy();
                 player.Destroy();
                 timer.Stop();
                 ScreenManager.Clear();
+                
+                
 
+                if (ScreenManager.WinScreen)
+                {
+                    ScreenManager.AddScreen(new PlayerWonScreen(timer.Time), null);
+                }
                 if (debug)
                 {
                     ScreenManager.AddScreen(new PlayerWonScreen(timer.Time), null);
                 }
-                else
+                else if (timer.Time <= TimeSpan.Zero)
                 {
                     ScreenManager.AddScreen(new GameOverScreen(), null);
                 }
@@ -199,7 +216,7 @@ namespace GameStateManagementSample
             }
 
             spriteBatch.End();
-            spriteBatch.Begin(SpriteSortMode.Deferred,BlendState.AlphaBlend,null,null,null,null,camera.matrix);
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, camera.matrix);
             map.RenderMap(spriteBatch);
         }
 

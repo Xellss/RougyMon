@@ -23,7 +23,7 @@ namespace GameStateManagement
         #region Fields
 
         private const string StateFilename = "ScreenManagerState.xml";
-
+        public static bool WinScreen = false;
         List<GameScreen> screens = new List<GameScreen>();
         List<GameScreen> tempScreensList = new List<GameScreen>();
 

@@ -41,6 +41,8 @@
     <Compile Include="Camera.cs" />
     <Compile Include="Fonts.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Jewel.cs" />
+    <Compile Include="Key_2.cs" />
     <Compile Include="OrkForest.cs" />
     <Compile Include="OrkGraveyard.cs" />
     <Compile Include="Skeleton.cs" />
@@ -255,7 +257,7 @@
     <Content Include="Content\Sprites\Objects\Key_2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sprites\Objects\Rubin.png">
+    <Content Include="Content\Sprites\Objects\Jewel.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Sprites\Objects\Tree_1.png">
