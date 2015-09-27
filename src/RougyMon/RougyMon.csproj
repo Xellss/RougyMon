@@ -498,7 +498,9 @@
     <Content Include="Content\Sprites\Sprite_Sheet\RougyMon_Sheet.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icon.ico" />
+    <Content Include="Icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />

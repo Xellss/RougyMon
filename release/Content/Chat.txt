@@ -1,0 +1,52 @@
+To Do:
+Sprite Animation
+Text Box (Intro)
+Enemy and Object Spawnpoints
+Hit Enemy = Timer - 
+Hit HealPotion = Timer +
+Sounds
+Victory
+Cheats
+King Drop
+Shoot
+
+
+
+
+Done:
+Rectangle Player
+MoveSpeed (Moor, DarkMoor, Sand)
+Options (Fullscreen, Move with Arrows)
+
+
+
+
+Chat:
+
+D:
+los arbeite du noob
+__
+D:
+MoveWithArrows : 
+			Player player;
+            player.moveWithInput.MoveWithArrow = true;
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+			
+			
+			
+
+
+
+
+
+			
+
