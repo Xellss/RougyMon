@@ -2,8 +2,9 @@ To Do:
 Julian - Sprite Animation
 Julian - Shoot
 Julian - Hit Enemy = Timer - 
-Julian - Hit HealPotion = Timer +
+Julian - take HealPotion = Timer +
 
+Daniel - House tiles
 Daniel - Enemy and Object Spawnpoints
 Daniel - Doors
 Daniel - Cheats
@@ -21,6 +22,7 @@ King Drop
 
 Chat:
 
+D: sinnlose nachricht!
 D: los arbeite du n00b
 
 			
