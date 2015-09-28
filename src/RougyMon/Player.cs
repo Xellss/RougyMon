@@ -17,11 +17,10 @@ namespace RougyMon
         Map map;
         public SpriteAnimation Animation;
         //public Rectangle Source;
-
+        private int moveSpeed = 3;
         public bool HasKey1 = false;
         public bool HasKey2 = false;
         public bool HasJewel = false;
-
 
         public Player(Vector2 position, Map map)
         {
@@ -103,15 +102,14 @@ namespace RougyMon
             if (nextTile == null)
                 return;
 
-
             if (nextTile.Type == Tile.Types.Moor)
                 moveWithInput.Speed = 1;
             else if (nextTile.Type == Tile.Types.DarkMoor)
                 moveWithInput.Speed = 1;
             else if (nextTile.Type == Tile.Types.Sand)
-                moveWithInput.Speed = 7;
-            else
                 moveWithInput.Speed = 5;
+            else
+                moveWithInput.Speed = moveSpeed;
         }
 
         public override void Destroy()

@@ -33,8 +33,8 @@ namespace GameStateManagementSample
         private Player player;
         private Map map;
         NewTimer timer;
-        bool debug;
-        InputAction debugAction;
+        bool instaWin;
+        bool destroyEverything;
         private Key key_1;
         Key_2 key_2;
         HealPotion[] healPotion = new HealPotion[14];
@@ -44,6 +44,7 @@ namespace GameStateManagementSample
         Spider spider;// = new Spider[1];
         Skeleton skeleton;//= new Skeleton[1];
         SkeletonKing skeletonKing;
+        
         #endregion
 
         #region Initialization
@@ -57,14 +58,11 @@ namespace GameStateManagementSample
                 new Buttons[] { Buttons.Start, Buttons.Back },
                 new Keys[] { Keys.Escape },
                 true);
-            debugAction = new InputAction(
-                new Buttons[] { Buttons.A },
-                new Keys[] { Keys.E },
-                true);
+
 
             timer = new NewTimer();
             timer.Time = new TimeSpan(0, 10, 0);
-
+            
         }
 
         public override void Activate(bool instancePreserved)
@@ -141,6 +139,7 @@ namespace GameStateManagementSample
         public override void Update(GameTime gameTime, bool otherScreenHasFocus,
                                                        bool coveredByOtherScreen)
         {
+            haxx0r();
             base.Update(gameTime, otherScreenHasFocus, false);
 
             if (coveredByOtherScreen)
@@ -151,22 +150,18 @@ namespace GameStateManagementSample
             camera.OnUpdate(player.transform.Position, 97 * 32, 54 * 32);
             timer.OnUpdate(gameTime);
 
-            if (timer.Time <= TimeSpan.Zero || debug || ScreenManager.WinScreen)
+            if (timer.Time <= TimeSpan.Zero || ScreenManager.WinScreen || instaWin && timer.chrisS)
             {
+                player.Destroy();
                 destroyAllObjects();
                 timer.Stop();
                 ScreenManager.Clear();
-
-
 
                 if (ScreenManager.WinScreen)
                 {
                     ScreenManager.AddScreen(new PlayerWonScreen(timer.Time), null);
                 }
-                if (debug)
-                {
-                    ScreenManager.AddScreen(new PlayerWonScreen(timer.Time), null);
-                }
+   
                 else if (timer.Time <= TimeSpan.Zero)
                 {
                     ScreenManager.AddScreen(new GameOverScreen(), null);
@@ -197,11 +192,34 @@ namespace GameStateManagementSample
                 ScreenManager.AddScreen(new PauseMenuScreen(), ControllingPlayer);
 #endif
             }
-
-            if (debugAction.Evaluate(input, ControllingPlayer, out player))
+        }
+        private void haxx0r()
+        {
+            if (Keyboard.GetState().IsKeyDown(Keys.D3) && timer.chrisS)
             {
-                debug = true;
+                player.Destroy();
+                destroyAllObjects();
+                timer.Stop();
+                ScreenManager.Clear();
+
+                ScreenManager.AddScreen(new PlayerWonScreen(timer.Time), null);
             }
+
+            if (Keyboard.GetState().IsKeyDown(Keys.D4) && timer.chrisS)
+            {
+                player.Destroy();
+                destroyAllObjects();
+                timer.Stop();
+                ScreenManager.Clear();
+
+                ScreenManager.AddScreen(new GameOverScreen(), null);
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.D5) && timer.chrisS)
+            {
+                destroyAllObjects();
+                timer.Stop();
+            }
+
 
         }
 
@@ -288,7 +306,7 @@ namespace GameStateManagementSample
             skeletonKing.Destroy();
             key_1.Destroy();
             key_2.Destroy();
-            player.Destroy();
+            //player.Destroy();
         }
         private void goldSpawn()
         {
@@ -354,22 +372,20 @@ namespace GameStateManagementSample
         {
             int middleOfTile = 16;
 
-            healPotion[0] = new HealPotion(new Vector2(2976 + middleOfTile, 2304 + middleOfTile));
-            healPotion[1] = new HealPotion(new Vector2(3648 + middleOfTile, 2432 + middleOfTile));
-            healPotion[2] = new HealPotion(new Vector2(2464 + middleOfTile, 2688 + middleOfTile));
-            healPotion[3] = new HealPotion(new Vector2(1504 + middleOfTile, 2560 + middleOfTile));
-            healPotion[4] = new HealPotion(new Vector2(1760 + middleOfTile, 2688 + middleOfTile));
-            healPotion[5] = new HealPotion(new Vector2(1120 + middleOfTile, 2016 + middleOfTile));
-            healPotion[6] = new HealPotion(new Vector2(800 + middleOfTile, 2688 + middleOfTile));
-            healPotion[7] = new HealPotion(new Vector2(512 + middleOfTile, 2016 + middleOfTile));
-            healPotion[8] = new HealPotion(new Vector2(2592 + middleOfTile, 1568 + middleOfTile));
-            healPotion[9] = new HealPotion(new Vector2(2752 + middleOfTile, 1152 + middleOfTile));
-            healPotion[10] = new HealPotion(new Vector2(1632 + middleOfTile, 1120 + middleOfTile));
-            healPotion[11] = new HealPotion(new Vector2(1312 + middleOfTile, 1312 + middleOfTile));
-            healPotion[12] = new HealPotion(new Vector2(1696 + middleOfTile, 672 + middleOfTile));
-            healPotion[13] = new HealPotion(new Vector2(3136 + middleOfTile, 608 + middleOfTile));
+            healPotion[0] = new HealPotion(new Vector2(2976 + middleOfTile, 2304 + middleOfTile), timer);
+            healPotion[1] = new HealPotion(new Vector2(3648 + middleOfTile, 2432 + middleOfTile), timer);
+            healPotion[2] = new HealPotion(new Vector2(2464 + middleOfTile, 2688 + middleOfTile), timer);
+            healPotion[3] = new HealPotion(new Vector2(1504 + middleOfTile, 2560 + middleOfTile), timer);
+            healPotion[4] = new HealPotion(new Vector2(1760 + middleOfTile, 2688 + middleOfTile), timer);
+            healPotion[5] = new HealPotion(new Vector2(1120 + middleOfTile, 2016 + middleOfTile), timer);
+            healPotion[6] = new HealPotion(new Vector2(800 + middleOfTile, 2688 + middleOfTile), timer);
+            healPotion[7] = new HealPotion(new Vector2(512 + middleOfTile, 2016 + middleOfTile), timer);
+            healPotion[8] = new HealPotion(new Vector2(2592 + middleOfTile, 1568 + middleOfTile), timer);
+            healPotion[9] = new HealPotion(new Vector2(2752 + middleOfTile, 1152 + middleOfTile), timer);
+            healPotion[10] = new HealPotion(new Vector2(1632 + middleOfTile, 1120 + middleOfTile), timer);
+            healPotion[11] = new HealPotion(new Vector2(1312 + middleOfTile, 1312 + middleOfTile), timer);
+            healPotion[12] = new HealPotion(new Vector2(1696 + middleOfTile, 672 + middleOfTile), timer);
+            healPotion[13] = new HealPotion(new Vector2(3136 + middleOfTile, 608 + middleOfTile), timer);
         }
-
     }
-
 }

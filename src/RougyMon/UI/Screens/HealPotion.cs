@@ -13,10 +13,12 @@ namespace RougyMon
         Transform transform;
         Renderer renderer;
         BoxCollider collider;
+        NewTimer timer;
 
-        public HealPotion(Vector2 position)
+        public HealPotion(Vector2 position, NewTimer timer)
         {
             Tag = "HealPotion";
+            this.timer = timer;
 
             transform = AddComponent<Transform>();
             transform.Position = position;
@@ -35,7 +37,10 @@ namespace RougyMon
         private void OnCollisionEnter(BoxCollider other)
         {
             if (other.GameObject.Tag == "Player")
+            {
+                timer.Time = timer.Time.Add(new TimeSpan(0, 0, 20));
                 Destroy();
+            }
         }
 
         private void OnUpdate(GameTime gameTime)
