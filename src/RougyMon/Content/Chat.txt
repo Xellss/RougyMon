@@ -1,13 +1,11 @@
 To Do:
 Julian - take HealPotion = Timer +
 
-Daniel - House tiles
-Daniel - Enemy and Object Spawnpoints
 Daniel - Doors
 Daniel - Cheats
 Daniel - Text Box (Intro)
 Daniel - Sounds
-
+Daniel - Enemy Spawnpoint
 
 Done:
 Rectangle Player
@@ -18,6 +16,8 @@ King Drop
 Julian - Hit Enemy = Timer - 
 Julian - Shoot
 Julian - Sprite Animation
+Daniel - House tiles
+Daniel - Object Spawnpoints
 
 
 Chat:

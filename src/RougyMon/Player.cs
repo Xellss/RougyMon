@@ -49,13 +49,7 @@ namespace RougyMon
                 Path.Combine(Managers.Content.RootDirectory, "Sprites", "Sprite_Sheet", "RougyMon.xml"));
             Animation.FrameDelay = 100;
 
-            //Soldier soldier = new Soldier();
-            //soldier.Animation = new SpriteAnimation(
-            //    "Soldier",
-            //    Content.Load<Texture2D>("Soldier"),
-            //    Content.RootDirectory + "/Soldier.xml"
-            //    );
-            //soldier.Animation.FrameDelay = 100;
+            
 
             EventManager.OnUpdate += OnUpdate;
             EventManager.OnLateUpdate += OnLateUpdate;
@@ -84,7 +78,7 @@ namespace RougyMon
             moveWithInput.NextFiledIsPassable = CanMoveTo(newRectangle);
 
             CheckCurrentTile();
-            Console.WriteLine(transform.Position);
+            //Console.WriteLine(transform.Position);
         }
 
         public bool CanMoveTo(RectangleF recCollider)
