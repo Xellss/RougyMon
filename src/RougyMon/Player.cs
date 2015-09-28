@@ -34,7 +34,7 @@ namespace RougyMon
 
             renderer = AddComponent<ViewRenderer>();
             renderer.SetImage(Managers.Content.Load<Texture2D>("Sprites/Sprite_Sheet/RougyMon"), 32, 32);
-            renderer.Pivot = new Vector2(16, 32);
+            renderer.Pivot = new Vector2(renderer.ImageWidth / 2, renderer.ImageHeight / 2f);
 
             moveWithInput = AddComponent<MoveWithInput>();
             moveWithInput.Speed = 5;
