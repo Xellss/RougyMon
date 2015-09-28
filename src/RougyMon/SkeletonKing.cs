@@ -7,19 +7,20 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using GameStateManagement;
 using RougyMon.UI.Screens;
+using System.IO;
 
 namespace RougyMon
 {
     class SkeletonKing : GameObject
     {
         Transform transform;
-        Renderer renderer;
+        ViewRenderer renderer;
         BoxCollider collider;
         Map map;
         Patrol patrol;
         public int moveSpeed;
         NewTimer timer;
-
+        public SpriteAnimation Animation;
 
         public SkeletonKing(Vector2 position, Map map, Vector2 patrolTarget, NewTimer timer)
         {
@@ -31,9 +32,15 @@ namespace RougyMon
             transform = AddComponent<Transform>();
             transform.Position = position;
 
+<<<<<<< HEAD
             renderer = AddComponent<Renderer>();
             renderer.SetImage(Managers.Content.Load<Texture2D>("Sprites/SkeletonKing/SkeletonKing_Front_0"));
             //renderer.Pivot = new Vector2(renderer.ImageWidth / 2, renderer.ImageHeight / 1f);
+=======
+            renderer = AddComponent<ViewRenderer>();
+            renderer.SetImage(Managers.Content.Load<Texture2D>("Sprites/Sprite_Sheet/RougyMon"), 32, 32);
+            renderer.Pivot = new Vector2(renderer.ImageWidth / 2, renderer.ImageHeight / 1f);
+>>>>>>> 48279a0d0417d94bf78eba7acd00cbc7eb081356
 
             patrol = AddComponent<Patrol>();
             patrol.PatrolToTarget(patrolTarget);
@@ -43,7 +50,13 @@ namespace RougyMon
             collider = AddComponent<BoxCollider>();
             collider.OnCollisionEnter += OnCollisionEnter;
 
+            Animation = new SpriteAnimation(
+    string.Empty,
+     Managers.Content.Load<Texture2D>("Sprites/Sprite_Sheet/RougyMon"),
+    Path.Combine(Managers.Content.RootDirectory, "Sprites", "Sprite_Sheet", "RougyMon.xml"));
+            Animation.FrameDelay = 100;
 
+            EventManager.OnLateUpdate += OnLateUpdate;
             EventManager.OnUpdate += OnUpdate;
         }
 
@@ -57,7 +70,7 @@ namespace RougyMon
                     ScreenManager.WinScreen = true;
                 }
                 timer.Time = timer.Time.Subtract(new TimeSpan(0, 0, 30));
-                renderer.SetImage(Managers.Content.Load<Texture2D>("Sprites/Objects/Jewel"));
+                renderer.SetImage(Managers.Content.Load<Texture2D>("Sprites/Objects/Jewel"), 22, 32);
                 transform.Position = new Vector2(transform.Position.X + 20, transform.Position.Y - 20);
                 patrol.CanPatrol = false;
                 Tag = "Jewel";
@@ -74,7 +87,14 @@ namespace RougyMon
 
             CheckCurrentTile();
         }
+        void OnLateUpdate(GameTime gameTime)
+        {
+            //Animation.PlayAnimation(string.Format("OrkGraveyard_{0}", moveWithInput.Direction));
+            Animation.PlayAnimation(string.Format("SkeletonKing_{0}", patrol.Direction));
 
+            Animation.UpdateAnimation(gameTime);
+            renderer.Source = Animation.CurrentFrame.Bounds;
+        }
         public bool CanMoveTo(RectangleF recCollider)
         {
 
@@ -109,6 +129,7 @@ namespace RougyMon
         }
         public override void Destroy()
         {
+            EventManager.OnLateUpdate -= OnLateUpdate;
             EventManager.OnUpdate -= OnUpdate;
             base.Destroy();
         }

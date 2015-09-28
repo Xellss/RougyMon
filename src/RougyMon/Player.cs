@@ -16,7 +16,7 @@ namespace RougyMon
         BoxCollider collider;
         Map map;
         public SpriteAnimation Animation;
-
+        //public Rectangle Source;
 
         public bool HasKey1 = false;
         public bool HasKey2 = false;
@@ -122,6 +122,7 @@ namespace RougyMon
 
         public override void Destroy()
         {
+            EventManager.OnLateUpdate -= OnLateUpdate;
             EventManager.OnUpdate -= OnUpdate;
             base.Destroy();
         }

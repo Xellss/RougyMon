@@ -88,16 +88,16 @@ namespace GameStateManagementSample
                 spriteBatch.Begin();
                 SpriteFont font = ScreenManager.Font;
 
-                const string message = "Loading...";
+                //const string message = "Loading...";
 
                 Viewport viewport = Managers.Graphics.GraphicsDevice.Viewport;
                 Vector2 viewportSize = new Vector2(viewport.Width, viewport.Height);
-                Vector2 textSize = font.MeasureString(message);
-                Vector2 textPosition = (viewportSize - textSize) / 2;
+                //Vector2 textSize = font.MeasureString(message);
+                //Vector2 textPosition = (viewportSize - textSize) / 2;
 
                 Color color = Color.White * TransitionAlpha;
 
-                spriteBatch.DrawString(font, message, textPosition, color);
+                //spriteBatch.DrawString(font, message, textPosition, color);
                 spriteBatch.End();
             }
         }
