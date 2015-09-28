@@ -72,9 +72,9 @@ namespace RougyMon
         }
         void OnLateUpdate(GameTime gameTime)
         {
-            Animation.PlayAnimation(string.Format("OrkGraveyard_{0}", moveWithInput.Direction));
-            Animation.UpdateAnimation(gameTime);
-            renderer.Source = Animation.CurrentFrame.Bounds;
+            //Animation.PlayAnimation(string.Format("OrkGraveyard_{0}", moveWithInput.Direction));
+            //Animation.UpdateAnimation(gameTime);
+            //renderer.Source = Animation.CurrentFrame.Bounds;
         }
 
         public bool CanMoveTo(RectangleF recCollider)
