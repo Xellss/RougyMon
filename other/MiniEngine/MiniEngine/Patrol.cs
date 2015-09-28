@@ -24,6 +24,20 @@ namespace MiniEngine
         private Vector2 oldDirection = Vector2.Zero;
         private Vector2 startPosition = Vector2.Zero;
 
+        public string Direction = Down;
+        public string State = Idle;
+
+        // Directions
+        private const string Down = "Front";
+        private const string Up = "Back";
+        private const string Left = "Left";
+        private const string Right = "Right";
+        // States
+        private const string Idle = "Idle";
+        private const string Walk = "Walk";
+
+        Vector2 oldPosition = Vector2.Zero;
+
         void Start()
         {
             transform = GameObject.GetComponent<Transform>();
@@ -88,6 +102,7 @@ namespace MiniEngine
 
         public void Move()
         {
+            oldPosition = transform.Position;
             //if (CanPatrol)
             //{
             //    PatrolToTarget(target);
@@ -126,6 +141,15 @@ namespace MiniEngine
 
                 patrolEnd = true;
 
+
+            if (transform.Position.X < oldPosition.X && transform.Position.Y == oldPosition.Y)
+                Direction = Left;
+            if (transform.Position.X > oldPosition.X && transform.Position.Y == oldPosition.Y)
+                Direction = Right;
+            if (transform.Position.X == oldPosition.X && transform.Position.Y < oldPosition.Y)
+                Direction = Up;
+            if (transform.Position.X == oldPosition.X && transform.Position.Y > oldPosition.Y)
+                Direction = Down;
         }
         private void takeNextPosition(Vector2 moveDirection)
         {

@@ -92,25 +92,25 @@ namespace MiniEngine
                     Direction = Right;
                     State = Walk;
                 }
-                if (key.IsKeyDown(Keys.A))
+                else if (key.IsKeyDown(Keys.A))
                 {
                     moveDirection.X--;
                     Direction = Left;
                     State = Walk;
                 }
-                if (key.IsKeyDown(Keys.S))
+                else if (key.IsKeyDown(Keys.S))
                 {
                     moveDirection.Y++;
                     Direction = Down;
                     State = Walk;
                 }
-                if (key.IsKeyDown(Keys.W))
+                else if (key.IsKeyDown(Keys.W))
                 {
                     moveDirection.Y--;
                     Direction = Up;
                     State = Walk;
                 }
-                else
+                 else
                     State = Idle;
 
                 takeNextPosition(moveDirection);
