@@ -12,8 +12,8 @@ namespace MiniEngine
         public Texture2D Image;
         public Rectangle Source;
         public Color ImageColor = Color.White;
-        public int ImageWidth = 1;
-        public int ImageHeight = 1;
+        public int ImageWidth = 10;
+        public int ImageHeight = 10;
         public int PositionZ = 0;
         public Vector2 Pivot = Vector2.Zero;
         public SpriteEffects Orientation = SpriteEffects.None;

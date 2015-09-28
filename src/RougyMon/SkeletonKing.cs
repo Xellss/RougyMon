@@ -32,9 +32,11 @@ namespace RougyMon
             transform = AddComponent<Transform>();
             transform.Position = position;
 
+
             renderer = AddComponent<ViewRenderer>();
             renderer.SetImage(Managers.Content.Load<Texture2D>("Sprites/Sprite_Sheet/RougyMon"), 32, 32);
             renderer.Pivot = new Vector2(renderer.ImageWidth / 2, renderer.ImageHeight / 1f);
+
 
             patrol = AddComponent<Patrol>();
             patrol.PatrolToTarget(patrolTarget);
@@ -74,7 +76,9 @@ namespace RougyMon
         }
         void OnUpdate(GameTime gameTime)
         {
-            RectangleF newRectangle = new RectangleF(patrol.NextPosition.X / map.TileWidth - 0.25f, patrol.NextPosition.Y / map.TileHeight - 0.25f, 0.5f, 0.25f);
+            renderer.Pivot = new Vector2(32, 32);
+
+            RectangleF newRectangle = new RectangleF(patrol.NextPosition.X / map.TileWidth , patrol.NextPosition.Y / map.TileHeight - 1f, 1f, 1f);
             patrol.NextFiledIsPassable = CanMoveTo(newRectangle);
 
             CheckCurrentTile();

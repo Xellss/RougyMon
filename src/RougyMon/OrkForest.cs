@@ -62,7 +62,9 @@ namespace RougyMon
         }
         void OnUpdate(GameTime gameTime)
         {
-            RectangleF newRectangle = new RectangleF(patrol.NextPosition.X / map.TileWidth - 0.25f, patrol.NextPosition.Y / map.TileHeight - 0.25f, 0.5f, 0.25f);
+            renderer.Pivot = new Vector2(32, 32);
+
+            RectangleF newRectangle = new RectangleF(patrol.NextPosition.X / map.TileWidth - 0.75f, patrol.NextPosition.Y / map.TileHeight - 0.25f, 0.5f, 0.25f);
             patrol.NextFiledIsPassable = CanMoveTo(newRectangle);
             CheckCurrentTile();
         }
