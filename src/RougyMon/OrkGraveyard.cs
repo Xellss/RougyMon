@@ -12,7 +12,6 @@ namespace RougyMon
     class OrkGraveyard : GameObject
     {
         Transform transform;
-        //Renderer renderer;
         ViewRenderer renderer;
         BoxCollider collider;
         Map map;
@@ -20,8 +19,7 @@ namespace RougyMon
         public int moveSpeed;
         NewTimer timer;
         public SpriteAnimation Animation;
-        public MoveWithInput moveWithInput;
-        //public Rectangle Source;
+        //public MoveWithInput moveWithInput;
 
         public OrkGraveyard(Vector2 position, Map map, Vector2 patrolTarget, NewTimer timer)
         {
@@ -73,8 +71,10 @@ namespace RougyMon
         void OnLateUpdate(GameTime gameTime)
         {
             //Animation.PlayAnimation(string.Format("OrkGraveyard_{0}", moveWithInput.Direction));
-            //Animation.UpdateAnimation(gameTime);
-            //renderer.Source = Animation.CurrentFrame.Bounds;
+            Animation.PlayAnimation(string.Format("OrkGraveyard_{0}", patrol.Direction));
+
+            Animation.UpdateAnimation(gameTime);
+            renderer.Source = Animation.CurrentFrame.Bounds;
         }
 
         public bool CanMoveTo(RectangleF recCollider)
