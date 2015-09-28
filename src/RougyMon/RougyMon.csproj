@@ -71,6 +71,8 @@
     <Compile Include="UI\Screens\BackgroundScreen.cs" />
     <Compile Include="UI\Screens\Button.cs" />
     <Compile Include="UI\Screens\GameplayScreen.cs" />
+    <Compile Include="UI\Screens\Gold.cs" />
+    <Compile Include="UI\Screens\HealPotion.cs" />
     <Compile Include="UI\Screens\HighscoreMenuScreen.cs" />
     <Compile Include="UI\Screens\LoadingScreen.cs" />
     <Compile Include="UI\Screens\MainMenuScreen.cs" />
