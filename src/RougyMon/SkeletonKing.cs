@@ -32,15 +32,11 @@ namespace RougyMon
             transform = AddComponent<Transform>();
             transform.Position = position;
 
-<<<<<<< HEAD
-            renderer = AddComponent<Renderer>();
-            renderer.SetImage(Managers.Content.Load<Texture2D>("Sprites/SkeletonKing/SkeletonKing_Front_0"));
-            //renderer.Pivot = new Vector2(renderer.ImageWidth / 2, renderer.ImageHeight / 1f);
-=======
+
             renderer = AddComponent<ViewRenderer>();
             renderer.SetImage(Managers.Content.Load<Texture2D>("Sprites/Sprite_Sheet/RougyMon"), 32, 32);
             renderer.Pivot = new Vector2(renderer.ImageWidth / 2, renderer.ImageHeight / 1f);
->>>>>>> 48279a0d0417d94bf78eba7acd00cbc7eb081356
+
 
             patrol = AddComponent<Patrol>();
             patrol.PatrolToTarget(patrolTarget);
