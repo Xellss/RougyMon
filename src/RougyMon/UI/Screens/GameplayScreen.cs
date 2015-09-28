@@ -32,7 +32,9 @@ namespace GameStateManagementSample
         private Camera camera;
         private Player player;
         private Map map;
-        NewTimer timer;
+
+        public NewTimer timer;
+
         bool debug;
         InputAction debugAction;
         private Key key_1;
@@ -63,6 +65,7 @@ namespace GameStateManagementSample
 
             timer = new NewTimer();
             timer.Time = new TimeSpan(0, 10, 0);
+        
 
         }
 
@@ -87,15 +90,13 @@ namespace GameStateManagementSample
 #endif
 
             map = new Map(content.Load<Texture2D>("Map/Tiles"));
-            //map.LoadMapFromTextfile(content.RootDirectory + "/Map/Map.txt", 42, 24);
-            //map.LoadMapFromImage(content.Load<Texture2D>("Map/UnitedMapBMP"));
             map.LoadMapFromImage(content.Load<Texture2D>("Map/MainMap"));
 
-            orkGraveyard = new OrkGraveyard(new Vector2(4460, 2280), map, new Vector2(5015, 2280));
-            orkForest = new OrkForest(new Vector2(4460, 2380), map, new Vector2(5015, 2380));
-            spider = new Spider(new Vector2(4460, 2480), map, new Vector2(5015, 2480));
-            skeleton = new Skeleton(new Vector2(4460, 2680), map, new Vector2(5015, 2680));
-            skeletonKing = new SkeletonKing(new Vector2(4460, 2880), map, new Vector2(5015, 2880));
+            orkGraveyard = new OrkGraveyard(new Vector2(4460, 2280), map, new Vector2(5015, 2280), timer);
+            orkForest = new OrkForest(new Vector2(4460, 2380), map, new Vector2(5015, 2380), timer);
+            spider = new Spider(new Vector2(4460, 2480), map, new Vector2(5015, 2480), timer);
+            skeleton = new Skeleton(new Vector2(4460, 2680), map, new Vector2(5015, 2680), timer);
+            skeletonKing = new SkeletonKing(new Vector2(4460, 2880), map, new Vector2(5015, 2880), timer);
             skeletonKing.moveSpeed = 3;
 
             key_1 = new Key(new Vector2(2258, 4175));
@@ -103,7 +104,20 @@ namespace GameStateManagementSample
 
 
             player = new Player(new Vector2(4400, 2230), map);
-            //new UITimer(timer);
+
+      
+
+            //Soldier soldier = new Soldier();
+            //soldier.Animation = new SpriteAnimation(
+            //    "Soldier",
+            //    Content.Load<Texture2D>("Soldier"),
+            //    Content.RootDirectory + "/Soldier.xml"
+            //    );
+            //soldier.Animation.FrameDelay = 100;
+
+
+
+
             camera = new Camera(Managers.Graphics.GraphicsDevice.Viewport);
             timer.Start();
         }

@@ -42,6 +42,8 @@ namespace RougyMon
 
             if (currentFrames.Count == 0)
                 throw new Exception(string.Format("No animationFrames found for {0}", name));
+
+            CurrentFrame = currentFrames[0];
         }
 
         private void UpdateAnimationFrame(GameTime gameTime)

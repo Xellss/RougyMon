@@ -7,7 +7,7 @@ namespace RougyMon
 {
     class UITimer : GameObject
     {
-        private NewTimer timer;
+        public NewTimer timer;
         private UILabel uiTimer;
 
         public UITimer(NewTimer timer)

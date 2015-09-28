@@ -21,7 +21,11 @@ namespace RougyMon
 
                 if (Keyboard.GetState().IsKeyDown(Keys.I))
                 {
-                    Time -= Time.Subtract(gameTime.ElapsedGameTime);
+                    Time = Time.Subtract(new TimeSpan(0, 0, 20));                    
+                }
+                if (Keyboard.GetState().IsKeyDown(Keys.K))
+                {
+                    Time = Time.Add(new TimeSpan(0, 0, 20));
                 }
             }
         }

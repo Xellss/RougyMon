@@ -16,13 +16,12 @@ namespace RougyMon
         Map map;
         Patrol patrol;
         public int moveSpeed;
-        //NewTimer timer;
+        NewTimer timer;
 
-
-        public OrkGraveyard(Vector2 position, Map map, Vector2 patrolTarget)
+        public OrkGraveyard(Vector2 position, Map map, Vector2 patrolTarget, NewTimer timer)
         {
             this.map = map;
-
+            this.timer = timer;
             Tag = "OrkGraveyard";
 
             transform = AddComponent<Transform>();
@@ -36,10 +35,8 @@ namespace RougyMon
             patrol.PatrolToTarget(patrolTarget);
             moveSpeed = 3;
 
-
             collider = AddComponent<BoxCollider>();
             collider.OnCollisionEnter += OnCollisionEnter;
-
 
             EventManager.OnUpdate += OnUpdate;
         }
@@ -48,7 +45,7 @@ namespace RougyMon
         {
             if (other.GameObject.Tag == "Player")
             {
-                //timer.Time.TotalSeconds -= 10f;
+                timer.Time = timer.Time.Subtract(new TimeSpan(0, 0, 20));
                 Destroy();
             }
         }

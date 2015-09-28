@@ -18,12 +18,13 @@ namespace RougyMon
         Map map;
         Patrol patrol;
         public int moveSpeed;
-        //NewTimer timer;
+        NewTimer timer;
 
 
-        public SkeletonKing(Vector2 position, Map map, Vector2 patrolTarget)
+        public SkeletonKing(Vector2 position, Map map, Vector2 patrolTarget, NewTimer timer)
         {
             this.map = map;
+            this.timer = timer;
 
             Tag = "OrkForest";
 
@@ -55,6 +56,7 @@ namespace RougyMon
                     Destroy();
                     ScreenManager.WinScreen = true;
                 }
+                timer.Time = timer.Time.Subtract(new TimeSpan(0, 0, 30));
                 renderer.SetImage(Managers.Content.Load<Texture2D>("Sprites/Objects/Jewel"));
                 transform.Position = new Vector2(transform.Position.X + 20, transform.Position.Y - 20);
                 patrol.CanPatrol = false;

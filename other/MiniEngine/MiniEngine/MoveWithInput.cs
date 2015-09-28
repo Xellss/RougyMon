@@ -26,8 +26,8 @@ namespace MiniEngine
         public string State = Idle;
 
         // Directions
-        private const string Down = "Down";
-        private const string Up = "Up";
+        private const string Down = "Front";
+        private const string Up = "Back";
         private const string Left = "Left";
         private const string Right = "Right";
         // States

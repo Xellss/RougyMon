@@ -34,7 +34,7 @@ namespace RougyMon
         public Color House8 = new Color(0, 0, 8);
         public Color House9 = new Color(0, 0, 9);
         public Color House10 = new Color(0, 0, 10);
-        public Color House11= new Color(0, 0, 11);
+        public Color House11 = new Color(0, 0, 11);
         public Color House12 = new Color(0, 0, 12);
 
         //public Color Graveyard = new Color(0, 0, 255);

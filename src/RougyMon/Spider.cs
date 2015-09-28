@@ -16,12 +16,13 @@ namespace RougyMon
         Map map;
         Patrol patrol;
         public int moveSpeed;
-        //NewTimer timer;
+        NewTimer timer;
 
 
-        public Spider(Vector2 position, Map map, Vector2 patrolTarget)
+        public Spider(Vector2 position, Map map, Vector2 patrolTarget, NewTimer timer)
         {
             this.map = map;
+            this.timer = timer;
 
             Tag = "Spider";
 
@@ -48,7 +49,7 @@ namespace RougyMon
         {
             if (other.GameObject.Tag == "Player")
             {
-                //timer.Time.TotalSeconds -= 10f;
+                timer.Time = timer.Time.Subtract(new TimeSpan(0, 0, 20));
                 Destroy();
             }
         }

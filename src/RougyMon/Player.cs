@@ -4,16 +4,19 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 using MiniEngine;
 using GameStateManagementSample;
+using System.IO;
 
 namespace RougyMon
 {
     class Player : GameObject
     {
         public Transform transform;
-        Renderer renderer;
+        ViewRenderer renderer;
         public MoveWithInput moveWithInput;
         BoxCollider collider;
         Map map;
+        public SpriteAnimation Animation;
+
 
         public bool HasKey1 = false;
         public bool HasKey2 = false;
@@ -29,9 +32,9 @@ namespace RougyMon
             transform = AddComponent<Transform>();
             transform.Position = position;
 
-            renderer = AddComponent<Renderer>();
-            renderer.SetImage(Managers.Content.Load<Texture2D>("Sprites/Brunhilde/Brunhilde_Front_0"));
-            renderer.Pivot = new Vector2(renderer.ImageWidth / 2, renderer.ImageHeight / 1f);
+            renderer = AddComponent<ViewRenderer>();
+            renderer.SetImage(Managers.Content.Load<Texture2D>("Sprites/Sprite_Sheet/RougyMon"), 32, 32);
+            renderer.Pivot = new Vector2(16, 32);
 
             moveWithInput = AddComponent<MoveWithInput>();
             moveWithInput.Speed = 5;
@@ -40,8 +43,29 @@ namespace RougyMon
             collider = AddComponent<BoxCollider>();
             collider.OnCollisionEnter += OnCollisionEnter;
 
+            Animation = new SpriteAnimation(
+                string.Empty,
+                Managers.Content.Load<Texture2D>("Sprites/Sprite_Sheet/RougyMon"),
+                Path.Combine(Managers.Content.RootDirectory, "Sprites", "Sprite_Sheet", "RougyMon.xml"));
+            Animation.FrameDelay = 100;
+
+            //Soldier soldier = new Soldier();
+            //soldier.Animation = new SpriteAnimation(
+            //    "Soldier",
+            //    Content.Load<Texture2D>("Soldier"),
+            //    Content.RootDirectory + "/Soldier.xml"
+            //    );
+            //soldier.Animation.FrameDelay = 100;
 
             EventManager.OnUpdate += OnUpdate;
+            EventManager.OnLateUpdate += OnLateUpdate;
+        }
+
+        void OnLateUpdate(GameTime gameTime)
+        {
+            Animation.PlayAnimation(string.Format("Brunhilde_{0}", moveWithInput.Direction));
+            Animation.UpdateAnimation(gameTime);
+            renderer.Source = Animation.CurrentFrame.Bounds;
         }
 
         void OnCollisionEnter(BoxCollider other)

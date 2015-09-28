@@ -45,6 +45,7 @@
     <Compile Include="Key_2.cs" />
     <Compile Include="OrkForest.cs" />
     <Compile Include="OrkGraveyard.cs" />
+    <Compile Include="SimpleAnimation.cs" />
     <Compile Include="Skeleton.cs" />
     <Compile Include="SkeletonKing.cs" />
     <Compile Include="Spider.cs" />
@@ -495,7 +496,7 @@
     <Content Include="Content\Sprites\Sprite_Sheet\RougyMon.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sprites\Sprite_Sheet\RougyMon_Sheet.png">
+    <Content Include="Content\Sprites\Sprite_Sheet\RougyMon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icon.ico">
