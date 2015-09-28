@@ -23,7 +23,7 @@ namespace RougyMon
         public void OnUpdate(Vector2 position, int xOffset, int yOffset)
         {
 
-            matrix = Matrix.CreateTranslation(new Vector3(-position, 0)) * Matrix.CreateScale(2.5f) * Matrix.CreateTranslation(new Vector3(viewport.Bounds.Size.ToVector2() / 2, 0));
+            matrix = Matrix.CreateTranslation(new Vector3(-position, 0)) * Matrix.CreateScale(1.5f) * Matrix.CreateTranslation(new Vector3(viewport.Bounds.Size.ToVector2() / 2, 0));
 
         }
     }
