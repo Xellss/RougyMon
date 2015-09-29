@@ -2,7 +2,6 @@ To Do:
 
 
 Daniel - Doors
-Daniel - Cheats
 Daniel - Text Box (Intro)
 Daniel - Sounds
 Daniel - Enemy Spawnpoint
@@ -19,6 +18,7 @@ Julian - Sprite Animation
 Daniel - House tiles
 Daniel - Object Spawnpoints
 Julian - take HealPotion = Timer +
+Julian - Cheats
 
 CHEATS: 
 

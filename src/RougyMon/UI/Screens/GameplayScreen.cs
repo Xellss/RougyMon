@@ -39,12 +39,12 @@ namespace GameStateManagementSample
         Key_2 key_2;
         HealPotion[] healPotion = new HealPotion[14];
         Gold[] gold = new Gold[56];
-        OrkGraveyard orkGraveyard;//= new OrkGraveyard[1];
-        OrkForest orkForest;//= new OrkForest[1];
-        Spider spider;// = new Spider[1];
-        Skeleton skeleton;//= new Skeleton[1];
+        OrkGraveyard[] orkGraveyard = new OrkGraveyard[10];
+        OrkForest[] orkForest = new OrkForest[10];
+        Spider[] spider = new Spider[10];
+        Skeleton[] skeleton = new Skeleton[10];
         SkeletonKing skeletonKing;
-        
+
         #endregion
 
         #region Initialization
@@ -62,7 +62,7 @@ namespace GameStateManagementSample
 
             timer = new NewTimer();
             timer.Time = new TimeSpan(0, 10, 0);
-            
+
         }
 
         public override void Activate(bool instancePreserved)
@@ -94,12 +94,11 @@ namespace GameStateManagementSample
             goldSpawn();
             healPotionSpawn();
 
+            orkForestSpawn();
 
-            orkGraveyard = new OrkGraveyard(new Vector2(3168, 700), map, new Vector2(3680, 700), timer);
-            orkForest = new OrkForest(new Vector2(3168, 800), map, new Vector2(3712, 800), timer);
-            spider = new Spider(new Vector2(3168, 900), map, new Vector2(3712, 900), timer);
-            skeleton = new Skeleton(new Vector2(3168, 1000), map, new Vector2(3712, 1000), timer);
+
             skeletonKing = new SkeletonKing(new Vector2(3168, 1200), map, new Vector2(3712, 1200), timer);
+
             skeletonKing.moveSpeed = 3;
 
             key_1 = new Key(new Vector2(992, 2560));
@@ -111,6 +110,8 @@ namespace GameStateManagementSample
             camera = new Camera(Managers.Graphics.GraphicsDevice.Viewport);
             timer.Start();
         }
+
+
 
         public override void Deactivate()
         {
@@ -161,7 +162,7 @@ namespace GameStateManagementSample
                 {
                     ScreenManager.AddScreen(new PlayerWonScreen(timer.Time), null);
                 }
-   
+
                 else if (timer.Time <= TimeSpan.Zero)
                 {
                     ScreenManager.AddScreen(new GameOverScreen(), null);
@@ -271,38 +272,35 @@ namespace GameStateManagementSample
 
                 }
             }
-            //for (int i = 0; i <= orkGraveyard.GetLength(0); i++)
-            //{
-            //    if (orkGraveyard[i] != null)
-            //    {
-            //        orkGraveyard[i].Destroy();
+            for (int i = 0; i < orkGraveyard.GetLength(0); i++)
+            {
+                if (orkGraveyard[i] != null)
+                {
+                    orkGraveyard[i].Destroy();
 
-            //    }
-            //}
-            //for (int i = 0; i <= spider.GetLength(0); i++)
-            //{
-            //    if (spider[i] != null)
-            //    {
-            //        spider[i].Destroy();
+                }
+            }
+            for (int i = 0; i < spider.GetLength(0); i++)
+            {
+                if (spider[i] != null)
+                {
+                    spider[i].Destroy();
 
-            //    }
+                }
 
-            //}
-            //for (int i = 0; i <= skeleton.GetLength(0); i++)
-            //{
-            //    if (skeleton[i] != null)
-            //    {
-            //        skeleton[i].Destroy();
+            }
+            for (int i = 0; i < skeleton.GetLength(0); i++)
+            {
+                if (skeleton[i] != null)
+                {
+                    skeleton[i].Destroy();
 
-            //    }
-            //}
+                }
+            }
 
             //DestoyPresi();
 
-            spider.Destroy();
-            skeleton.Destroy();
-            orkGraveyard.Destroy();
-            orkForest.Destroy();
+
             skeletonKing.Destroy();
             key_1.Destroy();
             key_2.Destroy();
@@ -386,6 +384,15 @@ namespace GameStateManagementSample
             healPotion[11] = new HealPotion(new Vector2(1312 + middleOfTile, 1312 + middleOfTile), timer);
             healPotion[12] = new HealPotion(new Vector2(1696 + middleOfTile, 672 + middleOfTile), timer);
             healPotion[13] = new HealPotion(new Vector2(3136 + middleOfTile, 608 + middleOfTile), timer);
+        }
+
+        private void orkForestSpawn()
+        {
+            int middleOfTile = 16;
+
+
+            orkForest[0] = new OrkForest(new Vector2((49 * 32) + middleOfTile, (65 * 32) + middleOfTile), map, new Vector2((49 * 32) + middleOfTile, (68 * 32) + middleOfTile), timer);
+
         }
     }
 }
