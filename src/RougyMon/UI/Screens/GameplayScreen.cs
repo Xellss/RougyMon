@@ -44,6 +44,8 @@ namespace GameStateManagementSample
         Spider[] spider = new Spider[20];
         Skeleton[] skeleton = new Skeleton[20];
         SkeletonKing skeletonKing;
+        DoorForest doorForest;
+        GateGraveyard gateGraveyard;
 
         #endregion
 
@@ -103,9 +105,10 @@ namespace GameStateManagementSample
 
             key_1 = new Key(new Vector2(992, 2560));
             key_2 = new Key_2(new Vector2(1136, 2096));
-
-
+            
             player = new Player(new Vector2(2976, 2240), map);
+            doorForest = new DoorForest(new Vector2(35 * 32 + 16, 67 * 32 + 16), player);
+            gateGraveyard = new GateGraveyard(new Vector2(81 * 32 + 16, 56 * 32 + 16), player);
             camera = new Camera(Managers.Graphics.GraphicsDevice.Viewport);
             timer.Start();
         }
@@ -289,6 +292,8 @@ namespace GameStateManagementSample
             }
 
             skeletonKing.Destroy();
+            doorForest.Destroy();
+            gateGraveyard.Destroy();
             key_1.Destroy();
             key_2.Destroy();
         }

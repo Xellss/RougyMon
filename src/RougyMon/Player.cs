@@ -23,6 +23,7 @@ namespace RougyMon
         public bool HasJewel = false;
         public static int GoldCounter = 0;
 
+       
         public Player(Vector2 position, Map map)
         {
             this.map = map;
