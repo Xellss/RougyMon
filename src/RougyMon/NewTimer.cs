@@ -7,9 +7,9 @@ using Microsoft.Xna.Framework.Input;
 
 namespace RougyMon
 {
-   public class NewTimer 
+    public class NewTimer
     {
-       // hi :)
+        // hi :)
         public TimeSpan Time;
         bool isRunning = false;
         private bool chrisC = false;
@@ -22,43 +22,8 @@ namespace RougyMon
         {
             if (isRunning)
             {
-                if (Keyboard.GetState().IsKeyDown(Keys.C))
-                {
-                    chrisC = true;
-                }
-                if (Keyboard.GetState().IsKeyDown(Keys.H) && chrisC)
-                {
-                    chrisH = true;
-                }
-                if (Keyboard.GetState().IsKeyDown(Keys.H) && chrisC && chrisH)
-                {
-                    chrisR = true;
-                }
-                if (Keyboard.GetState().IsKeyDown(Keys.H) && chrisC && chrisH && chrisR)
-                {
-                    chrisI = true;
-                } if (Keyboard.GetState().IsKeyDown(Keys.H) && chrisC && chrisH && chrisI)
-                {
-                    chrisS = true;
-                }
-
-
-
+                haxx();
                 Time = Time.Subtract(gameTime.ElapsedGameTime);
-
-
-
-                if (Keyboard.GetState().IsKeyDown(Keys.D1) && chrisS)
-                {
-                    Time = Time.Subtract(new TimeSpan(0, 0, 20));                    
-                }
-                if (Keyboard.GetState().IsKeyDown(Keys.D2) && chrisS)
-                {
-                    Time = Time.Add(new TimeSpan(0, 0, 20));
-                }
-
-     
-
             }
         }
 
@@ -71,6 +36,36 @@ namespace RougyMon
         {
             isRunning = false;
         }
+        public void haxx()
+        {
 
+            if (Keyboard.GetState().IsKeyDown(Keys.C))
+            {
+                chrisC = true;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.H) && chrisC)
+            {
+                chrisH = true;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.H) && chrisC && chrisH)
+            {
+                chrisR = true;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.H) && chrisC && chrisH && chrisR)
+            {
+                chrisI = true;
+            } if (Keyboard.GetState().IsKeyDown(Keys.H) && chrisC && chrisH && chrisI)
+            {
+                chrisS = true;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.D1) && chrisS)
+            {
+                Time = Time.Subtract(new TimeSpan(0, 0, 20));
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.D2) && chrisS)
+            {
+                Time = Time.Add(new TimeSpan(0, 0, 20));
+            }
+        }
     }
 }

@@ -17,10 +17,11 @@ namespace RougyMon
         Map map;
         public SpriteAnimation Animation;
         //public Rectangle Source;
-        private int moveSpeed = 9;
+        private int moveSpeed = 3;
         public bool HasKey1 = false;
         public bool HasKey2 = false;
         public bool HasJewel = false;
+        public static int GoldCounter = 0;
 
         public Player(Vector2 position, Map map)
         {
@@ -70,6 +71,8 @@ namespace RougyMon
                 HasKey2 = true;
             if (other.GameObject.Tag == "Jewel")
                 HasJewel = true;
+            if (other.GameObject.Tag == "Gold")
+                GoldCounter++;
         }
         void OnUpdate(GameTime gameTime)
         {

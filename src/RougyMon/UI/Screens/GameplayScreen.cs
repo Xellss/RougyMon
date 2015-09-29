@@ -61,8 +61,8 @@ namespace GameStateManagementSample
 
 
             timer = new NewTimer();
-            timer.Time = new TimeSpan(0, 10, 0);
-
+            // Set Timer Time here
+            timer.Time = new TimeSpan(0, 5, 0);
         }
 
         public override void Activate(bool instancePreserved)
@@ -86,8 +86,6 @@ namespace GameStateManagementSample
 #endif
 
             map = new Map(content.Load<Texture2D>("Map/Tiles"));
-            //map.LoadMapFromTextfile(content.RootDirectory + "/Map/Map.txt", 42, 24);
-            //map.LoadMapFromImage(content.Load<Texture2D>("Map/UnitedMapBMP"));
             map.LoadMapFromImage(content.Load<Texture2D>("Map/MainMap"));
             //Objects
 
@@ -99,7 +97,7 @@ namespace GameStateManagementSample
             SkeletonSpawn();
             orkGraveyardSpawn();
 
-            skeletonKing = new SkeletonKing(new Vector2(3168, 1200), map, new Vector2(3712, 1200), timer);
+            skeletonKing = new SkeletonKing(new Vector2(104 * 32, 40 * 32), map, new Vector2(112 * 32, 40 * 32), timer);
 
             skeletonKing.moveSpeed = 3;
 
@@ -108,7 +106,6 @@ namespace GameStateManagementSample
 
 
             player = new Player(new Vector2(2976, 2240), map);
-            //new UITimer(timer);
             camera = new Camera(Managers.Graphics.GraphicsDevice.Viewport);
             timer.Start();
         }
@@ -169,7 +166,6 @@ namespace GameStateManagementSample
                 {
                     ScreenManager.AddScreen(new GameOverScreen(), null);
                 }
-
             }
         }
 
@@ -222,8 +218,6 @@ namespace GameStateManagementSample
                 destroyAllObjects();
                 timer.Stop();
             }
-
-
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -239,7 +233,6 @@ namespace GameStateManagementSample
 
                 ScreenManager.FadeBackBufferToBlack(alpha);
             }
-
             spriteBatch.End();
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, camera.matrix);
             map.RenderMap(spriteBatch);
@@ -251,7 +244,11 @@ namespace GameStateManagementSample
             spriteBatch.Begin();
             string text = string.Format("Time left: {0:mm\\:ss}", timer.Time);
             float size = Fonts.Arial.MeasureString(text).X;
-            spriteBatch.DrawString(Fonts.Arial, text, new Vector2(Managers.Graphics.GraphicsDevice.Viewport.Width - size, 10), Color.White); base.LateDraw(spriteBatch);
+            spriteBatch.DrawString(Fonts.Arial, text, new Vector2(Managers.Graphics.GraphicsDevice.Viewport.Width - size - 30, 10), Color.White); base.LateDraw(spriteBatch);
+
+            string goldText = string.Format("Gold Amount: {0}", Player.GoldCounter);
+            float goldSize = Fonts.Arial.MeasureString(goldText).X;
+            spriteBatch.DrawString(Fonts.Arial, goldText, new Vector2(Managers.Graphics.GraphicsDevice.Viewport.Width - size - 30, 50), Color.White); base.LateDraw(spriteBatch);
             spriteBatch.End();
         }
 
@@ -261,61 +258,38 @@ namespace GameStateManagementSample
             for (int i = 0; i < healPotion.GetLength(0); i++)
             {
                 if (healPotion[i] != null)
-                {
                     healPotion[i].Destroy();
-
-                }
             }
             for (int i = 0; i < gold.GetLength(0); i++)
             {
                 if (gold[i] != null)
-                {
                     gold[i].Destroy();
-
-                }
             }
             for (int i = 0; i < orkGraveyard.GetLength(0); i++)
             {
                 if (orkGraveyard[i] != null)
-                {
                     orkGraveyard[i].Destroy();
-
-                }
             }
             for (int i = 0; i < spider.GetLength(0); i++)
             {
                 if (spider[i] != null)
-                {
                     spider[i].Destroy();
-
-                }
-
             }
             for (int i = 0; i < skeleton.GetLength(0); i++)
             {
                 if (skeleton[i] != null)
-                {
                     skeleton[i].Destroy();
-
-                }
             }
 
             for (int i = 0; i < orkForest.GetLength(0); i++)
             {
                 if (orkForest[i] != null)
-                {
                     orkForest[i].Destroy();
-
-                }
             }
-
-            //DestoyPresi();
-
 
             skeletonKing.Destroy();
             key_1.Destroy();
             key_2.Destroy();
-            //player.Destroy();
         }
         private void goldSpawn()
         {
@@ -410,16 +384,14 @@ namespace GameStateManagementSample
             orkForest[5] = new OrkForest(new Vector2(43 * 32 + middleOfTile, 71 * 32 + middleOfTile), map, new Vector2(43 * 32 + middleOfTile, 79 * 32 + middleOfTile), timer);
             orkForest[6] = new OrkForest(new Vector2(799, 2711), map, new Vector2(575, 2491), timer);
 
-            orkForest[7] = new OrkForest(new Vector2(51 * 32 + middleOfTile, 71 * 32 + middleOfTile), map, new Vector2(51 * 32 + middleOfTile, 74 * 32 + middleOfTile), timer);
-            orkForest[8] = new OrkForest(new Vector2(51 * 32 + middleOfTile, 74 * 32 + middleOfTile), map, new Vector2(55 * 32 + middleOfTile, 74 * 32 + middleOfTile), timer);
-            orkForest[9] = new OrkForest(new Vector2(55 * 32 + middleOfTile, 74 * 32 + middleOfTile), map, new Vector2(55 * 32 + middleOfTile, 71 * 32 + middleOfTile), timer);
+            orkForest[7] = new OrkForest(new Vector2(51 * 32 + middleOfTile, 71 * 32 + middleOfTile), map, new Vector2(51 * 32 + middleOfTile, 75 * 32 + middleOfTile), timer);
+            orkForest[8] = new OrkForest(new Vector2(51 * 32 + middleOfTile, 75 * 32 + middleOfTile), map, new Vector2(55 * 32 + middleOfTile, 75 * 32 + middleOfTile), timer);
+            orkForest[9] = new OrkForest(new Vector2(55 * 32 + middleOfTile, 75 * 32 + middleOfTile), map, new Vector2(55 * 32 + middleOfTile, 71 * 32 + middleOfTile), timer);
             orkForest[10] = new OrkForest(new Vector2(55 * 32 + middleOfTile, 71 * 32 + middleOfTile), map, new Vector2(51 * 32 + middleOfTile, 71 * 32 + middleOfTile), timer);
 
             orkForest[11] = new OrkForest(new Vector2(110 * 32 + middleOfTile, 79 * 32 + middleOfTile), map, new Vector2(110 * 32 + middleOfTile, 76 * 32 + middleOfTile), timer);
             orkForest[12] = new OrkForest(new Vector2(112 * 32 + middleOfTile, 78 * 32 + middleOfTile), map, new Vector2(112 * 32 + middleOfTile, 81 * 32 + middleOfTile), timer);
             //orkForest[13] = new OrkForest(new Vector2(112 * 32 + middleOfTile, 78 * 32 + middleOfTile), map, new Vector2(123 * 32 + middleOfTile, 81 * 32 + middleOfTile), timer);
-
-
 
             orkForest[0].moveSpeed = 1;
             orkForest[7].moveSpeed = 1;
