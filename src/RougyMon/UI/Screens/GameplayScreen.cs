@@ -251,7 +251,15 @@ namespace GameStateManagementSample
 
             string goldText = string.Format("Gold Amount: {0}", Player.GoldCounter);
             float goldSize = Fonts.Arial.MeasureString(goldText).X;
-            spriteBatch.DrawString(Fonts.Arial, goldText, new Vector2(Managers.Graphics.GraphicsDevice.Viewport.Width - size - 30, 50), Color.White); base.LateDraw(spriteBatch);
+            spriteBatch.DrawString(Fonts.Arial, goldText, new Vector2(Managers.Graphics.GraphicsDevice.Viewport.Width - size - 30, 40), Color.White); base.LateDraw(spriteBatch);
+
+            string key1Text = string.Format("Key one: {0}", player.HasKey1);
+            float key1Size = Fonts.Arial.MeasureString(key1Text).X;
+            spriteBatch.DrawString(Fonts.Arial, key1Text, new Vector2(Managers.Graphics.GraphicsDevice.Viewport.Width - size - 30, 70), Color.White); base.LateDraw(spriteBatch);
+
+            string key2Text = string.Format("Key two: {0}", player.HasKey2);
+            float key2Size = Fonts.Arial.MeasureString(key2Text).X;
+            spriteBatch.DrawString(Fonts.Arial, key2Text, new Vector2(Managers.Graphics.GraphicsDevice.Viewport.Width - size - 30, 100), Color.White); base.LateDraw(spriteBatch);
             spriteBatch.End();
             
         }
