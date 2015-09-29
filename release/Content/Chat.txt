@@ -1,24 +1,25 @@
 To Do:
-Julian - UIKey
 
-Daniel - Doors
+
 Daniel - Text Box (Intro)
 Daniel - Sounds
 
 Done:
 Daniel - Rectangle Player
 Daniel - MoveSpeed (Moor, DarkMoor, Sand)
-Julian - Options (Fullscreen, Move with Arrows)
-Julian - Victory
+Daniel - Options (Fullscreen, Move with Arrows)
+Daniel - Victory
 Daniel - King Drop
 Julian - Hit Enemy = Timer - 
-Julian - Shoot
 Julian - Sprite Animation
 Daniel - House tiles
 Daniel - Object Spawnpoints
 Julian - take HealPotion = Timer +
 Julian - Cheats
 Daniel & Julian - Enemy Spawnpoint
+Daniel - Doors
+Daniel - UIKey
+Julian - Map
 
 CHEATS: 
 
