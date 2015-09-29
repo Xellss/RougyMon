@@ -39,8 +39,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Camera.cs" />
+    <Compile Include="DoorForest.cs" />
     <Compile Include="Fonts.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="GateGraveyard.cs" />
     <Compile Include="Jewel.cs" />
     <Compile Include="Key_2.cs" />
     <Compile Include="OrkForest.cs" />
@@ -220,6 +222,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Sprites\House\House_Tile_9.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Objects\DoorForest.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Objects\GateGraveyard.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Sprites\Objects\Gold.png">
