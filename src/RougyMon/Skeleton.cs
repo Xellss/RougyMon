@@ -41,15 +41,15 @@ namespace RougyMon
             collider.OnCollisionEnter += OnCollisionEnter;
 
             Animation = new SpriteAnimation(
-string.Empty,
-Managers.Content.Load<Texture2D>("Sprites/Sprite_Sheet/RougyMon"),
-Path.Combine(Managers.Content.RootDirectory, "Sprites", "Sprite_Sheet", "RougyMon.xml"));
+            string.Empty,
+            Managers.Content.Load<Texture2D>("Sprites/Sprite_Sheet/RougyMon"),
+            Path.Combine(Managers.Content.RootDirectory, "Sprites", "Sprite_Sheet", "RougyMon.xml"));
             Animation.FrameDelay = 100;
 
             EventManager.OnLateUpdate += OnLateUpdate;
             EventManager.OnUpdate += OnUpdate;
         }
-
+        
         void OnCollisionEnter(BoxCollider other)
         {
             if (other.GameObject.Tag == "Player")
@@ -70,9 +70,7 @@ Path.Combine(Managers.Content.RootDirectory, "Sprites", "Sprite_Sheet", "RougyMo
         }
         void OnLateUpdate(GameTime gameTime)
         {
-            //Animation.PlayAnimation(string.Format("OrkGraveyard_{0}", moveWithInput.Direction));
             Animation.PlayAnimation(string.Format("Skeleton_{0}", patrol.Direction));
-
             Animation.UpdateAnimation(gameTime);
             renderer.Source = Animation.CurrentFrame.Bounds;
         }

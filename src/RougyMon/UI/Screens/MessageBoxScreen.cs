@@ -15,6 +15,7 @@ using RougyMon;
 namespace GameStateManagementSample
 {
 
+
     class MessageBoxScreen : GameScreen
     {
         #region Fields
@@ -25,6 +26,8 @@ namespace GameStateManagementSample
         InputAction menuSelect;
         InputAction menuCancel;
 
+        
+        
         #endregion
 
         #region Events

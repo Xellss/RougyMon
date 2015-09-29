@@ -1,23 +1,33 @@
 To Do:
-Julian - take HealPotion = Timer +
+
 
 Daniel - Doors
-Daniel - Cheats
 Daniel - Text Box (Intro)
 Daniel - Sounds
 Daniel - Enemy Spawnpoint
 
 Done:
-Rectangle Player
-MoveSpeed (Moor, DarkMoor, Sand)
-Options (Fullscreen, Move with Arrows)
-Victory
-King Drop
+Daniel - Rectangle Player
+Daniel - MoveSpeed (Moor, DarkMoor, Sand)
+Julian - Options (Fullscreen, Move with Arrows)
+Julian - Victory
+Daniel - King Drop
 Julian - Hit Enemy = Timer - 
 Julian - Shoot
 Julian - Sprite Animation
 Daniel - House tiles
 Daniel - Object Spawnpoints
+Julian - take HealPotion = Timer +
+Julian - Cheats
+
+CHEATS: 
+
+-Open doors
+-add time
+-remove time
+-insta win
+-insta lose
+
 
 
 Chat:
@@ -28,19 +38,3 @@ D: los arbeite du n00b
 			
 			
 			
-			
-			
-			
-			
-			
-
-			
-			
-			
-
-
-
-
-
-			
-
