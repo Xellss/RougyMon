@@ -17,7 +17,7 @@ namespace RougyMon
         Map map;
         public SpriteAnimation Animation;
         //public Rectangle Source;
-        private int moveSpeed = 3;
+        private int moveSpeed = 7;
         public bool HasKey1 = false;
         public bool HasKey2 = false;
         public bool HasJewel = false;
@@ -83,7 +83,7 @@ namespace RougyMon
 
             CheckCurrentTile();
 
-            //Console.WriteLine(transform.Position);
+            Console.WriteLine(transform.Position);
         }
 
         public bool CanMoveTo(RectangleF recCollider)
