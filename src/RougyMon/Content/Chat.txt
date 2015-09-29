@@ -4,7 +4,6 @@ To Do:
 Daniel - Doors
 Daniel - Text Box (Intro)
 Daniel - Sounds
-Daniel - Enemy Spawnpoint
 
 Done:
 Daniel - Rectangle Player
@@ -19,6 +18,7 @@ Daniel - House tiles
 Daniel - Object Spawnpoints
 Julian - take HealPotion = Timer +
 Julian - Cheats
+Daniel & Julian - Enemy Spawnpoint
 
 CHEATS: 
 

@@ -14,6 +14,7 @@ namespace RougyMon
         Renderer renderer;
         BoxCollider collider;
 
+
         public Gold(Vector2 position)
         {
             Tag = "Gold";

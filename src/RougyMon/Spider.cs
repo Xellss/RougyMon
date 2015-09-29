@@ -36,7 +36,7 @@ namespace RougyMon
 
             patrol = AddComponent<Patrol>();
             patrol.PatrolToTarget(patrolTarget);
-            moveSpeed = 3;
+            moveSpeed = 1;
 
 
             collider = AddComponent<BoxCollider>();
