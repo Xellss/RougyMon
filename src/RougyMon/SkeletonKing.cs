@@ -41,7 +41,7 @@ namespace RougyMon
 
             patrol = AddComponent<Patrol>();
             patrol.PatrolToTarget(patrolTarget);
-            moveSpeed = 3;
+            moveSpeed = 1;
 
 
             
@@ -76,26 +76,29 @@ namespace RougyMon
                 renderer.SetImage(Managers.Content.Load<Texture2D>("Sprites/Objects/Jewel"), 22, 32);
                 transform.Position = new Vector2(transform.Position.X + 20, transform.Position.Y - 20);
                 patrol.CanPatrol = false;
+                renderer.Source = renderer.Image.Bounds;
                 Tag = "Jewel";
-                //timer.Time.TotalSeconds -= 10f;
-                //Destroy();
-                Console.WriteLine("COLLISION DU PENNER!!!");
             }
         }
         void OnUpdate(GameTime gameTime)
         {
-            Animation.PlayAnimation(string.Format("SkeletonKing_{0}", patrol.Direction));
-            Animation.UpdateAnimation(gameTime);
-            renderer.Source = Animation.CurrentFrame.Bounds;
+            if (Tag == "SkeletonKing")
+            {
+                Animation.PlayAnimation(string.Format("SkeletonKing_{0}", patrol.Direction));
+                Animation.UpdateAnimation(gameTime);
+                renderer.Source = Animation.CurrentFrame.Bounds;
+                renderer.Pivot = new Vector2(32, 32);
 
-            renderer.Pivot = new Vector2(32, 32);
+                //RectangleF newRectangle = new RectangleF(patrol.NextPosition.X / map.TileWidth - 0.75f,patrol.NextPosition.Y / map.TileHeight - 0.25f, 0.5f, 0.25f);
 
-            //RectangleF newRectangle = new RectangleF(patrol.NextPosition.X / map.TileWidth - 0.75f,patrol.NextPosition.Y / map.TileHeight - 0.25f, 0.5f, 0.25f);
+                Rectangle rectangle = Animation.CurrentFrame.Bounds;
+                patrol.NextFiledIsPassable = CanMoveTo(rectangle);
 
-            Rectangle rectangle = Animation.CurrentFrame.Bounds;
-            patrol.NextFiledIsPassable = CanMoveTo(rectangle);
+                CheckCurrentTile();
+            }
+            
 
-            CheckCurrentTile();
+            
         }
         
         public bool CanMoveTo(Rectangle recCollider)
