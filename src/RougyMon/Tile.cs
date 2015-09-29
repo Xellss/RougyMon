@@ -10,11 +10,12 @@ namespace RougyMon
 {
     class Tile : GameObject
     {
-        public enum Types { Grass, ClosedDoor, OpenDoorTop, OpenDoorLeft, Tree, WallTop, 
-                            WallSide, WallTopRight, WallButtomRight, Moor, DarkMoor, Water, 
-                            Sand, BlackBackground, GraveyardWall, House1, House2, House3, House4, 
-                            House5, House6, House7, House8, House9, House10, House11, House12,
-                            Fence_Horizontal, Fence_Vertical, Fence_LL, Fence_LR, Fence_UL, Fence_UR};
+        public enum Types
+        {
+            Grass, Fence_UR, Fence_UL, Fence_LR, Tree, WallTop,
+            WallSide, BlackBackground, Fence_Horizontal, Moor, Fence_LL, Water,
+            Sand, Fence_Vertical, GraveyardWall, House1, House2, House3, House4, 
+                            House5, House6, House7, House8, House9, House10, House11, House12};
         public Types Type { get; set; }
 
         public bool IsPassable;
@@ -24,7 +25,7 @@ namespace RougyMon
             Tag = tileType.ToString();
 
             Type = tileType;
-            IsPassable = tileType == Types.Grass || tileType == Types.Moor || tileType == Types.Sand || tileType == Types.Moor || tileType == Types.DarkMoor || tileType == Types.OpenDoorLeft || tileType == Types.OpenDoorTop;
+            IsPassable = tileType == Types.Grass || tileType == Types.Sand || tileType == Types.Moor ;
 
         }
     }

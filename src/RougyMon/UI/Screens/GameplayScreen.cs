@@ -108,7 +108,7 @@ namespace GameStateManagementSample
             
             doorForest = new DoorForest(new Vector2(35 * 32, 67 * 32));
             gateGraveyard = new GateGraveyard(new Vector2(81 * 32, 56 * 32));
-            player = new Player(new Vector2(2976, 2240), map, doorForest, gateGraveyard);
+            player = new Player(new Vector2(2976, 2240), map/*, doorForest, gateGraveyard*/);
 
             camera = new Camera(Managers.Graphics.GraphicsDevice.Viewport);
             //timer.GetPlayer(player);

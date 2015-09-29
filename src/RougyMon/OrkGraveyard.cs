@@ -104,8 +104,6 @@ namespace RougyMon
 
             if (nextTile.Type == Tile.Types.Moor)
                 patrol.Speed = 1;
-            else if (nextTile.Type == Tile.Types.DarkMoor)
-                patrol.Speed = 1;
             else if (nextTile.Type == Tile.Types.Sand)
                 patrol.Speed = 7;
             else

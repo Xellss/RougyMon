@@ -113,8 +113,6 @@ namespace RougyMon
 
             if (nextTile.Type == Tile.Types.Moor)
                 moveWithInput.Speed = 1;
-            else if (nextTile.Type == Tile.Types.DarkMoor)
-                moveWithInput.Speed = 1;
             else if (nextTile.Type == Tile.Types.Sand)
                 moveWithInput.Speed = 5;
             else
