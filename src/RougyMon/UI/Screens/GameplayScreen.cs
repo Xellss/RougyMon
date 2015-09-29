@@ -105,10 +105,10 @@ namespace GameStateManagementSample
 
             key_1 = new Key(new Vector2(992, 2560));
             key_2 = new Key_2(new Vector2(1136, 2096));
-            
+
             doorForest = new DoorForest(new Vector2(35 * 32, 67 * 32));
             gateGraveyard = new GateGraveyard(new Vector2(81 * 32, 56 * 32));
-            player = new Player(new Vector2(2976, 2240), map/*, doorForest, gateGraveyard*/);
+            player = new Player(new Vector2(2976, 2240), map, doorForest, gateGraveyard);
 
             camera = new Camera(Managers.Graphics.GraphicsDevice.Viewport);
             //timer.GetPlayer(player);
@@ -459,7 +459,7 @@ namespace GameStateManagementSample
             orkGraveyard[1] = new OrkGraveyard(new Vector2(77 * 32 + middleOfTile, 43 * 32 + middleOfTile), map, new Vector2(77 * 32 + middleOfTile, 39 * 32 + middleOfTile), timer);
             orkGraveyard[2] = new OrkGraveyard(new Vector2(95 * 32 + middleOfTile, 39 * 32 + middleOfTile), map, new Vector2(95 * 32 + middleOfTile, 43 * 32 + middleOfTile), timer);
             orkGraveyard[3] = new OrkGraveyard(new Vector2(82 * 32 + middleOfTile, 37 * 32 + middleOfTile), map, new Vector2(90 * 32 + middleOfTile, 37 * 32 + middleOfTile), timer);
-            orkGraveyard[4] = new OrkGraveyard(new Vector2(75 * 32 + middleOfTile, 21 * 32 + middleOfTile), map, new Vector2(82 * 32 + middleOfTile, 21 * 32 + middleOfTile), timer);
+            //orkGraveyard[4] = new OrkGraveyard(new Vector2(75 * 32 + middleOfTile, 21 * 32 + middleOfTile), map, new Vector2(82 * 32 + middleOfTile, 21 * 32 + middleOfTile), timer);
 
 
 

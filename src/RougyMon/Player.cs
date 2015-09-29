@@ -15,6 +15,8 @@ namespace RougyMon
         public MoveWithInput moveWithInput;
         BoxCollider collider;
         Map map;
+        DoorForest doorForest;
+        GateGraveyard gateGraveyard;
         public SpriteAnimation Animation;
         //public Rectangle Source;
         private int moveSpeed = 3;
@@ -22,11 +24,14 @@ namespace RougyMon
         public bool HasKey2 = false;
         public bool HasJewel = false;
         public static int GoldCounter = 0;
-        NewTimer timer;
-       
-        public Player(Vector2 position, Map map)
+
+
+        public Player(Vector2 position, Map map, DoorForest doorForest, GateGraveyard gateGraveyard)
         {
+            this.gateGraveyard = gateGraveyard;
+            this.doorForest = doorForest;
             this.map = map;
+
             Tag = "Player";
 
             transform = AddComponent<Transform>();
@@ -50,7 +55,7 @@ namespace RougyMon
                 Path.Combine(Managers.Content.RootDirectory, "Sprites", "Sprite_Sheet", "RougyMon.xml"));
             Animation.FrameDelay = 100;
 
-            
+
 
             EventManager.OnUpdate += OnUpdate;
             EventManager.OnLateUpdate += OnLateUpdate;
@@ -73,17 +78,30 @@ namespace RougyMon
                 HasJewel = true;
             if (other.GameObject.Tag == "Gold")
                 GoldCounter++;
+            if (other.GameObject.Tag == "DoorForest")
+                if (HasKey1)
+                    other.GameObject.Destroy();
+            //else
+            //    transform.Position = new Vector2(transform.Position.X, transform.Position.Y + 10);
+
+            if (other.GameObject.Tag == "GateGraveyard")
+                if (HasKey2)
+                    other.GameObject.Destroy();
+            //else
+            //    transform.Position = new Vector2(transform.Position.X, transform.Position.Y + 10);
         }
         void OnUpdate(GameTime gameTime)
         {
-
-
             renderer.Pivot = new Vector2(32, 32);
 
             RectangleF newRectangle = new RectangleF(moveWithInput.NextPosition.X / map.TileWidth - 0.75f, moveWithInput.NextPosition.Y / map.TileHeight - 0.25f, 0.5f, 0.25f);
 
             moveWithInput.NextFiledIsPassable = CanMoveTo(newRectangle);
 
+            //if (newRectangle.Location.Y == doorForest.transform.Position.Y || newRectangle.Location.Y == gateGraveyard.transform.Position.Y)
+            //{
+            //    moveWithInput.NextFiledIsPassable = false;
+            //}
             CheckCurrentTile();
 
             Console.WriteLine(transform.Position);
@@ -93,6 +111,8 @@ namespace RougyMon
         {
 
             Vector2 v;
+            float pos = doorForest.transform.Position.Y / map.TileHeight;
+            float xpos = doorForest.transform.Position.X / map.TileHeight;
             for (v.X = recCollider.Location.X; v.X <= recCollider.Right; v.X += 0.25f)
             {
                 for (v.Y = recCollider.Location.Y; v.Y <= recCollider.Bottom; v.Y += 0.25f)
@@ -101,8 +121,13 @@ namespace RougyMon
                     {
                         return false;
                     }
+
                 }
             }
+
+            if (gateGraveyard.Bounds.Intersects(recCollider) & !HasKey2) return false;
+            if (doorForest.Bounds.Intersects(recCollider) & !HasKey1) return false;
+
             return true;
         }
         private void CheckCurrentTile()
@@ -124,15 +149,6 @@ namespace RougyMon
             EventManager.OnLateUpdate -= OnLateUpdate;
             EventManager.OnUpdate -= OnUpdate;
             base.Destroy();
-        }
-
-        public void hixhax()
-        {
-            if (Keyboard.GetState().IsKeyDown(Keys.D6) && timer.chrisS)
-            {
-                HasKey1 = true;
-                HasKey2 = true;
-            }
         }
     }
 }
