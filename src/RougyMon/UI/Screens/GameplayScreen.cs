@@ -97,6 +97,7 @@ namespace GameStateManagementSample
             orkForestSpawn();
             SpiderSpawn();
             SkeletonSpawn();
+            orkGraveyardSpawn();
 
             skeletonKing = new SkeletonKing(new Vector2(3168, 1200), map, new Vector2(3712, 1200), timer);
 
@@ -401,13 +402,12 @@ namespace GameStateManagementSample
             int middleOfTile = 32;
 
             orkForest[0] = new OrkForest(new Vector2((49 * 32) + middleOfTile, (65 * 32) + middleOfTile), map, new Vector2((49 * 32) + middleOfTile, (68 * 32) + middleOfTile), timer);
-            orkForest[0].moveSpeed = 1;
 
             orkForest[1] = new OrkForest(new Vector2(1540 + middleOfTile, 2073 + middleOfTile), map, new Vector2(1267 + middleOfTile, 2265 + middleOfTile), timer);
             orkForest[2] = new OrkForest(new Vector2(543 + middleOfTile, 2208 + middleOfTile), map, new Vector2(814 + middleOfTile, 2208 + middleOfTile), timer);
-            orkForest[3] = new OrkForest(new Vector2(1368 + middleOfTile, 2407 + middleOfTile), map, new Vector2(1368 + middleOfTile, 2587 + middleOfTile), timer);
+            orkForest[3] = new OrkForest(new Vector2(29 * 32 + middleOfTile, 83 * 32 + middleOfTile), map, new Vector2(37 * 32 + middleOfTile, 83 * 32 + middleOfTile), timer);
             orkForest[4] = new OrkForest(new Vector2(862, 2430), map, new Vector2(1228, 2430), timer);
-            orkForest[5] = new OrkForest(new Vector2(982 + middleOfTile, 2678 + middleOfTile), map, new Vector2(1219 + middleOfTile, 2678 + middleOfTile), timer);
+            orkForest[5] = new OrkForest(new Vector2(43 * 32 + middleOfTile, 71 * 32 + middleOfTile), map, new Vector2(43 * 32 + middleOfTile, 79 * 32 + middleOfTile), timer);
             orkForest[6] = new OrkForest(new Vector2(799, 2711), map, new Vector2(575, 2491), timer);
 
             orkForest[7] = new OrkForest(new Vector2(51 * 32 + middleOfTile, 71 * 32 + middleOfTile), map, new Vector2(51 * 32 + middleOfTile, 74 * 32 + middleOfTile), timer);
@@ -415,6 +415,13 @@ namespace GameStateManagementSample
             orkForest[9] = new OrkForest(new Vector2(55 * 32 + middleOfTile, 74 * 32 + middleOfTile), map, new Vector2(55 * 32 + middleOfTile, 71 * 32 + middleOfTile), timer);
             orkForest[10] = new OrkForest(new Vector2(55 * 32 + middleOfTile, 71 * 32 + middleOfTile), map, new Vector2(51 * 32 + middleOfTile, 71 * 32 + middleOfTile), timer);
 
+            orkForest[11] = new OrkForest(new Vector2(110 * 32 + middleOfTile, 79 * 32 + middleOfTile), map, new Vector2(110 * 32 + middleOfTile, 76 * 32 + middleOfTile), timer);
+            orkForest[12] = new OrkForest(new Vector2(112 * 32 + middleOfTile, 78 * 32 + middleOfTile), map, new Vector2(112 * 32 + middleOfTile, 81 * 32 + middleOfTile), timer);
+            //orkForest[13] = new OrkForest(new Vector2(112 * 32 + middleOfTile, 78 * 32 + middleOfTile), map, new Vector2(123 * 32 + middleOfTile, 81 * 32 + middleOfTile), timer);
+
+
+
+            orkForest[0].moveSpeed = 1;
             orkForest[7].moveSpeed = 1;
             orkForest[8].moveSpeed = 1;
             orkForest[9].moveSpeed = 1;
@@ -431,11 +438,12 @@ namespace GameStateManagementSample
             skeleton[3] = new Skeleton(new Vector2(46 * 32 + middleOfTile, 29 * 32 + middleOfTile), map, new Vector2(49 * 32 + middleOfTile, 29 * 32 + middleOfTile), timer);
             skeleton[4] = new Skeleton(new Vector2(44 * 32 + middleOfTile, 29 * 32 + middleOfTile), map, new Vector2(44 * 32 + middleOfTile, 32 * 32 + middleOfTile), timer);
             skeleton[5] = new Skeleton(new Vector2(49 * 32 + middleOfTile, 34 * 32 + middleOfTile), map, new Vector2(49 * 32 + middleOfTile, 37 * 32 + middleOfTile), timer);
-            //skeleton[6] = new Skeleton(new Vector2(55 * 32 + middleOfTile, 71 * 32 + middleOfTile), map, new Vector2(51 * 32 + middleOfTile, 71 * 32 + middleOfTile), timer);
-            //skeleton[7] = new Skeleton(new Vector2(55 * 32 + middleOfTile, 71 * 32 + middleOfTile), map, new Vector2(51 * 32 + middleOfTile, 71 * 32 + middleOfTile), timer);
-            //skeleton[8] = new Skeleton(new Vector2(55 * 32 + middleOfTile, 71 * 32 + middleOfTile), map, new Vector2(51 * 32 + middleOfTile, 71 * 32 + middleOfTile), timer);
+            skeleton[6] = new Skeleton(new Vector2(118 * 32 + middleOfTile, 84 * 32 + middleOfTile), map, new Vector2(118 * 32 + middleOfTile, 19 * 32 + middleOfTile), timer);
+            skeleton[7] = new Skeleton(new Vector2(69 * 32 + middleOfTile, 19 * 32 + middleOfTile), map, new Vector2(69 * 32 + middleOfTile, 22 * 32 + middleOfTile), timer);
+            skeleton[8] = new Skeleton(new Vector2(67 * 32 + middleOfTile, 19 * 32 + middleOfTile), map, new Vector2(67 * 32 + middleOfTile, 22 * 32 + middleOfTile), timer);
             //skeleton[9] = new Skeleton(new Vector2(55 * 32 + middleOfTile, 71 * 32 + middleOfTile), map, new Vector2(51 * 32 + middleOfTile, 71 * 32 + middleOfTile), timer);
 
+            skeleton[6].moveSpeed = 1;
 
         }
         private void SpiderSpawn()
@@ -448,11 +456,25 @@ namespace GameStateManagementSample
             spider[3] = new Spider(new Vector2(63 * 32 + middleOfTile, 25 * 32 + middleOfTile), map, new Vector2(63 * 32 + middleOfTile, 19 * 32 + middleOfTile), timer);
             spider[4] = new Spider(new Vector2(75 * 32 + middleOfTile, 21 * 32 + middleOfTile), map, new Vector2(82 * 32 + middleOfTile, 21 * 32 + middleOfTile), timer);
 
-            //spider[5] = new Spider(new Vector2(45 * 32 + middleOfTile, 21 * 32 + middleOfTile), map, new Vector2(45 * 32 + middleOfTile, 27 * 32 + middleOfTile), timer);
-            //spider[6] = new Spider(new Vector2(45 * 32 + middleOfTile, 21 * 32 + middleOfTile), map, new Vector2(45 * 32 + middleOfTile, 27 * 32 + middleOfTile), timer);
+            spider[5] = new Spider(new Vector2(66 * 32 + middleOfTile, 33 * 32 + middleOfTile), map, new Vector2(66 * 32 + middleOfTile, 39 * 32 + middleOfTile), timer);
+            spider[6] = new Spider(new Vector2(57 * 32 + middleOfTile, 39 * 32 + middleOfTile), map, new Vector2(57 * 32 + middleOfTile, 31 * 32 + middleOfTile), timer);
             //spider[7] = new Spider(new Vector2(45 * 32 + middleOfTile, 21 * 32 + middleOfTile), map, new Vector2(45 * 32 + middleOfTile, 27 * 32 + middleOfTile), timer);
             //spider[8] = new Spider(new Vector2(45 * 32 + middleOfTile, 21 * 32 + middleOfTile), map, new Vector2(45 * 32 + middleOfTile, 27 * 32 + middleOfTile), timer);
             //spider[9] = new Spider(new Vector2(45 * 32 + middleOfTile, 21 * 32 + middleOfTile), map, new Vector2(45 * 32 + middleOfTile, 27 * 32 + middleOfTile), timer);
+
+
+        }
+
+        private void orkGraveyardSpawn()
+        {
+            int middleOfTile = 32;
+
+            orkGraveyard[0] = new OrkGraveyard(new Vector2(79 * 32 + middleOfTile, 47 * 32 + middleOfTile), map, new Vector2(92 * 32 + middleOfTile, 47 * 32 + middleOfTile), timer);
+            orkGraveyard[1] = new OrkGraveyard(new Vector2(77 * 32 + middleOfTile, 43 * 32 + middleOfTile), map, new Vector2(77 * 32 + middleOfTile, 39 * 32 + middleOfTile), timer);
+            orkGraveyard[2] = new OrkGraveyard(new Vector2(95 * 32 + middleOfTile, 39 * 32 + middleOfTile), map, new Vector2(95 * 32 + middleOfTile, 43 * 32 + middleOfTile), timer);
+            orkGraveyard[3] = new OrkGraveyard(new Vector2(82 * 32 + middleOfTile, 37 * 32 + middleOfTile), map, new Vector2(90 * 32 + middleOfTile, 37 * 32 + middleOfTile), timer);
+            orkGraveyard[4] = new OrkGraveyard(new Vector2(75 * 32 + middleOfTile, 21 * 32 + middleOfTile), map, new Vector2(82 * 32 + middleOfTile, 21 * 32 + middleOfTile), timer);
+
 
 
 
