@@ -365,13 +365,13 @@ namespace GameStateManagementSample
             gold[42] = new Gold(new Vector2(2688 + middleOfTile, 1152 + middleOfTile));
             gold[43] = new Gold(new Vector2(2240 + middleOfTile, 1120 + middleOfTile));
             gold[44] = new Gold(new Vector2(2112 + middleOfTile, 1248 + middleOfTile));
-            gold[45] = new Gold(new Vector2(2112 + middleOfTile, 1024 + middleOfTile));
+            gold[45] = new Gold(new Vector2(2112 + middleOfTile, 992 + middleOfTile));
             gold[46] = new Gold(new Vector2(2208 + middleOfTile, 864 + middleOfTile));
             gold[47] = new Gold(new Vector2(2112 + middleOfTile, 864 + middleOfTile));
             gold[48] = new Gold(new Vector2(2080 + middleOfTile, 704 + middleOfTile));
             gold[49] = new Gold(new Vector2(2048 + middleOfTile, 1184 + middleOfTile));
             gold[50] = new Gold(new Vector2(1888 + middleOfTile, 1184 + middleOfTile));
-            gold[51] = new Gold(new Vector2(1696 + middleOfTile, 1024 + middleOfTile));
+            gold[51] = new Gold(new Vector2(1696 + middleOfTile, 992 + middleOfTile));
             gold[52] = new Gold(new Vector2(1632 + middleOfTile, 1184 + middleOfTile));
             gold[53] = new Gold(new Vector2(1440 + middleOfTile, 1088 + middleOfTile));
             gold[54] = new Gold(new Vector2(1376 + middleOfTile, 928 + middleOfTile));
