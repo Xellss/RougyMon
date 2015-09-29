@@ -392,6 +392,11 @@ namespace GameStateManagementSample
 
 
             orkForest[0] = new OrkForest(new Vector2((49 * 32) + middleOfTile, (65 * 32) + middleOfTile), map, new Vector2((49 * 32) + middleOfTile, (68 * 32) + middleOfTile), timer);
+            orkForest[0].moveSpeed = 1;
+
+            //orkForest[1] = new OrkForest(new Vector2((49 * 32) + middleOfTile, (65 * 32) + middleOfTile), map, new Vector2((49 * 32) + middleOfTile, (68 * 32) + middleOfTile), timer);
+
+
 
         }
     }
