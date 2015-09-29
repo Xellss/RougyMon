@@ -22,7 +22,6 @@ namespace RougyMon
         public bool HasKey2 = false;
         public bool HasJewel = false;
 
-
         public Player(Vector2 position, Map map)
         {
             this.map = map;
