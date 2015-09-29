@@ -45,7 +45,6 @@ namespace GameStateManagementSample
         Skeleton[] skeleton = new Skeleton[20];
         SkeletonKing skeletonKing;
 
-
         #endregion
 
         #region Initialization
@@ -251,7 +250,6 @@ namespace GameStateManagementSample
             float goldSize = Fonts.Arial.MeasureString(goldText).X;
             spriteBatch.DrawString(Fonts.Arial, goldText, new Vector2(Managers.Graphics.GraphicsDevice.Viewport.Width - size - 30, 50), Color.White); base.LateDraw(spriteBatch);
             spriteBatch.End();
-
             
         }
 
