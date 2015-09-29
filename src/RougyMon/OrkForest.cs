@@ -31,6 +31,7 @@ namespace RougyMon
             transform.Position = position;
 
             renderer = AddComponent<ViewRenderer>();
+            //renderer.SetImage(Managers.Content.Load<Texture2D>("Sprites/OrkForest/OrkForest_Front_0"));
             renderer.SetImage(Managers.Content.Load<Texture2D>("Sprites/Sprite_Sheet/RougyMon"), 32, 32);
             renderer.Pivot = new Vector2(renderer.ImageWidth / 2, renderer.ImageHeight / 1f);
 
@@ -77,7 +78,6 @@ namespace RougyMon
 
         public bool CanMoveTo(RectangleF recCollider)
         {
-
             Vector2 v;
             for (v.X = recCollider.Location.X; v.X <= recCollider.Right; v.X += 0.25f)
             {

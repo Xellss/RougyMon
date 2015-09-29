@@ -7,13 +7,17 @@ using System.Text;
 
 namespace MiniEngine
 {
-    public class ViewRenderer : Component
+    public class ViewRenderer : Component, IRender
     {
         public Texture2D Image;
         public Rectangle Source;
         public Color ImageColor = Color.White;
-        public int ImageWidth = 10;
-        public int ImageHeight = 10;
+        private int imageWidth = 10;
+        private int imageHeight = 10;
+
+        public int ImageWidth { get { return this.imageWidth; } set { this.imageWidth = value; } }
+        public int ImageHeight { get { return this.imageHeight; } set { this.imageHeight = value; } }
+
         public int PositionZ = 0;
         public Vector2 Pivot = Vector2.Zero;
         public SpriteEffects Orientation = SpriteEffects.None;

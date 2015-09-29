@@ -51,6 +51,7 @@
     <Compile Include="GameObject.cs" />
     <Compile Include="GameObjectManager.cs" />
     <Compile Include="Health.cs" />
+    <Compile Include="IRender.cs" />
     <Compile Include="MouseInteractive.cs" />
     <Compile Include="MoveToTarget.cs" />
     <Compile Include="MoveWithInput.cs" />

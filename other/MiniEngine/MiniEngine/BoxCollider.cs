@@ -77,7 +77,13 @@ namespace MiniEngine
 
         private void BoundsToRendereSize()
         {
-            Renderer renderer = GameObject.GetComponent<Renderer>();
+            IRender renderer = GameObject.GetComponent<Renderer>();
+
+            if (renderer == null)
+            {
+                renderer = GameObject.GetComponent<ViewRenderer>();
+            }
+
             if (renderer != null)
             {
                 bounds.Width = renderer.ImageWidth;
