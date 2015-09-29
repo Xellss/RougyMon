@@ -10,7 +10,11 @@ namespace RougyMon
 {
     class Tile : GameObject
     {
-        public enum Types { Grass, ClosedDoor, OpenDoorTop, OpenDoorLeft, Tree, WallTop, WallSide, WallTopRight, WallButtomRight, Moor, DarkMoor, Water, Sand, BlackBackground, GraveyardWall, House1, House2, House3, House4, House5, House6, House7, House8, House9, House10, House11, House12 };
+        public enum Types { Grass, ClosedDoor, OpenDoorTop, OpenDoorLeft, Tree, WallTop, 
+                            WallSide, WallTopRight, WallButtomRight, Moor, DarkMoor, Water, 
+                            Sand, BlackBackground, GraveyardWall, House1, House2, House3, House4, 
+                            House5, House6, House7, House8, House9, House10, House11, House12,
+                            Fence_Horizontal, Fence_Vertical, Fence_LL, Fence_LR, Fence_UL, Fence_UR};
         public Types Type { get; set; }
 
         public bool IsPassable;

@@ -22,12 +22,11 @@ namespace RougyMon
         public bool HasKey2 = false;
         public bool HasJewel = false;
         public static int GoldCounter = 0;
-
+        NewTimer timer;
        
         public Player(Vector2 position, Map map)
         {
             this.map = map;
-
             Tag = "Player";
 
             transform = AddComponent<Transform>();
@@ -127,6 +126,15 @@ namespace RougyMon
             EventManager.OnLateUpdate -= OnLateUpdate;
             EventManager.OnUpdate -= OnUpdate;
             base.Destroy();
+        }
+
+        public void hixhax()
+        {
+            if (Keyboard.GetState().IsKeyDown(Keys.D6) && timer.chrisS)
+            {
+                HasKey1 = true;
+                HasKey2 = true;
+            }
         }
     }
 }

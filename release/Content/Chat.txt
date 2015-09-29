@@ -1,52 +1,40 @@
 To Do:
-Sprite Animation
-Text Box (Intro)
-Enemy and Object Spawnpoints
-Hit Enemy = Timer - 
-Hit HealPotion = Timer +
-Sounds
-Victory
-Cheats
-King Drop
-Shoot
+Julian - UIKey
 
-
-
+Daniel - Doors
+Daniel - Text Box (Intro)
+Daniel - Sounds
 
 Done:
-Rectangle Player
-MoveSpeed (Moor, DarkMoor, Sand)
-Options (Fullscreen, Move with Arrows)
+Daniel - Rectangle Player
+Daniel - MoveSpeed (Moor, DarkMoor, Sand)
+Julian - Options (Fullscreen, Move with Arrows)
+Julian - Victory
+Daniel - King Drop
+Julian - Hit Enemy = Timer - 
+Julian - Shoot
+Julian - Sprite Animation
+Daniel - House tiles
+Daniel - Object Spawnpoints
+Julian - take HealPotion = Timer +
+Julian - Cheats
+Daniel & Julian - Enemy Spawnpoint
 
+CHEATS: 
+
+-Open doors
+-add time
+-remove time
+-insta win
+-insta lose
 
 
 
 Chat:
 
-D:
-los arbeite du noob
-__
-D:
-MoveWithArrows : 
-			Player player;
-            player.moveWithInput.MoveWithArrow = true;
-			
-			
-			
-			
-			
-			
-			
-			
-			
+D: sinnlose nachricht!
+D: los arbeite du n00b
 
 			
 			
 			
-
-
-
-
-
-			
-

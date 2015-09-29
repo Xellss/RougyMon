@@ -110,10 +110,9 @@ namespace GameStateManagementSample
             doorForest = new DoorForest(new Vector2(35 * 32 + 16, 67 * 32 + 16), player);
             gateGraveyard = new GateGraveyard(new Vector2(81 * 32 + 16, 56 * 32 + 16), player);
             camera = new Camera(Managers.Graphics.GraphicsDevice.Viewport);
+            //timer.GetPlayer(player);
             timer.Start();
         }
-
-
 
         public override void Deactivate()
         {

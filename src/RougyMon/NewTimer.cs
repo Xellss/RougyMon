@@ -17,6 +17,7 @@ namespace RougyMon
         private bool chrisR = false;
         private bool chrisI = false;
         public bool chrisS = false;
+        Player player;
 
         public void OnUpdate(Microsoft.Xna.Framework.GameTime gameTime)
         {
@@ -65,6 +66,11 @@ namespace RougyMon
             if (Keyboard.GetState().IsKeyDown(Keys.D2) && chrisS)
             {
                 Time = Time.Add(new TimeSpan(0, 0, 20));
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.D6) && chrisS)
+            {
+                player.HasKey1 = true;
+                player.HasKey2 = true;
             }
         }
     }

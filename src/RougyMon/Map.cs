@@ -36,6 +36,12 @@ namespace RougyMon
         public Color House10 = new Color(0, 0, 10);
         public Color House11 = new Color(0, 0, 11);
         public Color House12 = new Color(0, 0, 12);
+        public Color Fence_Horizontal = new Color(254, 0, 0);
+        public Color Fence_Vertical = new Color(253, 0, 0);
+        public Color Fence_LL = new Color(252, 0, 0);
+        public Color Fence_LR = new Color(251, 0, 0);
+        public Color Fence_UL = new Color(250, 0, 0);
+        public Color Fence_UR = new Color(249, 0, 0);
 
         //public Color Graveyard = new Color(0, 0, 255);
 
@@ -191,6 +197,18 @@ namespace RougyMon
                 return new Tile(Tile.Types.House11);
             else if (color == House12)
                 return new Tile(Tile.Types.House12);
+            else if (color == Fence_Horizontal)
+                return new Tile(Tile.Types.Fence_Horizontal);
+            else if (color == Fence_Vertical)
+                return new Tile(Tile.Types.Fence_Vertical);
+            else if (color == Fence_LL)
+                return new Tile(Tile.Types.Fence_LL);
+            else if (color == Fence_LR)
+                return new Tile(Tile.Types.Fence_LR);
+            else if (color == Fence_UR)
+                return new Tile(Tile.Types.Fence_UR);
+            else if (color == Fence_UL)
+                return new Tile(Tile.Types.Fence_UL);
 
 
             else
